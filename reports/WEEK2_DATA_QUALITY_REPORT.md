@@ -108,3 +108,10 @@ Top các tài nguyên có lượt click cao nhất:
   - [02_demographics_overview.png](file:///c:/Users/mrore/Project_I/reports/figures/02_demographics_overview.png)
   - [03_activity_type_clicks.png](file:///c:/Users/mrore/Project_I/reports/figures/03_activity_type_clicks.png)
 - [x] Báo cáo đánh giá chất lượng dữ liệu: [WEEK2_DATA_QUALITY_REPORT.md](file:///c:/Users/mrore/Project_I/reports/WEEK2_DATA_QUALITY_REPORT.md)
+
+---
+
+## 7. KẾ HOẠCH BỔ SUNG CHO TUẦN 3
+- Triển khai phân tích khám phá dữ liệu (EDA) theo khung lý thuyết SEDL.
+- **Nhiệm vụ trọng tâm bổ sung**: Chạy thử mô hình của bài báo dự đoán cũ (baseline model), thực hiện chuyển đổi cấu hình nhãn từ **4 sample** (`Distinction`, `Pass`, `Fail`, `Withdrawn`) sang **2 sample** (`0: Not At-Risk` vs `1: At-Risk`) đối với bài toán cảnh báo sớm hiện tại để thiết lập ngưỡng chuẩn (benchmark) ban đầu.
+

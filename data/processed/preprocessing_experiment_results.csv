@@ -1,0 +1,8 @@
+Mô hình,Chiến lược Tiền xử lý,Accuracy,Precision,Recall (At-Risk),F1-Score,ROC-AUC
+Logistic Regression,Robust (Chuẩn),0.9296,0.9694,0.895,0.9307,0.9779
+Logistic Regression,Balanced Weights,0.9296,0.9737,0.8907,0.9304,0.9779
+Logistic Regression,SMOTE Train,0.9294,0.9721,0.8919,0.9303,0.9779
+Decision Tree,max_depth=6,0.9239,0.9593,0.8938,0.9254,0.9728
+Random Forest,100 Trees (Chuẩn),0.9307,0.9722,0.8942,0.9316,0.9806
+Random Forest,Balanced Weights,0.9298,0.9742,0.8907,0.9306,0.9812
+Random Forest,SMOTE Train,0.9282,0.9733,0.8884,0.9289,0.9808

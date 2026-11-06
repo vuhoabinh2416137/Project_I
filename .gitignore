@@ -1,0 +1,45 @@
+# Datasets and Large Archives
+data/raw/
+*.zip
+*.tar.gz
+*.parquet
+
+# Academic papers & local PDFs
+*.pdf
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Model artifacts
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Agent and temporary workspaces
+.agents/
+scratch/
+

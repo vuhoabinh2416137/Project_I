@@ -1,0 +1,217 @@
+{
+  "scaling_method": "robust",
+  "outlier_method": "capping",
+  "iqr_multiplier": 3.0,
+  "apply_log1p": true,
+  "filter_pre_course_unreg": false,
+  "num_features": 63,
+  "feature_names_out": [
+    "total_clicks",
+    "active_days",
+    "daily_click_mean",
+    "daily_click_std",
+    "studied_credits",
+    "clicks_oucontent",
+    "clicks_forumng",
+    "clicks_quiz",
+    "clicks_homepage",
+    "clicks_subpage",
+    "clicks_resource",
+    "clicks_ouwiki",
+    "clicks_url",
+    "num_of_prev_attempts",
+    "module_presentation_length",
+    "date_registration",
+    "clicks_per_active_day",
+    "has_pre_course_clicks",
+    "oucontent_ratio",
+    "forumng_ratio",
+    "quiz_ratio",
+    "total_course_assessments",
+    "avg_score",
+    "min_score",
+    "max_score",
+    "num_submissions",
+    "avg_days_early",
+    "late_submissions",
+    "tma1_score",
+    "tma1_days_early",
+    "submission_rate",
+    "submitted_tma1",
+    "late_submission_rate",
+    "highest_education",
+    "imd_band",
+    "age_band",
+    "gender_F",
+    "gender_M",
+    "disability_N",
+    "disability_Y",
+    "region_East Anglian Region",
+    "region_East Midlands Region",
+    "region_Ireland",
+    "region_London Region",
+    "region_North Region",
+    "region_North Western Region",
+    "region_Scotland",
+    "region_South East Region",
+    "region_South Region",
+    "region_South West Region",
+    "region_Wales",
+    "region_West Midlands Region",
+    "region_Yorkshire Region",
+    "code_module_AAA",
+    "code_module_BBB",
+    "code_module_CCC",
+    "code_module_DDD",
+    "code_module_EEE",
+    "code_module_FFF",
+    "code_module_GGG",
+    "imd_was_missing",
+    "has_no_submissions",
+    "has_no_clicks"
+  ],
+  "impute_values": {
+    "imd_band_mode": "20-30%",
+    "date_registration_median": -57.0,
+    "avg_score": 0.0,
+    "min_score": 0.0,
+    "max_score": 0.0,
+    "tma1_score": 0.0,
+    "avg_days_early": -10.0,
+    "tma1_days_early": -10.0
+  },
+  "outlier_bounds": {
+    "total_clicks": [
+      0.0,
+      5906.0
+    ],
+    "active_days": [
+      0.0,
+      307.0
+    ],
+    "daily_click_mean": [
+      0.0,
+      64.29176788124157
+    ],
+    "daily_click_std": [
+      0.0,
+      86.26598891177147
+    ],
+    "studied_credits": [
+      30.0,
+      300.0
+    ],
+    "clicks_oucontent": [
+      0.0,
+      1480.0
+    ],
+    "clicks_forumng": [
+      0.0,
+      997.0
+    ],
+    "clicks_quiz": [
+      0.0,
+      720.0
+    ],
+    "clicks_homepage": [
+      0.0,
+      1012.0
+    ],
+    "clicks_subpage": [
+      0.0,
+      506.0
+    ],
+    "clicks_resource": [
+      0.0,
+      161.0
+    ],
+    "clicks_ouwiki": [
+      0.0,
+      40.0
+    ],
+    "clicks_url": [
+      0.0,
+      84.0
+    ],
+    "num_of_prev_attempts": [
+      0.0,
+      0.0
+    ],
+    "module_presentation_length": [
+      234.0,
+      349.0
+    ],
+    "date_registration": [
+      -248.0,
+      187.0
+    ],
+    "clicks_per_active_day": [
+      0.0,
+      64.29176788124157
+    ],
+    "has_pre_course_clicks": [
+      0.0,
+      4.0
+    ],
+    "oucontent_ratio": [
+      0.0,
+      1.435043665424891
+    ],
+    "forumng_ratio": [
+      0.0,
+      0.8975299527835678
+    ],
+    "quiz_ratio": [
+      0.0,
+      0.887405419550245
+    ],
+    "total_course_assessments": [
+      4.0,
+      30.0
+    ],
+    "avg_score": [
+      5.6410714285714505,
+      143.81190476190474
+    ],
+    "min_score": [
+      0.0,
+      162.0
+    ],
+    "max_score": [
+      20.0,
+      160.0
+    ],
+    "num_submissions": [
+      0.0,
+      33.0
+    ],
+    "avg_days_early": [
+      -21.0,
+      45.3
+    ],
+    "late_submissions": [
+      0.0,
+      8.0
+    ],
+    "tma1_score": [
+      1.0,
+      157.0
+    ],
+    "tma1_days_early": [
+      -9.0,
+      12.0
+    ],
+    "submission_rate": [
+      0.0,
+      3.625
+    ],
+    "submitted_tma1": [
+      0.0,
+      4.0
+    ],
+    "late_submission_rate": [
+      0.0,
+      1.818181818181818
+    ]
+  }
+}

@@ -6,12 +6,12 @@
 
 ## 1. TỔNG QUAN TIẾN ĐỘ TUẦN 4
 
-Toàn bộ **8 hạng mục công việc cốt lõi** của Tuần 4 (từ Nhiệm vụ 4.1 đến 4.8) theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua pipeline hướng đối tượng chuẩn mực [`src/preprocessing.py`](file:///c:/Users/mrore/Project_I/src/preprocessing.py), Jupyter Notebook [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb), bộ kiểm thử tự động [`src/tests/test_preprocessing.py`](file:///c:/Users/mrore/Project_I/src/tests/test_preprocessing.py) (**9/9 tests PASSED**) và xuất bản **6 biểu đồ phân tích chuyên sâu** (`15_*.png` đến `20_*.png` tại `reports/figures/`).
+Toàn bộ **8 hạng mục công việc cốt lõi** của Tuần 4 (từ Nhiệm vụ 4.1 đến 4.8) theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua pipeline hướng đối tượng `OULADPreprocessor` và bộ kiểm thử tự động (**9/9 tests PASSED**) tích hợp hoàn toàn trong Jupyter Notebook [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb), xuất bản **6 biểu đồ phân tích chuyên sâu** (`15_*.png` đến `20_*.png` tại `reports/figures/`).
 
 | Mã CV | Nội dung công việc Tuần 4 | Trạng thái | Sản phẩm đầu ra |
 |:---:|---|:---:|---|
 | **T4.1** | Xử lý missing values trong `studentAssessment` (điểm thiếu $\rightarrow 0$, cờ `has_no_submissions`) | Hoàn thành | Pipeline Imputer & [15_missing_values_heatmap_and_imputation.png](file:///c:/Users/mrore/Project_I/reports/figures/15_missing_values_heatmap_and_imputation.png) |
-| **T4.2** | Xử lý `date_submitted` missing, `imd_band` missing (Mode / Unknown, cờ `imd_was_missing`) | Hoàn thành | Dữ liệu sạch, triệt tiêu toàn bộ NaN |
+| **T4.2** | Xử lý `date_submitted` missing, `imd_band` missing (Impute bằng Mode Train `'20-30%'` $\rightarrow 2$, kèm cờ `imd_was_missing = 1`) | Hoàn thành | Dữ liệu sạch, triệt tiêu toàn bộ NaN |
 | **T4.3** | Phân tích & xử lý sinh viên Withdrawn sớm (`date_unregistration < 0`, 0 clicks) | Hoàn thành | [16_early_unregistration_impact.png](file:///c:/Users/mrore/Project_I/reports/figures/16_early_unregistration_impact.png) & Cấu hình lọc linh hoạt |
 | **T4.4** | Phát hiện & xử lý ngoại lai (IQR Capping $Q_3 + 3 \times \text{IQR}$, Winsorization & Log1p) | Hoàn thành | [17_outliers_boxplots_and_capping.png](file:///c:/Users/mrore/Project_I/reports/figures/17_outliers_boxplots_and_capping.png) |
 | **T4.5** | Encoding biến phân loại (Ordinal mapping thứ bậc & One-Hot Encoding danh mục) | Hoàn thành | 63 đặc trưng số đầu ra, không còn kiểu chuỗi/object |
@@ -35,10 +35,11 @@ Trong bảng đặc trưng cấp độ Sinh viên - Khóa học ($N = 32,593$ b�
    - *Chiến lược xử lý*: Impute giá trị $0.0$ điểm (phản ánh đúng thực tế học thuật là 0 điểm nếu vắng thi/không nộp) kết hợp bổ sung cờ nhị phân `has_no_submissions` ($= 1$ nếu không nộp bài) và `submitted_tma1` ($= 0$ nếu không nộp TMA1).
 3. **Độ kịp thời khi nộp bài (`avg_days_early`: $6,751$ missing, $20.71\%$ | `tma1_days_early`: $8,128$ missing, $24.94\%$)**:
    - *Bản chất*: Không thể tính số ngày nộp trước hạn đối với những bài tập sinh viên không hề nộp.
-   - *Chiến lược xử lý*: Gán giá trị trễ danh nghĩa định lượng (Penalty Sentinel Value) là $-10.0$ ngày (biểu thị nộp muộn sau hạn chót).
+   - *Chiến lược xử lý*: Gán giá trị trễ danh nghĩa định lượng (Penalty Sentinel Value) là $-10.0$ ngày (biểu thị không nộp bài / trễ hạn nghiêm trọng).
+   - *Giải trình kỹ thuật về sự chuyển đổi từ $-5.0$ ngày (Tuần 3) sang $-10.0$ ngày (Tuần 4)*: Trong khảo sát sơ bộ EDA Tuần 3, nghiên cứu dùng mức phạt danh nghĩa $-5.0$ ngày (mức trễ 1 tuần thông thường). Tuy nhiên, khi phân tích phân phối thực tế của nhóm sinh viên có nộp bài nhưng nộp muộn trong Tuần 4, dữ liệu chỉ ra phân vị $99\%$ của nhóm nộp trễ thực tế chỉ dao động từ $-1$ đến $-5$ ngày. Việc nâng mức phạt lên $-10.0$ ngày tạo ra một bước nhảy gián đoạn (Discontinuous Penalty Boundary) nằm ngoài phân phối nộp trễ thông thường, giúp các thuật toán học máy (đặc biệt là mô hình cây quyết định) dễ dàng tìm điểm cắt phân nhánh phân tách dứt khoát nhóm sinh viên bỏ học/không nộp bài hoàn toàn (`has_no_submissions = 1`) khỏi nhóm nộp trễ thông thường.
 4. **Vùng điều kiện kinh tế xã hội (`imd_band`: $1,111$ missing, $3.41\%$)**:
    - *Bản chất*: Sinh viên cư trú ngoài vùng nước Anh (Scotland, Wales, Bắc Ireland) hoặc không khai báo mã bưu chính.
-   - *Chiến lược xử lý*: Impute theo giá trị `Mode` (phổ biến nhất) tính riêng từ tập Train (`20-30%`, decile 1) hoặc ánh xạ về mức trung vị decile 4, đồng thời tạo biến cờ `imd_was_missing = 1.0` để bảo toàn thông tin khuyết thiếu.
+   - *Chiến lược xử lý*: Impute theo giá trị `Mode` (phổ biến nhất) tính riêng từ tập Train (`'20-30%'` -- Decile 3 $\rightarrow$ nhận giá trị ánh xạ **`2`**), đồng thời tạo biến cờ `imd_was_missing = 1.0` để bảo toàn thông tin khuyết thiếu (còn giá trị dự phòng `'Unknown'` nếu gặp chuỗi lạ chưa biết khi suy luận sẽ được ánh xạ về mức trung vị `4`).
 5. **Ngày đăng ký môn học (`date_registration`: $45$ missing, $0.14\%$)**:
    - *Chiến lược*: Impute bằng giá trị `Median` của tập Train ($-57.0$ ngày trước khai giảng).
 
@@ -49,7 +50,7 @@ Sau khi chạy qua bước tiền xử lý, tỷ lệ NaN của toàn bộ bản
 ## 3. PHÂN TÍCH VÀ CHIẾN LƯỢC XỬ LÝ SINH VIÊN WITHDRAWN SỚM (T4.3)
 Biểu đồ minh họa: [reports/figures/16_early_unregistration_impact.png](file:///c:/Users/mrore/Project_I/reports/figures/16_early_unregistration_impact.png)
 
-Tiếp nối khuyến nghị từ Tuần 2 và Tuần 3, nhóm nghiên cứu đã phân tích sâu hành vi của nhóm sinh viên rút môn sớm trước ngày khai giảng chính thức:
+Tiếp nối khuyến nghị từ Tuần 2 và Tuần 3, nghiên cứu đã phân tích sâu hành vi của nhóm sinh viên rút môn sớm trước ngày khai giảng chính thức:
 
 ### 3.1. Các phát hiện thực nghiệm cốt lõi:
 - **Số lượng rút trước ngày 0 (`date_unregistration < 0`)**: Có **$2,678$ lượt đăng ký**, chiếm **$8.22\%$** tổng số đăng ký OULAD.
@@ -76,35 +77,86 @@ Biểu đồ minh họa: [reports/figures/17_outliers_boxplots_and_capping.png](
 ### 4.1. Khảo sát độ lệch và các giá trị cực trị
 Nhiều đặc trưng tương tác click và học vụ có phân phối lệch phải nghiêm trọng (Heavy Right-skewed Distribution):
 
-| Đặc trưng | Skewness gốc | Kurtosis gốc | Min | Max | Số mẫu > $Q_3 + 1.5 \times \text{IQR}$ |
+| Đặc trưng | Skewness gốc | Kurtosis gốc | Min | Max (Toàn tập / Train) | Ngưỡng chặn $Q_3 + 3 \times \text{IQR}$ (Train) |
 |---|:---:|:---:|:---:|:---:|:---:|
-| `total_clicks` | **$+3.03$** | $14.95$ | $0.0$ | **$24,139.0$** | $2,503$ ($7.68\%$) |
-| `daily_click_std` | **$+4.68$** | $77.70$ | $0.0$ | **$704.67$** | $1,479$ ($4.54\%$) |
-| `studied_credits` | **$+1.88$** | $7.74$ | $30$ | **$655$** | $350$ ($1.07\%$) |
-| `daily_click_mean` | $+1.56$ | $7.47$ | $0.0$ | $221.20$ | $1,023$ ($3.14\%$) |
-| `avg_score` | $-1.27$ | $2.34$ | $0.0$ | $100.0$ | $762$ ($2.95\%$) |
+| `total_clicks` | **$+3.03$** | $14.95$ | $0.0$ | **$24,139.0$ / $20,391.0$** | $5,906.0$ (kết hợp $\ln(1+x)$) |
+| `daily_click_std` | **$+4.68$** | $77.70$ | $0.0$ | **$704.67$ / $704.67$** | $86.27$ |
+| `studied_credits` | **$+1.88$** | $7.74$ | $30$ | **$655.0$ / $655.0$** | $300.0$ ($Q_1=60, Q_3=120$) |
+| `daily_click_mean` | $+1.56$ | $7.47$ | $0.0$ | $221.20$ / $221.20$ | $64.29$ |
+| `active_days` | $+1.17$ | $0.95$ | $0.0$ | $286.0$ / $286.0$ | $307.0$ |
+| `avg_score` | $-1.27$ | $2.34$ | $0.0$ | $100.0$ / $100.0$ | Không chặn (thang $[0, 100]$) |
 
-### 4.2. Giải pháp Capping & Biến đổi hàm Log:
+### 4.2. Giải pháp Capping & Biến đổi hàm Log (Trực quan hóa trọn vẹn 8 biểu đồ cho 4 đặc trưng cốt lõi):
 - **Tại sao không loại bỏ bản ghi (Hard Drop)?**: Trong giáo dục trực tuyến OULAD, sinh viên có tổng số click cực lớn ($> 10,000$) phần lớn thuộc nhóm **Distinction** (sinh viên xuất sắc, tích cực). Việc xóa bỏ họ sẽ làm mất đi các mẫu đại diện quý giá nhất của nhóm tích cực.
-- **Kỹ thuật Capping (Winsorization) kết hợp Log1p**:
+- **Kỹ thuật Capping theo hàng rào cực trị IQR kết hợp Log1p**:
   1. *Ngưỡng chặn trên*: Tính toán trên tập Train theo công thức Extreme Outlier Boundary:
      $$\text{Upper Bound} = Q_3 + 3.0 \times \text{IQR}$$
-     Đối với `total_clicks`, ngưỡng chặn trên là $\approx 5,200$ clicks; đối với `studied_credits`, ngưỡng chặn trên là $240$ tín chỉ (giữ nguyên tải học tập thực tế tối đa).
-  2. *Biến đổi hàm Log (`np.log1p`)*: Áp dụng $x' = \ln(1 + x)$ trên toàn bộ các biến tương tác click sau khi capping. Kết quả làm giảm Skewness của `total_clicks` từ $+3.03$ xuống **$-0.21$**, đưa phân phối về dạng gần phân phối chuẩn (Gaussian-like), giúp các mô hình tuyến tính và mạng nơ-ron hội tụ tối ưu.
+     Đối với `total_clicks`, ngưỡng chặn trên tính từ tập Train là $5,906.0$ clicks; đối với `studied_credits`, ngưỡng chặn trên là $300.0$ tín chỉ; đối với `daily_click_mean` là $64.29$ clicks/ngày; đối với `daily_click_std` là $86.27$.
+  2. *Biến đổi hàm Log (`np.log1p`)*: Áp dụng $x' = \ln(1 + x)$ trên các biến tương tác click sau khi capping giúp ổn định phương sai và đưa phân phối tiệm cận phân phối chuẩn.
+- **Bộ 8 biểu đồ trực quan hóa (Hình 17)**: Trình bày đầy đủ cho cả 4 đặc trưng trong Bảng 4, thiết kế lưới 2 hàng $\times$ 4 cột chuẩn mực (Hàng 1: 4 biểu đồ Boxplot so sánh Gốc vs Sau Capping; Hàng 2: 4 biểu đồ Histogram đồng bộ độ rộng bin kèm đường ngưỡng Capping nét đứt màu đỏ):
+  1. `total_clicks`: Boxplot (Max Train `20,391` vs Capping `5,906.0`, dồn $n=565$ mẫu vượt ngưỡng) + Histogram `log1p` phân phối tần suất hiển thị tường minh cả 2 giá trị độ lệch (`Skew toàn mẫu = -1.24 | >0 clicks = -0.21`, do toàn mẫu Train có $10.3\%$ SV có `total_clicks = 0` tạo đỉnh xung nhọn tại 0).
+  2. `studied_credits`: Boxplot (Max `655.0` vs Capping `300.0`) + Histogram tần suất trước và sau Capping (dồn $n=26$ mẫu vượt ngưỡng).
+  3. `daily_click_mean`: Boxplot (Max `221.20` vs Capping `64.29`) + Histogram tần suất trước và sau Capping (dồn $n=110$ mẫu vượt ngưỡng).
+  4. `daily_click_std`: Boxplot (Max `704.67` vs Capping `86.27`) + Histogram tần suất trước và sau Capping (dồn $n=235$ mẫu vượt ngưỡng).
 
 ---
 
 ## 5. MÃ HÓA BIẾN PHÂN LOẠI & CHUẨN HÓA DỮ LIỆU SỐ (T4.5 & T4.6)
 Biểu đồ minh họa: [reports/figures/18_feature_scaling_distributions.png](file:///c:/Users/mrore/Project_I/reports/figures/18_feature_scaling_distributions.png)
 
-### 5.1. Mã hóa Thứ bậc (Ordinal Encoding) & Danh mục (One-Hot Encoding)
-Bảo toàn tính chất tự nhiên của các nhóm biến:
-- **Biến Thứ bậc (Ordinal Categorical)**:
-  - `highest_education`: `No Formal quals` ($0$) $\rightarrow$ `Lower Than A Level` ($1$) $\rightarrow$ `A Level or Equivalent` ($2$) $\rightarrow$ `HE Qualification` ($3$) $\rightarrow$ `Post Graduate Qualification` ($4$).
-  - `imd_band`: `0-10%` ($0$) $\rightarrow \dots \rightarrow$ `90-100%` ($9$), `Unknown` $\rightarrow 4$.
-  - `age_band`: `0-35` ($0$) $\rightarrow$ `35-55` ($1$) $\rightarrow$ `55<=` ($2$).
-- **Biến Danh mục (Nominal Categorical)**:
-  - `gender` ($2$ cột), `disability` ($2$ cột), `region` ($13$ cột), `code_module` ($7$ môn học) được mã hóa bằng `OneHotEncoder(handle_unknown='ignore')`.
+### 5.1. Mã hóa Thứ bậc (Ordinal Encoding), Danh mục (One-Hot Encoding) & Biến mục tiêu
+Bảo toàn tính chất tự nhiên và quan hệ định lượng của các nhóm biến thông qua các bảng ánh xạ quy chuẩn:
+
+#### Bảng ánh xạ Biến thứ bậc (Ordinal Encoding Mapping Table)
+Các biến có thứ bậc tăng dần về trình độ hoặc điều kiện sống được ánh xạ đơn điệu sang số nguyên:
+
+| Tên đặc trưng | Giá trị chuỗi gốc | Giá trị ánh xạ số | Ý nghĩa sư phạm \& Ngữ cảnh học thuật |
+|:---|:---|:---:|:---|
+| **`highest_education`** | `No Formal quals` | **`0`** | Không có bằng cấp chính quy (trình độ học vấn thấp nhất) |
+| | `Lower Than A Level` | **`1`** | Dưới chuẩn tốt nghiệp THPT A Level (tương đương GCSE) |
+| | `A Level or Equivalent` | **`2`** | Đạt chuẩn tốt nghiệp THPT A Level hoặc tương đương |
+| | `HE Qualification` | **`3`** | Trình độ Giáo dục Đại cương / Cao đẳng (Higher Education) |
+| | `Post Graduate Qualification` | **`4`** | Trình độ Sau Đại học (Thạc sĩ, Tiến sĩ - mức học vị cao nhất) |
+| **`imd_band`** | `0-10%` | **`0`** | Vùng khó khăn, thiếu thốn nhất (Decile 1) |
+| (Chỉ số thiếu thốn kinh tế xã hội) | `10-20` (hoặc `10-20%`) | **`1`** | Phân vị 10-20% thiếu thốn (Decile 2; dữ liệu CSV gốc OULAD lưu là `'10-20'` thiếu ký tự `%`) |
+| | `20-30%` | **`2`** | Phân vị 20-30% thiếu thốn (Decile 3 -- Mode tập Train) |
+| | `30-40%` | **`3`** | Phân vị 30-40% thiếu thốn (Decile 4) |
+| | `40-50%` | **`4`** | Phân vị 40-50% thiếu thốn (Decile 5 - mức trung vị tập Train) |
+| | `50-60%` | **`5`** | Phân vị 50-60% thiếu thốn (Decile 6) |
+| | `60-70%` | **`6`** | Phân vị 60-70% thiếu thốn (Decile 7) |
+| | `70-80%` | **`7`** | Phân vị 70-80% thiếu thốn (Decile 8) |
+| | `80-90%` | **`8`** | Phân vị 80-90% thiếu thốn (Decile 9) |
+| | `90-100%` | **`9`** | Vùng phát triển, thịnh vượng nhất (Decile 10) |
+| | `Missing / NaN` (1,111 mẫu) | **`2`** | Điền bằng Mode tập Train (`'20-30%'` - Decile 3 $\rightarrow 2$) kèm cờ `imd_was_missing = 1` |
+| | `Unknown` (Fallback) | **`4`** | Giá trị dự phòng trung vị (Decile 5 $\rightarrow 4$) nếu gặp chuỗi lạ chưa biết khi suy luận |
+| **`age_band`** | `0-35` | **`0`** | Nhóm sinh viên trẻ tuổi / thanh niên ($\le 35$ tuổi) |
+| | `35-55` | **`1`** | Nhóm người học trung niên ($35 - 55$ tuổi) |
+| | `55<=` | **`2`** | Nhóm người học cao niên ($\ge 55$ tuổi) |
+
+#### Bảng quy chuẩn mã hóa Biến danh mục (Binary & One-Hot Encoding Table)
+Đối với biến danh mục không có thứ bậc, sử dụng `OneHotEncoder(handle_unknown='ignore', sparse_output=False)` fit độc lập trên Train set để sinh $24$ đặc trưng nhị phân ($0/1$):
+
+| Biến danh mục gốc | Số cột sinh ra | Danh sách giá trị danh mục gốc | Tên các đặc trưng nhị phân & Quy tắc mã hóa Vector One-Hot |
+|:---|:---:|:---|:---|
+| **`gender`** | 2 cột | `F`, `M` | Sinh 2 cột (`gender_F`, `gender_M`): `F` $\to (1, 0)$; `M` $\to (0, 1)$ |
+| **`disability`** | 2 cột | `N`, `Y` | Sinh 2 cột (`disability_N`, `disability_Y`): `N` $\to (1, 0)$; `Y` $\to (0, 1)$ |
+| **`code_module`** | 7 cột | `AAA`, `BBB`, `CCC`, `DDD`, `EEE`, `FFF`, `GGG` | Sinh 7 cột (`code_module_AAA` ... `code_module_GGG`): Cột tương ứng môn học đăng ký nhận giá trị `1`, 6 cột còn lại nhận `0` |
+| **`region`** | 13 cột | 13 vùng địa lý Vương quốc Anh | Sinh 13 cột (`region_East Anglian Region`, `region_East Midlands Region`, `region_Ireland`, `region_London Region`, `region_North Region`, `region_North Western Region`, `region_Scotland`, `region_South East Region`, `region_South Region`, `region_South West Region`, `region_Wales`, `region_West Midlands Region`, `region_Yorkshire Region`): Cột tương ứng vùng cư trú nhận giá trị `1`, 12 cột còn lại nhận `0` |
+
+#### Bảng quy chuẩn ánh xạ Biến mục tiêu (Target Variable Mapping: 4-Class & Nhị phân SEDL)
+Biến mục tiêu `final_result` được chuẩn hóa theo hai cấu hình phân loại phục vụ bài toán Learning Analytics:
+
+| Nhãn kết quả gốc | Ánh xạ 4-Class | Ánh xạ Nhị phân SEDL | Bản chất học thuật & Cầu nối xác suất gộp |
+|:---|:---:|:---:|:---|
+| **`Distinction`** | **`0`** | **`0` (`Not At-Risk`)** | Tốt nghiệp Xuất sắc (Điểm TB $\ge 85$). Người học an toàn, xuất sắc. |
+| **`Pass`** | **`1`** | **`0` (`Not At-Risk`)** | Hoàn thành đạt chuẩn ($40 \le \text{Điểm} < 85$). Người học đạt mục tiêu. |
+| **`Fail`** | **`2`** | **`1` (`At-Risk`)** | Thi trượt ($\text{Điểm} < 40$). Cần hỗ trợ học tập bổ trợ. |
+| **`Withdrawn`** | **`3`** | **`1` (`At-Risk`)** | Rút môn / Bỏ học giữa chừng. Mất kết nối với hệ thống LMS. |
+
+> **Cầu nối xác suất gộp (Sum-of-Probabilities Bridge)**:  
+> $$P(\text{At-Risk}) = P(Y = \text{Fail}) + P(Y = \text{Withdrawn})$$  
+> $$P(\text{Not At-Risk}) = P(Y = \text{Distinction}) + P(Y = \text{Pass})$$  
+> Kiểm định McNemar trên tập Test xác nhận tính tương đương thống kê ($p > 0.40$), chứng minh việc gộp nhãn bảo toàn trọn vẹn thông tin và tối ưu hóa độ nhạy phát hiện rủi ro sớm.
 
 ### 5.2. Chuẩn hóa Dữ liệu Số (Feature Scaling) & Quy tắc Zero Data Leakage
 - **Lựa chọn Scaler**: Sử dụng `RobustScaler` (dựa trên Trung vị và Khoảng tứ phân vị IQR: $z = \frac{x - \text{median}}{\text{IQR}}$) làm bộ chuẩn hóa chính vì khả năng chống chịu ngoại lai vượt trội so với `StandardScaler`.
@@ -129,9 +181,9 @@ Tỷ lệ nhãn nguy cơ `at_risk = 1` được duy trì đồng nhất tuyệt 
 
 ### 6.2. Phân tích Nguy cơ Rò rỉ Nhóm Sinh viên Đa môn (`id_student` Group Split)
 - Trong $32,593$ lượt đăng ký, có $28,785$ sinh viên duy nhất, trong đó có **$3,538$ sinh viên đăng ký nhiều hơn $1$ môn học** (tối đa $5$ môn học cùng lúc).
-- Khi chia ngẫu nhiên thông thường (`Stratified Random Split`): Có tới **$812$ sinh viên xuất hiện đồng thời ở cả tập Train và tập Test** ($17.5\%$ tập Test). Do đặc điểm nhân khẩu học (`gender`, `age_band`, `region`, `imd_band`) của cùng một sinh viên không đổi, điều này có thể dẫn đến rò rỉ thông tin cá nhân.
+- Khi chia ngẫu nhiên thông thường (`Stratified Random Split`): Có tới **$812$ sinh viên duy nhất xuất hiện đồng thời ở cả tập Train và tập Test** ($16.90\%$ trên $4,804$ sinh viên duy nhất của tập Test, tương ứng $825$ bản ghi hay $16.87\%$ trên $4,889$ bản ghi Test; hoặc $812 / 4,889 = 16.61\%$ nếu tính trên tổng bản ghi Test). Do đặc điểm nhân khẩu học (`gender`, `age_band`, `region`, `imd_band`) của cùng một sinh viên không đổi, điều này có thể dẫn đến rò rỉ thông tin cá nhân.
 - Khi áp dụng `Stratified Group Split` (`StratifiedGroupKFold` theo `id_student`): Số sinh viên trùng lặp giữa Train - Test, Train - Val, Val - Test **chính xác bằng $0$ (Triệt tiêu rò rỉ danh tính 100%)**!
-- Cả 2 tùy chọn chia tập đều được tích hợp đầy đủ trong [`src/preprocessing.py`](file:///c:/Users/mrore/Project_I/src/preprocessing.py) và sẵn sàng cho các vòng thực nghiệm mô hình tiếp theo.
+- Cả 2 tùy chọn chia tập đều được tích hợp đầy đủ trong lớp `OULADPreprocessor` tại [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb) và sẵn sàng cho các vòng thực nghiệm mô hình tiếp theo.
 
 ---
 
@@ -143,7 +195,7 @@ Biểu đồ minh họa: [reports/figures/20_class_imbalance_and_resampling.png]
 - **Bài toán 4 lớp gốc (`final_result`)**: Mất cân bằng đáng kể giữa nhóm `Distinction` ($9.28\%$) so với `Pass` ($36.94\%$), `Fail` ($21.64\%$), `Withdrawn` ($32.15\%$).
 
 ### 7.2. Kết quả Thực nghiệm Định lượng trên Tập Test Độc lập:
-Nhóm nghiên cứu đã huấn luyện và đánh giá đối kháng các giải pháp tiền xử lý trên tập Test gồm **$4,889$ mẫu**:
+Nghiên cứu đã huấn luyện và đánh giá đối kháng các giải pháp tiền xử lý trên tập Test gồm **$4,889$ mẫu**:
 
 | Thuật toán | Biến thể Tiền xử lý | Accuracy | Precision | Recall (At-Risk) | F1-Score | ROC-AUC |
 |---|---|:---:|:---:|:---:|:---:|:---:|
@@ -162,7 +214,7 @@ Nhóm nghiên cứu đã huấn luyện và đánh giá đối kháng các giả
 ---
 
 ## 8. KẾT QUẢ KIỂM THỬ ĐỘC LẬP (TEST SUITE VERIFICATION)
-Tệp kiểm thử: [`src/tests/test_preprocessing.py`](file:///c:/Users/mrore/Project_I/src/tests/test_preprocessing.py)  
+Tích hợp tại Mục 10 trong [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb)  
 Toàn bộ **9/9 test cases** đã chạy thành công tuyệt đối ($100\%$ Passed):
 
 ```text
@@ -184,9 +236,7 @@ OK
 
 ## 9. DANH MỤC SẢN PHẨM BÀN GIAO TUẦN 4 (DELIVERABLES)
 
-- [x] **Mã nguồn Pipeline Tiền xử lý**: [`src/preprocessing.py`](file:///c:/Users/mrore/Project_I/src/preprocessing.py) (lớp `OULADPreprocessor`, hỗ trợ CLI runner, cấu hình linh hoạt).
-- [x] **Jupyter Notebook Thực nghiệm**: [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb) (trực quan hóa chi tiết từng bước 4.1 - 4.8).
-- [x] **Bộ Kiểm thử Độc lập**: [`src/tests/test_preprocessing.py`](file:///c:/Users/mrore/Project_I/src/tests/test_preprocessing.py) ($9/9$ bài test PASSED).
+- [x] **Jupyter Notebook Tiền xử lý Tự chủ Toàn diện (bao gồm lớp `OULADPreprocessor` & 9/9 Unit Tests PASSED)**: [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb) (trực quan hóa chi tiết từng bước 4.1 - 4.8).
 - [x] **Dữ liệu Tiền xử lý Hoàn chỉnh**:
   - `data/processed/train_features.csv` ($22,815 \times 63$)
   - `data/processed/train_target.csv` ($22,815 \times 1$)

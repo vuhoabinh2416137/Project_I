@@ -103,7 +103,7 @@
         "cohens_d_100": 2.470214588534341,
         "mutual_info_100": 0.4244989440584177,
         "rf_gini_importance_100": 0.13339842911307145,
-        "rf_perm_importance_100": 0.017072472627524603
+        "rf_perm_importance_100": 0.017072472627524583
       },
       {
         "feature_name": "course_progress_submission_rate",
@@ -203,7 +203,7 @@
         "cohens_d_100": 1.6078080996510213,
         "mutual_info_100": 0.29070533079192384,
         "rf_gini_importance_100": 0.023838760575737222,
-        "rf_perm_importance_100": 0.00031978496477826914
+        "rf_perm_importance_100": 0.0003197849647782469
       },
       {
         "feature_name": "clicks_per_day",
@@ -213,7 +213,7 @@
         "cohens_d_100": 1.08073226071998,
         "mutual_info_100": 0.24898329224136573,
         "rf_gini_importance_100": 0.021345176339975905,
-        "rf_perm_importance_100": 0.00044607819375153124
+        "rf_perm_importance_100": 0.00044607819375155346
       },
       {
         "feature_name": "score_std",
@@ -445,7 +445,7 @@
         "cohens_d_25": 0.9989452319706493,
         "mutual_info_25": 0.14299747985917133,
         "rf_gini_importance_25": 0.01768823606193174,
-        "rf_perm_importance_25": 0.0010208918529581279
+        "rf_perm_importance_25": 0.0010208918529581723
       },
       {
         "feature_name": "num_submissions",

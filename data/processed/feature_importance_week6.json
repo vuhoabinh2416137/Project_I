@@ -1,0 +1,525 @@
+{
+  "total_catalog_features": 92,
+  "new_week6_features_count": 16,
+  "top20_by_rf_100pct": [
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.8117044335366033,
+      "cohens_d_100": 2.7837566005935037,
+      "rf_gini_importance_100": 0.11342723668120709,
+      "rf_perm_importance_100": 0.005600751320750464
+    },
+    {
+      "feature_name": "max_inactivity_streak",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_100": 0.7809596510978567,
+      "cohens_d_100": -2.504589510133848,
+      "rf_gini_importance_100": 0.10000630716684515,
+      "rf_perm_importance_100": 0.005191750717221999
+    },
+    {
+      "feature_name": "days_since_last_activity",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_100": 0.7777730088645417,
+      "cohens_d_100": -2.4786395376813495,
+      "rf_gini_importance_100": 0.09518202815699789,
+      "rf_perm_importance_100": 0.009840196326210315
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.8117044335366033,
+      "cohens_d_100": 2.7837566005935037,
+      "rf_gini_importance_100": 0.07886660735244491,
+      "rf_perm_importance_100": 0.00451173587138447
+    },
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.7767253488211752,
+      "cohens_d_100": 2.470214588534341,
+      "rf_gini_importance_100": 0.07822888379400741,
+      "rf_perm_importance_100": 0.004412862297456277
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.7389556242697124,
+      "cohens_d_100": 2.196918779706354,
+      "rf_gini_importance_100": 0.04813274302612505,
+      "rf_perm_importance_100": 0.0018432594828158067
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.7002312059159337,
+      "cohens_d_100": 1.9646777276985756,
+      "rf_gini_importance_100": 0.04413752467055762,
+      "rf_perm_importance_100": 0.0007382584855692764
+    },
+    {
+      "feature_name": "consistency_score",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_100": -0.7090422717984606,
+      "cohens_d_100": 2.014085205391676,
+      "rf_gini_importance_100": 0.035802136498160324,
+      "rf_perm_importance_100": 0.00036887021770328767
+    },
+    {
+      "feature_name": "num_submissions_raw",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.699536001433884,
+      "cohens_d_100": 1.96085611595912,
+      "rf_gini_importance_100": 0.03297670906850188,
+      "rf_perm_importance_100": 0.0005687635733769402
+    },
+    {
+      "feature_name": "login_regularity",
+      "feature_group": "6.2 Regularity & Burst",
+      "is_week6_new": 1,
+      "point_biserial_r_100": -0.7704472188266138,
+      "cohens_d_100": 2.4207903688389956,
+      "rf_gini_importance_100": 0.03229153325337945,
+      "rf_perm_importance_100": 0.0006453424885132453
+    },
+    {
+      "feature_name": "active_weeks",
+      "feature_group": "6.2 Regularity & Burst",
+      "is_week6_new": 1,
+      "point_biserial_r_100": -0.7725452302754648,
+      "cohens_d_100": 2.4371080870764223,
+      "rf_gini_importance_100": 0.027652164374897967,
+      "rf_perm_importance_100": 0.0004923141707811717
+    },
+    {
+      "feature_name": "active_days_ratio",
+      "feature_group": "5.1 Click-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.6326683107554392,
+      "cohens_d_100": 1.6364207008652942,
+      "rf_gini_importance_100": 0.021047853923915536,
+      "rf_perm_importance_100": 0.0003800638015779567
+    },
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.6050484679166505,
+      "cohens_d_100": 1.5221983642254406,
+      "rf_gini_importance_100": 0.020887861335405367,
+      "rf_perm_importance_100": 0.0037951059801121455
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.6131478768787211,
+      "cohens_d_100": 1.554721872572961,
+      "rf_gini_importance_100": 0.018695964854098853,
+      "rf_perm_importance_100": 0.0007841984339343799
+    },
+    {
+      "feature_name": "active_days",
+      "feature_group": "5.1 Click-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.625963962719871,
+      "cohens_d_100": 1.6078080996510213,
+      "rf_gini_importance_100": 0.017475923240379457,
+      "rf_perm_importance_100": 0.0005915577805400085
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.6014621858746662,
+      "cohens_d_100": 1.5080379796689647,
+      "rf_gini_importance_100": 0.015657199625044197,
+      "rf_perm_importance_100": 0.003144268459514965
+    },
+    {
+      "feature_name": "clicks_homepage",
+      "feature_group": "5.2 Activity-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.4350789679834203,
+      "cohens_d_100": 0.9679064422125847,
+      "rf_gini_importance_100": 0.014998306010431681,
+      "rf_perm_importance_100": 0.0002781744356306737
+    },
+    {
+      "feature_name": "inactivity_ratio",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_100": 0.6326848466595119,
+      "cohens_d_100": -1.6364920193047512,
+      "rf_gini_importance_100": 0.01272107857805796,
+      "rf_perm_importance_100": 2.2572185665703513e-06
+    },
+    {
+      "feature_name": "engagement_decay",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_100": -0.028752330469846175,
+      "cohens_d_100": 0.05761687546570558,
+      "rf_gini_importance_100": 0.012706752974478494,
+      "rf_perm_importance_100": 3.345123908358172e-05
+    },
+    {
+      "feature_name": "active_days_in_course",
+      "feature_group": "5.1 Click-based",
+      "is_week6_new": 0,
+      "point_biserial_r_100": -0.6353321086859076,
+      "cohens_d_100": 1.6479579356762515,
+      "rf_gini_importance_100": 0.01260061910413389,
+      "rf_perm_importance_100": 3.524591286181433e-05
+    }
+  ],
+  "top20_by_rf_25pct": [
+    {
+      "feature_name": "engagement_decay",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_25": -0.015110999104799563,
+      "cohens_d_25": 0.03027191058114101,
+      "rf_gini_importance_25": 0.0671185551220473,
+      "rf_perm_importance_25": 0.003308194332457082
+    },
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.57069197742905,
+      "cohens_d_25": 1.392094812134322,
+      "rf_gini_importance_25": 0.05849074596856659,
+      "rf_perm_importance_25": 0.003918864463645843
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5656322024176419,
+      "cohens_d_25": 1.3739075369375244,
+      "rf_gini_importance_25": 0.05384159590120979,
+      "rf_perm_importance_25": 0.004852686885671043
+    },
+    {
+      "feature_name": "days_since_last_activity",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_25": 0.5297285019122189,
+      "cohens_d_25": -1.251033371797863,
+      "rf_gini_importance_25": 0.05303136931132516,
+      "rf_perm_importance_25": 0.002673249850782944
+    },
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5310421780596891,
+      "cohens_d_25": 1.2553522613550265,
+      "rf_gini_importance_25": 0.05198442460198861,
+      "rf_perm_importance_25": 0.004223959005950384
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5650341072598095,
+      "cohens_d_25": 1.3717729074918692,
+      "rf_gini_importance_25": 0.04778960982683741,
+      "rf_perm_importance_25": 0.006271404260074376
+    },
+    {
+      "feature_name": "min_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5361130787811162,
+      "cohens_d_25": 1.2721426326442622,
+      "rf_gini_importance_25": 0.04202580389562883,
+      "rf_perm_importance_25": 0.0031477467963221483
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.48030024644770025,
+      "cohens_d_25": 1.09687897195718,
+      "rf_gini_importance_25": 0.030997915342423552,
+      "rf_perm_importance_25": 0.004883288848859113
+    },
+    {
+      "feature_name": "clicks_last_2_weeks",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_25": -0.31243749251307473,
+      "cohens_d_25": 0.6588170022328552,
+      "rf_gini_importance_25": 0.030666052679344094,
+      "rf_perm_importance_25": 0.0013669863652896463
+    },
+    {
+      "feature_name": "tma1_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5143164114889793,
+      "cohens_d_25": 1.2012749369513802,
+      "rf_gini_importance_25": 0.027222539550615012,
+      "rf_perm_importance_25": 0.0009206121428736669
+    },
+    {
+      "feature_name": "consistency_score",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_25": -0.5344524373292845,
+      "cohens_d_25": 1.2666230297965306,
+      "rf_gini_importance_25": 0.026311019325923737,
+      "rf_perm_importance_25": 0.001527729930089028
+    },
+    {
+      "feature_name": "first_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5230279386009725,
+      "cohens_d_25": 1.2291971512883393,
+      "rf_gini_importance_25": 0.023472861315145938,
+      "rf_perm_importance_25": 0.00036437428236160143
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.46015084833880643,
+      "cohens_d_25": 1.0381550367169317,
+      "rf_gini_importance_25": 0.02297476767868738,
+      "rf_perm_importance_25": 0.004108766851894141
+    },
+    {
+      "feature_name": "max_inactivity_streak",
+      "feature_group": "6.1 Temporal & Decay",
+      "is_week6_new": 1,
+      "point_biserial_r_25": 0.5293880472131931,
+      "cohens_d_25": -1.2499161262618805,
+      "rf_gini_importance_25": 0.02262414394963705,
+      "rf_perm_importance_25": 0.0013345712265317555
+    },
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.5122870679912593,
+      "cohens_d_25": 1.1948439817318532,
+      "rf_gini_importance_25": 0.021761779704035922,
+      "rf_perm_importance_25": 0.0008790941226837657
+    },
+    {
+      "feature_name": "tma1_days_early",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.4030245234572208,
+      "cohens_d_25": 0.8820996689635613,
+      "rf_gini_importance_25": 0.02028869673602257,
+      "rf_perm_importance_25": 0.0018674228225517675
+    },
+    {
+      "feature_name": "avg_days_before_deadline",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.2284756587080107,
+      "cohens_d_25": 0.47008772015737266,
+      "rf_gini_importance_25": 0.01765497001485749,
+      "rf_perm_importance_25": 0.0025520261126883216
+    },
+    {
+      "feature_name": "login_regularity",
+      "feature_group": "6.2 Regularity & Burst",
+      "is_week6_new": 1,
+      "point_biserial_r_25": -0.537269014989514,
+      "cohens_d_25": 1.2759969312475996,
+      "rf_gini_importance_25": 0.0157409152526315,
+      "rf_perm_importance_25": 0.0007336330376869205
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "is_week6_new": 0,
+      "point_biserial_r_25": -0.4472127238080652,
+      "cohens_d_25": 1.0015347181062677,
+      "rf_gini_importance_25": 0.014157395512136177,
+      "rf_perm_importance_25": 0.0010039442119178954
+    },
+    {
+      "feature_name": "active_weeks",
+      "feature_group": "6.2 Regularity & Burst",
+      "is_week6_new": 1,
+      "point_biserial_r_25": -0.5411856078273459,
+      "cohens_d_25": 1.2891317726733125,
+      "rf_gini_importance_25": 0.01380226562458652,
+      "rf_perm_importance_25": 0.0004589924442382154
+    }
+  ],
+  "week6_new_features_importance_25pct": [
+    {
+      "feature_name": "engagement_decay",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": -0.015110999104799563,
+      "cohens_d_25": 0.03027191058114101,
+      "rf_gini_importance_25": 0.0671185551220473,
+      "rf_gini_importance_100": 0.012706752974478494
+    },
+    {
+      "feature_name": "days_since_last_activity",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": 0.5297285019122189,
+      "cohens_d_25": -1.251033371797863,
+      "rf_gini_importance_25": 0.05303136931132516,
+      "rf_gini_importance_100": 0.09518202815699789
+    },
+    {
+      "feature_name": "clicks_last_2_weeks",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": -0.31243749251307473,
+      "cohens_d_25": 0.6588170022328552,
+      "rf_gini_importance_25": 0.030666052679344094,
+      "rf_gini_importance_100": 0.007205184888629829
+    },
+    {
+      "feature_name": "consistency_score",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": -0.5344524373292845,
+      "cohens_d_25": 1.2666230297965306,
+      "rf_gini_importance_25": 0.026311019325923737,
+      "rf_gini_importance_100": 0.035802136498160324
+    },
+    {
+      "feature_name": "max_inactivity_streak",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": 0.5293880472131931,
+      "cohens_d_25": -1.2499161262618805,
+      "rf_gini_importance_25": 0.02262414394963705,
+      "rf_gini_importance_100": 0.10000630716684515
+    },
+    {
+      "feature_name": "login_regularity",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.537269014989514,
+      "cohens_d_25": 1.2759969312475996,
+      "rf_gini_importance_25": 0.0157409152526315,
+      "rf_gini_importance_100": 0.03229153325337945
+    },
+    {
+      "feature_name": "active_weeks",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.5411856078273459,
+      "cohens_d_25": 1.2891317726733125,
+      "rf_gini_importance_25": 0.01380226562458652,
+      "rf_gini_importance_100": 0.027652164374897967
+    },
+    {
+      "feature_name": "score_trend_slope",
+      "feature_group": "6.3 Score Trajectory",
+      "point_biserial_r_25": -0.08127656728430274,
+      "cohens_d_25": 0.16334341193539462,
+      "rf_gini_importance_25": 0.009812705922450513,
+      "rf_gini_importance_100": 0.003657730184474803
+    },
+    {
+      "feature_name": "clicks_trend",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": 0.10333462492853845,
+      "cohens_d_25": -0.2081009708634272,
+      "rf_gini_importance_25": 0.008733328462506263,
+      "rf_gini_importance_100": 0.008459399392076856
+    },
+    {
+      "feature_name": "last_minus_first_score",
+      "feature_group": "6.3 Score Trajectory",
+      "point_biserial_r_25": -0.10871185817125338,
+      "cohens_d_25": 0.21905621078340093,
+      "rf_gini_importance_25": 0.008303716635478494,
+      "rf_gini_importance_100": 0.0029000191090278863
+    },
+    {
+      "feature_name": "inactivity_ratio",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": 0.4785824806219749,
+      "cohens_d_25": -1.0917878861176433,
+      "rf_gini_importance_25": 0.00818721077637728,
+      "rf_gini_importance_100": 0.01272107857805796
+    },
+    {
+      "feature_name": "clicks_week_1_to_4",
+      "feature_group": "6.1 Temporal & Decay",
+      "point_biserial_r_25": -0.2967448169688534,
+      "cohens_d_25": 0.6224385372411926,
+      "rf_gini_importance_25": 0.007561234407596975,
+      "rf_gini_importance_100": 0.0030056745769789423
+    },
+    {
+      "feature_name": "weekend_ratio",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.12508016519036583,
+      "cohens_d_25": 0.2525280605594133,
+      "rf_gini_importance_25": 0.006133993933392395,
+      "rf_gini_importance_100": 0.002170014588382459
+    },
+    {
+      "feature_name": "weekend_clicks",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.30214357015039983,
+      "cohens_d_25": 0.6348892030086094,
+      "rf_gini_importance_25": 0.00560390387896447,
+      "rf_gini_importance_100": 0.002692307290197143
+    },
+    {
+      "feature_name": "burst_ratio",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.23786814612358062,
+      "cohens_d_25": 0.4905475372615627,
+      "rf_gini_importance_25": 0.005577685210479087,
+      "rf_gini_importance_100": 0.0020309579607221675
+    },
+    {
+      "feature_name": "burst_count",
+      "feature_group": "6.2 Regularity & Burst",
+      "point_biserial_r_25": -0.3969337682260897,
+      "cohens_d_25": 0.8662528891752069,
+      "rf_gini_importance_25": 0.0017057081784688972,
+      "rf_gini_importance_100": 0.00354318253963645
+    }
+  ],
+  "group_importance_share_25pct": {
+    "5.1 Click-based": 0.0870103196291581,
+    "5.2 Activity-based": 0.11343537338844804,
+    "5.3 Assessment-based": 0.4452294094820265,
+    "5.4 Demographics & Context": 0.040843188997863294,
+    "6.1 Temporal & Decay": 0.22423291403475787,
+    "6.2 Regularity & Burst": 0.04856447207852287,
+    "6.3 Score Trajectory": 0.01811642255792901
+  },
+  "group_importance_share_50pct": {
+    "5.1 Click-based": 0.0922915820214002,
+    "5.2 Activity-based": 0.08137714192130333,
+    "5.3 Assessment-based": 0.4145388119338987,
+    "5.4 Demographics & Context": 0.021388488836479338,
+    "6.1 Temporal & Decay": 0.31314227226977115,
+    "6.2 Regularity & Burst": 0.05131421240702422,
+    "6.3 Score Trajectory": 0.01533304148788757
+  },
+  "group_importance_share_100pct": {
+    "5.1 Click-based": 0.15486688429861983,
+    "5.2 Activity-based": 0.062462522283568425,
+    "5.3 Assessment-based": 0.4140994787838409,
+    "5.4 Demographics & Context": 0.009822175043452265,
+    "6.1 Temporal & Decay": 0.27508856223222544,
+    "6.2 Regularity & Burst": 0.07038016000721563,
+    "6.3 Score Trajectory": 0.006557749293502689
+  }
+}

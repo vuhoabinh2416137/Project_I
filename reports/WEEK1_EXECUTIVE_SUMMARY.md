@@ -13,7 +13,7 @@ Tuần 1 đã hoàn thành toàn bộ các mục tiêu đề ra theo kế hoạc
 | **1.2** | Tổng hợp 4 bài báo kinh điển về OULAD & Early Prediction (Kuzilek 2017, Hlosta 2017, Umer 2017, Jayaprakash 2014) | **HOÀN THÀNH** | [01_literature_review_summary.md](../references/01_literature_review_summary.md) (Mục 2 & 3) |
 | **1.3** | Tìm hiểu cấu trúc OULAD và xây dựng sơ đồ thực thể liên kết | **HOÀN THÀNH** | [02_oulad_data_architecture.md](../references/02_oulad_data_architecture.md) (Kèm Mermaid ERD) |
 | **1.4** | Xác định câu hỏi nghiên cứu, giả thuyết và vận hành hóa biến đo lường | **HOÀN THÀNH** | [03_research_questions_and_methodology.md](../references/03_research_questions_and_methodology.md) |
-| **1.5** | Thiết lập môi trường lập trình (Python, packages ML/XAI, cấu trúc thư mục) | **HOÀN THÀNH** | [requirements.txt](../requirements.txt) & [check_env.py](../src/check_env.py) |
+| **1.5** | Thiết lập môi trường lập trình (Python, packages ML/XAI, cấu trúc thư mục) | **HOÀN THÀNH** | [requirements.txt](../requirements.txt) & [notebooks/01_data_loading.ipynb](../notebooks/01_data_loading.ipynb) |
 
 ---
 
@@ -29,7 +29,7 @@ Project_I/
 ├── demo/    
 │   └── assets/              # Tài nguyên hình ảnh, logo cho dashboard Streamlit    
 ├── models/                  # Lưu trữ model weights (.pkl / .joblib / .json)    
-├── notebooks/               # Jupyter notebooks thực nghiệm (01_data_loading.ipynb, ...)    
+├── notebooks/               # Toàn bộ mã nguồn pipeline tự chủ (01_data_loading.ipynb, ...)    
 ├── references/              # Báo cáo tổng quan tài liệu, kiến trúc dữ liệu, RQ    
 │   ├── 01_literature_review_summary.md    
 │   ├── 02_oulad_data_architecture.md    
@@ -37,8 +37,6 @@ Project_I/
 ├── reports/    
 │   ├── figures/             # Biểu đồ EDA, SHAP plots xuất bản    
 │   └── WEEK1_EXECUTIVE_SUMMARY.md    
-├── src/                     # Source code module hóa (data pipeline, features, train)    
-│   └── check_env.py    
 ├── requirements.txt         # Danh mục thư viện Python    
 └── KE_HOACH_DU_AN_LMS_LEARNING_ANALYTICS.md  # Kế hoạch chi tiết 12 tuần    
 ```

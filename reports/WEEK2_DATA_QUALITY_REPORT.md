@@ -23,7 +23,7 @@ Bộ dữ liệu **Open University Learning Analytics Dataset (OULAD)** đã đ�
 
 ## 2. BẢNG KIỂM TRA CHẤT LƯỢNG VÀ MISSING VALUES (DATA AUDIT)
 
-Qua kiểm tra tự động bằng [src/data_audit.py](file:///c:/Users/mrore/Project_I/src/data_audit.py):
+Qua kiểm tra tự động trong [notebooks/01_data_loading.ipynb](file:///c:/Users/mrore/Project_I/notebooks/01_data_loading.ipynb):
 
 | Bảng dữ liệu | Số dòng | Số cột | Số ô bị Missing | Tỷ lệ Missing (%) | Trùng lặp (Duplicates) | Bộ nhớ RAM (MB) |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -100,9 +100,9 @@ Top các tài nguyên có lượt click cao nhất:
 
 ## 6. DANH MỤC SẢN PHẨM BÀN GIAO TUẦN 2 (DELIVERABLES CHECKLIST)
 
-- [x] Tải và giải nén 7 file CSV OULAD vào `data/raw/` ([download_data.py](file:///c:/Users/mrore/Project_I/src/download_data.py))
-- [x] Tạo Jupyter Notebook kiểm tra dữ liệu: [01_data_loading.ipynb](file:///c:/Users/mrore/Project_I/notebooks/01_data_loading.ipynb)
-- [x] Bảng thống kê chi tiết chất lượng và missing data ([data_audit.py](file:///c:/Users/mrore/Project_I/src/data_audit.py))
+- [x] Lưu trữ 7 file CSV OULAD tại `data/raw/`
+- [x] Tạo Jupyter Notebook nạp và kiểm tra dữ liệu toàn diện: [01_data_loading.ipynb](file:///c:/Users/mrore/Project_I/notebooks/01_data_loading.ipynb)
+- [x] Bảng thống kê chi tiết chất lượng và missing data trong [01_data_loading.ipynb](file:///c:/Users/mrore/Project_I/notebooks/01_data_loading.ipynb)
 - [x] Xuất bản 3 biểu đồ phân bố và nhân khẩu học:
   - [01_target_distribution.png](file:///c:/Users/mrore/Project_I/reports/figures/01_target_distribution.png)
   - [02_demographics_overview.png](file:///c:/Users/mrore/Project_I/reports/figures/02_demographics_overview.png)

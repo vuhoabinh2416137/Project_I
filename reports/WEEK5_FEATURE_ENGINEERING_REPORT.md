@@ -6,7 +6,7 @@
 
 ## 1. TỔNG QUAN TIẾN ĐỘ TUẦN 5
 
-Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua module hướng đối tượng [`src/feature_engineering.py`](file:///c:/Users/mrore/Project_I/src/feature_engineering.py), bộ kiểm thử tự động [`src/tests/test_feature_engineering.py`](file:///c:/Users/mrore/Project_I/src/tests/test_feature_engineering.py) (**12/12 unit tests PASSED**), Jupyter Notebook thực nghiệm [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb), xuất bản **5 biểu đồ phân tích chuyên sâu** (`21_*.png` đến `25_*.png` tại `reports/figures/`), cùng bảng danh mục đặc trưng chuẩn hóa gồm **76 đặc trưng** tại [`data/processed/feature_catalog_week5.csv`](file:///c:/Users/mrore/Project_I/data/processed/feature_catalog_week5.csv).
+Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua lớp `OULADFeatureEngineer`, bộ kiểm thử tự động (**12/12 unit tests Tuần 5 PASSED**) tích hợp hoàn toàn trong Jupyter Notebook [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb), xuất bản **5 biểu đồ phân tích chuyên sâu** (`21_*.png` đến `25_*.png` tại `reports/figures/`), cùng bảng danh mục đặc trưng chuẩn hóa gồm **76 đặc trưng** tại [`data/processed/feature_catalog_week5.csv`](file:///c:/Users/mrore/Project_I/data/processed/feature_catalog_week5.csv).
 
 | Mã CV | Nội dung công việc Tuần 5 | Trạng thái | Sản phẩm đầu ra |
 |:---:|---|:---:|---|
@@ -22,9 +22,8 @@ Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự �
 ---
 
 ## 2. CHI TIẾT KỸ THUẬT 4 NHÓM ĐẶC TRƯNG TUẦN 5 (T5.1 – T5.4)
-Biểu đồ minh họa: [reports/figures/21_feature_engineering_taxonomy_and_distributions.png](file:///c:/Users/mrore/Project_I/reports/figures/21_feature_engineering_taxonomy_and_distributions.png)
 
-Dựa trên khung lý thuyết Gắn kết Học tập Số (Student Engagement in Digital Learning – SEDL; Bergdahl et al., 2024; Bond & Bedenlier, 2019), nhóm nghiên cứu đã mở rộng và chuẩn hóa toàn diện không gian đặc trưng từ **$p = 63$ đặc trưng cơ sở ban đầu** ở Tuần 4 (tương ứng **$64$ cột mã hóa baseline** khi bổ sung cờ chỉ báo nộp bài `submitted_tma1`) lên **$p = 76$ đặc trưng danh mục số học** (tương ứng **$98$ biến sau mã hóa One-Hot đa biến**) phân loại theo 4 nhóm kỹ thuật.
+Dựa trên khung lý thuyết Gắn kết Học tập Số (Student Engagement in Digital Learning – SEDL; Bergdahl et al., 2024; Bond & Bedenlier, 2019), nghiên cứu đã mở rộng và chuẩn hóa toàn diện không gian đặc trưng từ **$p = 63$ đặc trưng cơ sở ban đầu** ở Tuần 4 (tương ứng **$64$ cột mã hóa baseline** khi bổ sung cờ chỉ báo nộp bài `submitted_tma1`) lên **$p = 76$ đặc trưng danh mục số học** (tương ứng **$98$ biến sau mã hóa One-Hot đa biến**) phân loại theo 4 nhóm kỹ thuật.
 
 > **Ghi chú phương pháp luận về chiều Cảm xúc (Emotional / Affective Engagement) trong khung SEDL**:  
 > Khung lý thuyết SEDL toàn diện bao gồm 4 chiều tương tác: Hành vi (Behavioural), Nhận thức (Cognitive), Cảm xúc (Emotional) và Xã hội (Social). Trong đề tài này, dữ liệu vết tương tác clickstream LMS khách quan của OULAD phản ánh trực tiếp 3 chiều: Hành vi (tần suất, cường độ, tính bền bỉ click và nộp bài), Nhận thức (tiến trình điểm số, học liệu lý thuyết/bài tập) và Xã hội (diễn đàn `forumng`, wiki `ouwiki`), bên cạnh Bối cảnh nhân khẩu học (Demographics & Context). Trạng thái cảm xúc tức thời của người học (như hứng thú, chán nản, âu lo môn học) không thể đo lường trực tiếp từ nhật ký máy chủ LMS nếu thiếu khảo sát tâm lý tự khai báo (self-reports) hoặc thiết bị đo sinh trắc thời gian thực — đây là một giới hạn tự nhiên đã được kiểm chứng và chấp nhận rộng rãi trong y văn Learning Analytics quốc tế (Bergdahl et al., 2024).
@@ -44,8 +43,9 @@ Nhóm đặc trưng đo lường mức độ chuyên cần, thời lượng và 
 - `first_click_day`, `last_click_day`, `active_span_days`: Khoảng cách thời gian từ ngày học đầu tiên đến ngày học cuối cùng tính đến mốc $T_{\text{cutoff}}$ có xử lý điều kiện biên triệt để:
   $$\text{active\_span\_days} = \begin{cases} \text{last\_click\_day} - \text{first\_click\_day} + 1, & \text{active\_days} > 0 \\ 0.0, & \text{active\_days} = 0 \end{cases}$$
 
+Biểu đồ minh họa: [reports/figures/21_feature_engineering_taxonomy_and_distributions.png](file:///c:/Users/mrore/Project_I/reports/figures/21_feature_engineering_taxonomy_and_distributions.png)
+
 ### 2.2. Nhóm 5.2: Đặc trưng Theo Loại Tài nguyên & Đại diện Khung SEDL (Activity-based & SEDL Proxies)
-Biểu đồ minh họa: [reports/figures/22_activity_diversity_and_entropy_analysis.png](file:///c:/Users/mrore/Project_I/reports/figures/22_activity_diversity_and_entropy_analysis.png)
 - **Bao phủ toàn diện 20 loại tài nguyên VLE**:
   Thay vì chỉ lấy 8 nhóm rút gọn như Tuần 3, pipeline Tuần 5 trích xuất đầy đủ 20 loại tài nguyên: `oucontent`, `forumng`, `quiz`, `resource`, `homepage`, `subpage`, `url`, `glossary`, `ouwiki`, `page`, `questionnaire`, `dataplus`, `externalquiz`, `oucollaborate`, `ouelluminate`, `dualpane`, `repeatactivity`, `htmlactivity`, `sharedsubpage`, `folder`.
 - **Độ đa dạng học liệu (`activity_diversity`)**:
@@ -55,8 +55,9 @@ Biểu đồ minh họa: [reports/figures/22_activity_diversity_and_entropy_anal
   $$H = \begin{cases} -\sum_{k=1}^{K} p_k \ln(p_k), & \text{total\_clicks} > 0 \quad (\text{với } p_k = \frac{\text{clicks}_k}{\text{total\_clicks}} > 0) \\ 0.0, & \text{total\_clicks} = 0 \end{cases}$$
   với $0 \le H \le \ln(20) \approx 2.996$. Nhóm Not At-Risk có entropy trung bình đạt $1.46 - 1.49$, phản ánh hành vi học tập cân bằng giữa đọc bài giảng (`oucontent`), làm quiz (`quiz`), thảo luận (`forumng`) và tra cứu (`resource`/`glossary`), trong khi nhóm At-Risk có entropy thấp ($1.10 - 1.11$) do chủ yếu chỉ truy cập trang chủ (`homepage`) rồi thoát.
 
+Biểu đồ minh họa: [reports/figures/22_activity_diversity_and_entropy_analysis.png](file:///c:/Users/mrore/Project_I/reports/figures/22_activity_diversity_and_entropy_analysis.png)
+
 ### 2.3. Nhóm 5.3: Đặc trưng Bài kiểm tra & Điểm số (Assessment-based & Trajectory)
-Biểu đồ minh họa: [reports/figures/23_assessment_trajectory_and_weighted_scores.png](file:///c:/Users/mrore/Project_I/reports/figures/23_assessment_trajectory_and_weighted_scores.png)
 - **Quy tắc Vàng Loại bỏ Bài thi Cuối kỳ (`Exam Strictly Excluded`)**:
   Trong OULAD có 24 bài đánh giá dạng `Exam` diễn ra vào cuối khóa (ngày 240-261). Việc tính gộp `Exam` vào đặc trưng đầu vào sẽ gây ra hiện tượng rò rỉ nhãn (Target Leakage) và làm sai lệch chỉ số nộp bài. Pipeline Tuần 5 **chỉ tính toán trên các bài Coursework (TMA và CMA, tổng cộng 182 bài toàn bộ dataset)**.
 - **Điểm trung bình có trọng số (`weighted_avg_score` - Cognitive Performance)**:
@@ -78,6 +79,8 @@ Biểu đồ minh họa: [reports/figures/23_assessment_trajectory_and_weighted_
 > **Cơ chế đồng quy số học tại mốc Toàn khóa 100%**:  
 > Ở mốc cuối khóa (100%), toàn bộ các bài kiểm tra Coursework trong đề cương môn học đều đã đến hạn ($\text{due\_course\_assessments} \equiv \text{total\_course\_assessments}$), do đó $\text{submission\_rate} \equiv \text{course\_progress\_submission\_rate}$ đối với mọi sinh viên. Điều này lý giải tại sao tại mốc 100%, hai đặc trưng này có chỉ số tương quan Point-Biserial ($r = -0.812$) và khoảng cách Cohen's $d$ ($2.784$) hoàn toàn trùng khớp. Tuy nhiên, tại các mốc sớm 25% và 50%, `submission_rate` đo lường mức độ tuân thủ hạn nộp trước mắt ($r = -0.531$, Cohen's $d = 1.255$), trong khi `course_progress_submission_rate` đo lường tiến độ hoàn thành đường dài so với toàn bộ chương trình môn học ($r = -0.480$, Cohen's $d = 1.097$). Cả hai bổ trợ thông tin quan trọng cho nhau trong mô hình dự báo sớm.
 
+Biểu đồ minh họa: [reports/figures/23_assessment_trajectory_and_weighted_scores.png](file:///c:/Users/mrore/Project_I/reports/figures/23_assessment_trajectory_and_weighted_scores.png)
+
 ### 2.4. Nhóm 5.4: Đặc trưng Nhân khẩu học & Bối cảnh (Demographics & Context)
 - `studied_credits`: Tải học tập (số tín chỉ sinh viên đăng ký học đồng thời).
 - `credit_overload`: Biến cờ nhị phân ($= 1$ nếu $\text{studied\_credits} > 60$).
@@ -87,7 +90,6 @@ Biểu đồ minh họa: [reports/figures/23_assessment_trajectory_and_weighted_
 ---
 
 ## 3. RÀNG BUỘC ZERO TEMPORAL LEAKAGE & QUẢN LÝ COHORT ĐỘNG (T5.5 & T5.6)
-Biểu đồ minh họa: [reports/figures/24_snapshot_progression_25_50_75_100.png](file:///c:/Users/mrore/Project_I/reports/figures/24_snapshot_progression_25_50_75_100.png)
 
 ### 3.1. Ràng buộc Lát cắt Thời gian Tuyệt đối (Zero Temporal Leakage)
 Tại mỗi tỷ lệ thời lượng $c \in \{0.25, 0.50, 0.75, 1.00\}$, ngày cắt của từng khóa học được xác định:
@@ -96,7 +98,7 @@ $$T_{\text{cutoff}} = \text{module\_presentation\_length} \times c$$
 - **Bài nộp Assessment**: Chỉ tính các bài nộp có $\text{date\_submitted} \le T_{\text{cutoff}}$. Các bài tập có hạn nộp hoặc ngày nộp sau mốc $T_{\text{cutoff}}$ hoàn toàn vô hình đối với mô hình tại thời điểm dự đoán.
 
 ### 3.2. Quản lý 3 Định nghĩa Cohort Động qua các Mốc Snapshot
-Nhóm nghiên cứu thiết lập và đối sánh 3 định nghĩa tập sinh viên:
+Nghiên cứu thiết lập và đối sánh 3 định nghĩa tập sinh viên:
 1. **Full Cohort ($N = 32,593$, cố định)**: Toàn bộ sinh viên, phục vụ góc nhìn quản trị tuyển sinh và hoạch định nguồn lực chung.
 2. **Pre-Course Active Cohort ($N = 29,915$, cố định)**: Loại bỏ $2,678$ sinh viên đã rút trước ngày khai giảng ($82.6\%$ có 0 click VLE).
 3. **Dynamic Snapshot Active Cohort (Thu hẹp tự nhiên theo thời gian)**:
@@ -115,9 +117,23 @@ Nhóm nghiên cứu thiết lập và đối sánh 3 định nghĩa tập sinh v
 > (*) **Giải trình thực chứng hiện tượng dữ liệu**:  
 > Số ca Fail trong Dynamic Active Cohort giảm đúng 1 ca từ $7,044$ (mốc 50%) xuống $7,043$ (mốc 75%). Phân tích đối soát dữ liệu gốc OULAD (`studentInfo.csv` và `studentRegistration.csv`) xác nhận: trong số 32,593 bản ghi có 9 sinh viên đã nộp đơn hủy môn (`date_unregistration` khác null) nhưng kết quả cuối kỳ vẫn được ghi nhận là `Fail` (thay vì `Withdrawn`). Trong đó, đúng 1 sinh viên (Mã SV `554243`, học phần `BBB_2013J`) rút môn vào ngày thứ $166$ — thời điểm nằm giữa mốc 50% ($T_{\text{cutoff}} = 134$ ngày) và 75% ($T_{\text{cutoff}} = 201$ ngày). Tại mốc 75%, sinh viên này đã chính thức rút môn nên theo đúng định nghĩa Dynamic Active Cohort (`date_unregistration > cutoff_day`), sinh viên này được lọc ra khỏi nhóm còn đang học, khiến số ca Fail giảm chính xác 1 trường hợp.
 
+Biểu đồ minh họa: [reports/figures/24_snapshot_progression_25_50_75_100.png](file:///c:/Users/mrore/Project_I/reports/figures/24_snapshot_progression_25_50_75_100.png)
+
+> ### Ý nghĩa và Nhận xét Biểu đồ Tiến triển Hiệu năng (Test ROC-AUC)
+> Chỉ số **ROC-AUC** đo xác suất mô hình xếp hạng đúng sinh viên *At-Risk* có rủi ro cao hơn sinh viên *Not At-Risk* ($0.5$: ngẫu nhiên; $> 0.8$: tốt; $> 0.9$: xuất sắc). Biểu đồ trên cho thấy:
+> - **Biểu đồ (A) -- Hiệu quả của Bộ đặc trưng Tuần 5**: Năng lực dự báo tăng mạnh theo lượng dữ liệu tích lũy từ mốc $25\%$ đến $100\%$ (tăng mạnh nhất ở giai đoạn $25\% \rightarrow 50\%$). Trên cả 4 mốc và cả 2 thuật toán, **Bộ mở rộng Tuần 5** luôn vượt trên **Bộ cơ sở Tuần 3--4**, khẳng định giá trị thực chất của các đặc trưng SEDL mới.
+> - **Biểu đồ (B) -- Độ khó thực tế giữa 3 Cohort**: `Full Cohort` có AUC cao nhất do bao gồm nhiều sinh viên đã rút môn sớm ($0$ click, $0$ điểm -- rất dễ đoán). Khi lọc bỏ người đã rút môn để chỉ xét nhóm đang học thực tế cần giảng viên can thiệp (`Dynamic Snapshot Active`), bài toán khó hơn nhưng mô hình vẫn đạt hiệu năng cao ($\text{AUC} = 0.8411$ tại $25\%$ và tăng lên $0.9561$ tại $100\%$).
+
 ---
 
 ## 4. PHÂN TÍCH TẦM QUAN TRỌNG ĐẶC TRƯNG (FEATURE IMPORTANCE RANKING - T5.7)
+
+Để đánh giá khách quan sức mạnh dự báo của từng đặc trưng mà không bị thiên lệch bởi giả định tuyến tính đơn thuần, nghiên cứu kết hợp hai thước đo trọng tâm bên cạnh tương quan Point-Biserial $r$ và cỡ hiệu ứng Cohen's $d$:
+- **Thông tin tương hỗ (Mutual Information -- `Mutual Info`)**: Là thước đo lý thuyết thông tin định lượng mức độ giảm độ bất định (entropy) của nhãn mục tiêu $Y$ (`at_risk`) khi biết giá trị đặc trưng $X$:
+  $$I(X; Y) = \iint p(x, y) \ln\left(\frac{p(x, y)}{p(x)p(y)}\right) dx\,dy \ge 0$$
+  `Mutual Info` bằng $0$ khi $X$ và $Y$ hoàn toàn độc lập thống kê; giá trị càng lớn chứng tỏ đặc trưng càng chứa nhiều thông tin phân tách nhãn. Khác với hệ số tương quan tuyến tính $r$, `Mutual Info` nắm bắt được **mọi mối quan hệ phụ thuộc phi tuyến và đơn biến** mà không phụ thuộc vào mô hình học máy cụ thể.
+- **Độ quan trọng Gini của Rừng ngẫu nhiên (Random Forest Gini Importance -- `RF Gini` / Mean Decrease in Impurity)**: Đo lường tổng mức giảm độ tạp chất Gini ($\Delta \text{Gini}$) có trọng số theo tỷ lệ mẫu tại mọi nút phân nhánh sử dụng đặc trưng $X$, tính trung bình trên toàn bộ các cây quyết định trong rừng và chuẩn hóa để tổng trọng số của tất cả đặc trưng bằng $1.0$. Chỉ số `RF Gini` phản ánh **quyền lực phân nhánh thực tế trong không gian đa biến**, giúp nhận diện các đặc trưng đóng vai trò trụ cột khi kết hợp tương tác chéo với các biến khác.
+
 Biểu đồ minh họa: [reports/figures/25_preliminary_feature_importance_ranking.png](file:///c:/Users/mrore/Project_I/reports/figures/25_preliminary_feature_importance_ranking.png)
 
 Kết hợp đa chỉ số thống kê (Tương quan Point-Biserial $r$, Khoảng cách Cohen's $d$, Thông tin tương hỗ Mutual Information và Tầm quan trọng Random Forest Gini/Permutation):
@@ -148,7 +164,7 @@ Tại mốc 25% (khi dữ liệu click và bài nộp còn hạn chế), các t�
 
 ## 5. ĐỐI SÁNH THỰC NGHIỆM ĐỊNH LƯỢNG MÔ HÌNH HỌC MÁY (T5.8)
 
-Nhóm nghiên cứu đã thực thi **92 cấu hình thực nghiệm độc lập** trên tập Test, so sánh trực tiếp giữa:
+Nghiên cứu đã thực thi **92 cấu hình thực nghiệm độc lập** trên tập Test, so sánh trực tiếp giữa:
 - **Bộ đặc trưng cơ sở Tuần 3-4** ($64$ biến mã hóa) vs **Bộ đặc trưng mở rộng Tuần 5** ($76$ đặc trưng danh mục, $98$ biến mã hóa sau One-Hot bao gồm `activity_diversity`, `activity_entropy`, `earned_weight_score`, `weighted_avg_score`, `click_cv`, `active_span_days`...).
 - **Chiến lược chia tập**: `Stratified Random Split` vs `Group-Stratified Split` theo `id_student` (Triệt tiêu 100% rò rỉ $3,538$ sinh viên đa môn).
 
@@ -199,14 +215,14 @@ Khi loại bỏ các sinh viên đã chính thức hủy môn trước thời đ
 > ### Đánh giá Khách quan Tiêu chuẩn Nghiệm thu Câu hỏi Nghiên cứu RQ2
 > Đối chiếu kết quả thực nghiệm giữa hai góc nhìn quản trị đào tạo và nghiệp vụ lớp học trực tiếp:
 > 1. **Trên Full Cohort ($N = 32,593$)**: Với bài toán giám sát vĩ mô của nhà trường (tính cả người học bỏ cuộc sớm trước ngày 60), tại mốc Cảnh báo sớm 25% thời lượng, mô hình với bộ đặc trưng Tuần 5 đạt **Test Recall = 76.02%** (Random Forest) và **Test Recall = 77.34%** (Logistic Regression), cùng **Test ROC-AUC $\approx$ 0.891 - 0.894**. Trên phương diện giám sát toàn thể, kết quả này **đáp ứng vững chắc tiêu chuẩn thành công $\text{Recall} \ge 75\%$** của **RQ2**.
-> 2. **Trên Dynamic Snapshot Active Cohort ($N = 26,248$ tại 25%)**: Với nghiệp vụ sư phạm trực tiếp (chỉ theo dõi sinh viên còn đang học tại thời điểm cảnh báo để can thiệp), bài toán có độ khó học thuật cao hơn rõ rệt. Nhóm nghiên cứu ghi nhận tiến trình Recall tăng dần theo lượng thông tin tích lũy: từ **$61.34\%$** (mốc 25%) $\to$ **$68.41\%$** (mốc 50%) $\to$ **$73.18\%$** (mốc 75%) $\to$ **$75.00\%$** (mốc 100%) với Random Forest (và $64.18\% \to 70.01\% \to 74.71\% \to 76.96\%$ với Logistic Regression).
+> 2. **Trên Dynamic Snapshot Active Cohort ($N = 26,248$ tại 25%)**: Với nghiệp vụ sư phạm trực tiếp (chỉ theo dõi sinh viên còn đang học tại thời điểm cảnh báo để can thiệp), bài toán có độ khó học thuật cao hơn rõ rệt. Nghiên cứu ghi nhận tiến trình Recall tăng dần theo lượng thông tin tích lũy: từ **$61.34\%$** (mốc 25%) $\to$ **$68.41\%$** (mốc 50%) $\to$ **$73.18\%$** (mốc 75%) $\to$ **$75.00\%$** (mốc 100%) với Random Forest (và $64.18\% \to 70.01\% \to 74.71\% \to 76.96\%$ với Logistic Regression).
 > 3. **Bản chất Sư phạm & Định hướng Tuần 6**: Tại mốc 25% khóa học, các sinh viên đang theo học có tần suất tương tác click ban đầu tương đối đồng nhất và mới chỉ hoàn thành 0–1 bài TMA đầu tiên, khiến tín hiệu suy giảm động lực của nhóm rớt môn về sau còn tiềm ẩn. Đây là thách thức nghiên cứu thực tiễn, tạo động lực cốt lõi để Tuần 6 tập trung khai phá **Đặc trưng Chuỗi thời gian (độ dốc suy giảm click, số ngày không hoạt động liên tiếp)** và **Đặc trưng Tính Quy luật học tập** nhằm bứt phá Recall của nhóm Active tại mốc 25% vượt ngưỡng $\ge 75\%$.
 
 ---
 
 ## 6. KẾT QUẢ BỘ KIỂM THỬ ĐỘC LẬP (TEST SUITE VERIFICATION)
-Tệp kiểm thử: [`src/tests/test_feature_engineering.py`](file:///c:/Users/mrore/Project_I/src/tests/test_feature_engineering.py)  
-Toàn bộ **12/12 unit tests** đã chạy thành công tuyệt đối ($100\%$ Passed trong $21.17$ giây):
+Tích hợp tại Mục 5 trong [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb)  
+Toàn bộ **12/12 unit tests Tuần 5** (cùng 6 unit tests Tuần 6) đã chạy thành công tuyệt đối ($100\%$ Passed):
 
 ```text
 Ran 12 tests in 21.169s
@@ -230,17 +246,15 @@ OK
 
 ## 7. DANH MỤC SẢN PHẨM BÀN GIAO TUẦN 5 (DELIVERABLES)
 
-- [x] **Mã nguồn Feature Engineering Hướng đối tượng**: [`src/feature_engineering.py`](file:///c:/Users/mrore/Project_I/src/feature_engineering.py) (lớp `OULADFeatureEngineer`, hỗ trợ trích xuất snapshot, lọc cohort, tính toán entropy, ma trận tương quan và benchmark ML).
-- [x] **Bộ Kiểm thử Tự động Chuyên sâu**: [`src/tests/test_feature_engineering.py`](file:///c:/Users/mrore/Project_I/src/tests/test_feature_engineering.py) ($12/12$ bài kiểm thử PASSED).
-- [x] **Jupyter Notebook Thực nghiệm**: [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb).
+- [x] **Jupyter Notebook Thực nghiệm Tự chủ Toàn diện (bao gồm lớp `OULADFeatureEngineer`, benchmark & 18/18 Unit Tests PASSED)**: [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb).
 - [x] **4 Ma trận Đặc trưng Snapshot Đã Lưu**:
-  - `data/processed/features_snapshot_25pct.csv` ($32,593 \times 76$)
-  - `data/processed/features_snapshot_50pct.csv` ($32,593 \times 76$)
-  - `data/processed/features_snapshot_75pct.csv` ($32,593 \times 76$)
-  - `data/processed/features_snapshot_100pct.csv` ($32,593 \times 76$)
+  - `data/processed/features_snapshot_25pct.csv` ($32,593 \times 113$ cột đầy đủ Tuần 5–6; chuẩn hóa 76 đặc trưng Tuần 5)
+  - `data/processed/features_snapshot_50pct.csv` ($32,593 \times 113$ cột)
+  - `data/processed/features_snapshot_75pct.csv` ($32,593 \times 113$ cột)
+  - `data/processed/features_snapshot_100pct.csv` ($32,593 \times 113$ cột)
 - [x] **Từ điển Danh mục & Độ quan trọng Đặc trưng**:
   - `data/processed/feature_catalog_week5.csv` (Mô tả chi tiết 76 đặc trưng kèm công thức và chỉ số thống kê).
-  - `data/processed/feature_importance_week5.json` & `reports/week5_experiment_metrics.json` (92 thực nghiệm mô hình).
+  - [`data/processed/feature_importance_week5.json`](file:///c:/Users/mrore/Project_I/data/processed/feature_importance_week5.json) & [`data/processed/week5_experiment_metrics.json`](file:///c:/Users/mrore/Project_I/data/processed/week5_experiment_metrics.json) (92 thực nghiệm mô hình).
 - [x] **5 Biểu đồ Báo cáo Độ nét cao (300 DPI)**:
   - `reports/figures/21_feature_engineering_taxonomy_and_distributions.png`
   - `reports/figures/22_activity_diversity_and_entropy_analysis.png`

@@ -6,7 +6,7 @@
 
 ## 1. TỔNG QUAN TIẾN ĐỘ TUẦN 5
 
-Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua lớp `OULADFeatureEngineer`, bộ kiểm thử tự động (**12/12 unit tests Tuần 5 PASSED**) tích hợp hoàn toàn trong Jupyter Notebook [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb), xuất bản **5 biểu đồ phân tích chuyên sâu** (`21_*.png` đến `25_*.png` tại `reports/figures/`), cùng bảng danh mục đặc trưng chuẩn hóa gồm **76 đặc trưng** tại [`data/processed/feature_catalog_week5.csv`](file:///c:/Users/mrore/Project_I/data/processed/feature_catalog_week5.csv).
+Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự án LMS Learning Analytics đã được hoàn thành 100% thông qua lớp `OULADFeatureEngineer`, bộ kiểm thử tự động (**12/12 unit tests Tuần 5 PASSED**) tích hợp hoàn toàn trong Jupyter Notebook [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb), xuất bản **5 biểu đồ phân tích chuyên sâu** (`21_*.png` đến `25_*.png` tại `reports/figures/`), cùng bảng danh mục đặc trưng chuẩn hóa gồm **76 đặc trưng** tại [`data/processed/week5_feature_engineering/feature_catalog_week5.csv`](file:///c:/Users/mrore/Project_I/data/processed/week5_feature_engineering/feature_catalog_week5.csv).
 
 | Mã CV | Nội dung công việc Tuần 5 | Trạng thái | Sản phẩm đầu ra |
 |:---:|---|:---:|---|
@@ -14,7 +14,7 @@ Toàn bộ các mục tiêu trọng tâm của Tuần 5 theo Kế hoạch Dự �
 | **T5.2** | **Activity-based Features (SEDL Proxies)**: 20 loại `activity_type` (gồm `clicks_glossary`), độ đa dạng học liệu `activity_diversity` và độ hỗn loạn Shannon `activity_entropy` | Hoàn thành | [22_activity_diversity_and_entropy_analysis.png](file:///c:/Users/mrore/Project_I/reports/figures/22_activity_diversity_and_entropy_analysis.png) |
 | **T5.3** | **Assessment-based Features**: `weighted_avg_score`, `earned_weight_score`, `first_score`, `tma1_score`, `submission_rate` (Loại trừ tuyệt đối bài thi `Exam` để triệt tiêu Target Leakage) | Hoàn thành | [23_assessment_trajectory_and_weighted_scores.png](file:///c:/Users/mrore/Project_I/reports/figures/23_assessment_trajectory_and_weighted_scores.png) |
 | **T5.4** | **Demographics & Context**: Tải học tập `studied_credits`, tiền sử học vụ `num_of_prev_attempts`, độ tuổi, học vấn, kinh tế vùng `imd_band`, cờ `credit_overload` | Hoàn thành | Danh mục `feature_catalog_week5.csv` |
-| **T5.5** | **Temporal Snapshot Modeling (Zero Leakage)**: Trích xuất 4 lát cắt thời gian $25\%$, $50\%$, $75\%$, $100\%$ khóa học (`date <= cutoff_day` và `date_submitted <= cutoff_day`) | Hoàn thành | 4 file CSV snapshot ($32,593 \times 76$) tại `data/processed/` |
+| **T5.5** | **Temporal Snapshot Modeling (Zero Leakage)**: Trích xuất 4 lát cắt thời gian $25\%$, $50\%$, $75\%$, $100\%$ khóa học (`date <= cutoff_day` và `date_submitted <= cutoff_day`) | Hoàn thành | 4 file CSV snapshot ($32,593 \times 113$ cột Tuần 5–6) tại `data/processed/week5_6_snapshots/` |
 | **T5.6** | **Cohort Management**: Quản lý và đối sánh Full Cohort ($N=32,593$), Pre-Course Active Cohort ($N=29,915$) và Dynamic Active Cohort tại từng mốc thời gian cắt | Hoàn thành | Bảng thống kê động học sinh viên rút môn |
 | **T5.7** | **Feature Importance Ranking**: Đo lường Point-Biserial $r$, Spearman $\rho$, Cohen's $d$, Mutual Information và Random Forest Importance (Gini & Permutation) | Hoàn thành | [25_preliminary_feature_importance_ranking.png](file:///c:/Users/mrore/Project_I/reports/figures/25_preliminary_feature_importance_ranking.png) & `feature_importance_week5.json` |
 | **T5.8** | **Benchmark Thực nghiệm Học máy**: Huấn luyện đối kháng 92 cấu hình mô hình (Random Forest, Logistic Regression, Decision Tree) qua các mốc snapshot và chiến lược chia tập | Hoàn thành | [24_snapshot_progression_25_50_75_100.png](file:///c:/Users/mrore/Project_I/reports/figures/24_snapshot_progression_25_50_75_100.png) & `week5_experiment_metrics.json` |
@@ -81,11 +81,10 @@ Biểu đồ minh họa: [reports/figures/22_activity_diversity_and_entropy_anal
 
 Biểu đồ minh họa: [reports/figures/23_assessment_trajectory_and_weighted_scores.png](file:///c:/Users/mrore/Project_I/reports/figures/23_assessment_trajectory_and_weighted_scores.png)
 
-### 2.4. Nhóm 5.4: Đặc trưng Nhân khẩu học & Bối cảnh (Demographics & Context)
+### 2.4. Nhóm 5.4: Bối cảnh Học tập (Context)
 - `studied_credits`: Tải học tập (số tín chỉ sinh viên đăng ký học đồng thời).
-- `credit_overload`: Biến cờ nhị phân ($= 1$ nếu $\text{studied\_credits} > 60$).
+- `credit_overload`: Biến cờ nhị phân ($= 1$ nếu $\text{studied\_credits} > 60$). Ngưỡng $60$ tín chỉ được chọn vì đây là mức tải chuẩn hệ bán thời gian (*part-time*) tại The Open University, đồng thời là mode ($51.4\%$, $n=16{,}751$) và trung vị ($Q_1 = \text{median} = 60$) của OULAD ($N=32{,}593$, phân tách $63.1\%$ học mức chuẩn $\le 60$ với $36.9\%$ vượt tải $> 60$); ngay khi vượt mốc $60$ tín chỉ, tỷ lệ `At-Risk` tăng nhảy vọt từ $48.2\%$ lên $60.7\%$ ($+12.5$ điểm \%), trong đó tỷ lệ rút môn (`Withdrawn`) tăng từ $25.4\%$ lên $41.1\%$.
 - `num_of_prev_attempts` & `is_repeat_student`: Tiền sử học vụ và cờ học lại ($= 1$ nếu $\text{num\_of\_prev\_attempts} > 0$).
-- Mã hóa thứ bậc `highest_education`, `imd_band`, `age_band` và các biến danh mục `gender`, `disability`, `region`, `code_module`.
 
 ---
 
@@ -138,26 +137,74 @@ Biểu đồ minh họa: [reports/figures/25_preliminary_feature_importance_rank
 
 Kết hợp đa chỉ số thống kê (Tương quan Point-Biserial $r$, Khoảng cách Cohen's $d$, Thông tin tương hỗ Mutual Information và Tầm quan trọng Random Forest Gini/Permutation):
 
-### 4.1. Top 5 Đặc trưng Tích lũy Hàng đầu tại Mốc 100% (Toàn khóa)
-Tại mốc cuối khóa, các chỉ số tích lũy về sự duy trì học tập và nộp bài chiếm ưu thế áp đảo:
-1. `active_span_days` (5.1 / Behavioural): Khoảng thời gian duy trì học tập ($r = -0.777$, $d = 2.470$, $\text{RF Importance} = 0.1334$).
-2. `course_progress_submission_rate` (5.3 / Behavioural Task Completion): Tỷ lệ hoàn thành bài tập khóa học ($r = -0.812$, $d = 2.784$, $\text{RF Importance} = 0.1314$).
-3. `earned_weight_score` (5.3 / Cognitive Achievement): Điểm tích lũy trên thang 100 ($r = -0.739$, $d = 2.197$, $\text{RF Importance} = 0.1122$).
-4. `submission_rate` (5.3 / Behavioural Task Completion): Tỷ lệ nộp bài kiểm tra ($r = -0.812$, $d = 2.784$, $\text{RF Importance} = 0.0801$).
-5. `num_submissions_raw` (5.3 / Behavioural Task Completion): Số lượng bài nộp thực tế ($r = -0.700$, $d = 1.961$, $\text{RF Importance} = 0.0664$).
+### 4.1. Top 10 Đặc trưng Hàng đầu tại Mốc 25% (Cảnh báo sớm Thời gian thực)
 
-### 4.2. Top 6 Đặc trưng Tín hiệu Sớm Cốt lõi tại Mốc 25% (Cảnh báo sớm Thời gian thực)
-Tại mốc 25% (khi dữ liệu click và bài nộp còn hạn chế), các tín hiệu chất lượng học tập ban đầu đóng vai trò quyết định:
-1. `weighted_avg_score` (5.3 / Cognitive Performance): Điểm trung bình có trọng số các bài đầu tiên ($r = -0.571$, $d = 1.392$, $\text{RF Importance} = 0.0787$).
-2. `max_score` (5.3 / Cognitive Performance): Điểm kiểm tra cao nhất đạt được ($r = -0.566$, $d = 1.374$, $\text{RF Importance} = 0.0718$).
-3. `avg_score` (5.3 / Cognitive Performance): Điểm trung bình bài tập đã nộp ($r = -0.565$, $d = 1.372$, $\text{RF Importance} = 0.0635$).
-4. `min_score` (5.3 / Cognitive Performance): Điểm kiểm tra thấp nhất ($r = -0.536$, $d = 1.272$, $\text{RF Importance} = 0.0461$).
-5. `first_score` (5.3 / Cognitive Early Signal): Điểm bài nộp đầu tiên ($r = -0.528$, $d = 1.246$, $\text{RF Importance} = 0.0395$).
-6. `tma1_score` (5.3 / Cognitive Early Signal): Điểm bài TMA1 ($r = -0.520$, $d = 1.219$, $\text{RF Importance} = 0.0381$).
+| Hạng | Tên Đặc trưng | Nhóm / SEDL | Point-Bis. $r$ | Cohen's $d$ | Mutual Info | RF Gini |
+|---:|---|---|---:|---:|---:|---:|
+| 1 | `weighted_avg_score` | 5.3 / Cognitive (Performance) | $-0.571$ | $1.392$ | $0.209$ | $0.0787$ |
+| 2 | `max_score` | 5.3 / Cognitive (Performance) | $-0.566$ | $1.374$ | $0.194$ | $0.0718$ |
+| 3 | `avg_score` | 5.3 / Cognitive (Performance) | $-0.565$ | $1.372$ | $0.201$ | $0.0635$ |
+| 4 | `course_progress_submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.480$ | $1.097$ | $0.205$ | $0.0553$ |
+| 5 | `min_score` | 5.3 / Cognitive (Performance) | $-0.536$ | $1.272$ | $0.199$ | $0.0461$ |
+| 6 | `earned_weight_score` | 5.3 / Cognitive (Achievement) | $-0.460$ | $1.038$ | $0.162$ | $0.0437$ |
+| 7 | `tma1_score` | 5.3 / Cognitive (Early Signal) | $-0.514$ | $1.201$ | $0.179$ | $0.0423$ |
+| 8 | `submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.531$ | $1.255$ | $0.188$ | $0.0402$ |
+| 9 | `active_span_days` | 5.1 / Behavioural | $-0.512$ | $1.195$ | $0.161$ | $0.0392$ |
+| 10 | `first_score` | 5.3 / Cognitive (Early Signal) | $-0.523$ | $1.229$ | $0.182$ | $0.0326$ |
 
-### 4.3. Phân bổ Tầm quan trọng theo Khung SEDL (Bergdahl et al., 2024)
-- **Mốc 25%**: Chiều Nhận thức (Cognitive: điểm số ban đầu, học liệu bài giảng) chiếm **$45.4\%$** (hoặc $49.2\%$ tổng thể); Chiều Hành vi (Behavioural: click, số ngày) chiếm **$37.9\%$**; Yếu tố Bối cảnh & Nhân khẩu học chiếm **$12.5\%$**; Chiều Xã hội (Social: forum, wiki) chiếm **$4.2\%$**.
-- **Mốc 100%**: Chiều Hành vi (nộp bài, duy trì đăng nhập) chiếm ưu thế áp đảo với **$56.9\%$**; Chiều Nhận thức chiếm **$34.8\%$** (trong đó riêng `earned_weight_score` chiếm $11.2\%$); Bối cảnh nhân khẩu học giảm còn **$5.9\%$**; Chiều Xã hội chiếm **$2.4\%$**.  
+### 4.2. Top 10 Đặc trưng Hàng đầu tại Mốc 50% (Giữa khóa)
+
+| Hạng | Tên Đặc trưng | Nhóm / SEDL | Point-Bis. $r$ | Cohen's $d$ | Mutual Info | RF Gini |
+|---:|---|---|---:|---:|---:|---:|
+| 1 | `active_span_days` | 5.1 / Behavioural | $-0.640$ | $1.666$ | $0.269$ | $0.0944$ |
+| 2 | `earned_weight_score` | 5.3 / Cognitive (Achievement) | $-0.624$ | $1.598$ | $0.249$ | $0.0930$ |
+| 3 | `submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.671$ | $1.811$ | $0.298$ | $0.0796$ |
+| 4 | `course_progress_submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.639$ | $1.663$ | $0.305$ | $0.0712$ |
+| 5 | `num_submissions_raw` | 5.3 / Behavioural (Task Completion) | $-0.581$ | $1.428$ | $0.253$ | $0.0569$ |
+| 6 | `num_submissions` | 5.3 / Behavioural (Task Completion) | $-0.581$ | $1.431$ | $0.254$ | $0.0473$ |
+| 7 | `weighted_avg_score` | 5.3 / Cognitive (Performance) | $-0.601$ | $1.506$ | $0.267$ | $0.0468$ |
+| 8 | `score_std` | 5.3 / Cognitive (Consistency) | $-0.252$ | $0.522$ | $0.251$ | $0.0428$ |
+| 9 | `avg_score` | 5.3 / Cognitive (Performance) | $-0.595$ | $1.485$ | $0.256$ | $0.0356$ |
+| 10 | `max_score` | 5.3 / Cognitive (Performance) | $-0.599$ | $1.497$ | $0.240$ | $0.0337$ |
+
+### 4.3. Top 10 Đặc trưng Hàng đầu tại Mốc 75% (Tiền cuối khóa)
+
+| Hạng | Tên Đặc trưng | Nhóm / SEDL | Point-Bis. $r$ | Cohen's $d$ | Mutual Info | RF Gini |
+|---:|---|---|---:|---:|---:|---:|
+| 1 | `active_span_days` | 5.1 / Behavioural | $-0.725$ | $2.111$ | $0.371$ | $0.1150$ |
+| 2 | `earned_weight_score` | 5.3 / Cognitive (Achievement) | $-0.705$ | $1.989$ | $0.330$ | $0.1116$ |
+| 3 | `course_progress_submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.748$ | $2.255$ | $0.388$ | $0.1006$ |
+| 4 | `submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.749$ | $2.264$ | $0.387$ | $0.0876$ |
+| 5 | `num_submissions_raw` | 5.3 / Behavioural (Task Completion) | $-0.666$ | $1.789$ | $0.333$ | $0.0677$ |
+| 6 | `num_submissions` | 5.3 / Behavioural (Task Completion) | $-0.667$ | $1.792$ | $0.335$ | $0.0551$ |
+| 7 | `active_days_ratio` | 5.1 / Behavioural | $-0.604$ | $1.516$ | $0.284$ | $0.0397$ |
+| 8 | `weighted_avg_score` | 5.3 / Cognitive (Performance) | $-0.605$ | $1.522$ | $0.295$ | $0.0356$ |
+| 9 | `active_days_in_course` | 5.1 / Behavioural | $-0.606$ | $1.527$ | $0.270$ | $0.0301$ |
+| 10 | `score_std` | 5.3 / Cognitive (Consistency) | $-0.273$ | $0.569$ | $0.305$ | $0.0280$ |
+
+### 4.4. Top 10 Đặc trưng Hàng đầu tại Mốc 100% (Toàn khóa)
+
+| Hạng | Tên Đặc trưng | Nhóm / SEDL | Point-Bis. $r$ | Cohen's $d$ | Mutual Info | RF Gini |
+|---:|---|---|---:|---:|---:|---:|
+| 1 | `active_span_days` | 5.1 / Behavioural | $-0.777$ | $2.470$ | $0.424$ | $0.1334$ |
+| 2 | `course_progress_submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.812$ | $2.784$ | $0.448$ | $0.1314$ |
+| 3 | `earned_weight_score` | 5.3 / Cognitive (Achievement) | $-0.739$ | $2.197$ | $0.373$ | $0.1122$ |
+| 4 | `submission_rate` | 5.3 / Behavioural (Task Completion) | $-0.812$ | $2.784$ | $0.446$ | $0.0801$ |
+| 5 | `num_submissions_raw` | 5.3 / Behavioural (Task Completion) | $-0.700$ | $1.961$ | $0.365$ | $0.0664$ |
+| 6 | `num_submissions` | 5.3 / Behavioural (Task Completion) | $-0.700$ | $1.965$ | $0.365$ | $0.0582$ |
+| 7 | `active_days_ratio` | 5.1 / Behavioural | $-0.633$ | $1.636$ | $0.313$ | $0.0422$ |
+| 8 | `active_days_in_course` | 5.1 / Behavioural | $-0.635$ | $1.648$ | $0.303$ | $0.0333$ |
+| 9 | `max_score` | 5.3 / Cognitive (Performance) | $-0.613$ | $1.555$ | $0.264$ | $0.0278$ |
+| 10 | `weighted_avg_score` | 5.3 / Cognitive (Performance) | $-0.605$ | $1.522$ | $0.302$ | $0.0262$ |
+
+### 4.5. Phân bổ Tầm quan trọng theo 4 Nhóm Đặc trưng qua 4 Lát cắt
+| Mốc Snapshot | 5.1 Click-based | 5.2 Activity-based | 5.3 Assessment-based | 5.4 Demographics & Context |
+|:---:|---:|---:|---:|---:|
+| **25%** | $16.2\%$ | $15.5\%$ | **$60.5\%$** | $5.2\%$ |
+| **50%** | $20.6\%$ | $11.6\%$ | **$63.4\%$** | $2.8\%$ |
+| **75%** | $25.2\%$ | $9.5\%$ | **$62.5\%$** | $1.9\%$ |
+| **100%** | $27.9\%$ | $8.9\%$ | **$61.0\%$** | $1.5\%$ |
+
 *(Lưu ý phương pháp luận: Dữ liệu log máy chủ LMS không đo lường trực tiếp trạng thái Cảm xúc Emotional/Affective do thiếu vắng khảo sát tự khai báo thời gian thực)*.
 
 ---
@@ -173,21 +220,21 @@ Nghiên cứu đã thực thi **92 cấu hình thực nghiệm độc lập** tr
 | Mốc Snapshot | Thuật toán | Bộ Đặc trưng | Test Accuracy | Bal-Acc | Test Precision | Test Recall (At-Risk) | Test F1-Score | Test ROC-AUC |
 |:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **25%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.8018$ | $0.8043$ | $0.8493$ | $0.7592$ | $0.8017$ | $0.8875$ |
-| **25%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.8151$** | **$0.8174$** | **$0.8624$** | **$0.7734$** | **$0.8154$** | **$0.8938$** |
-| **25%** | Random Forest | Tuần 3-4 Cơ sở | $0.8093$ | $0.8124$ | $0.8710$ | $0.7523$ | $0.8073$ | $0.8887$ |
-| **25%** | Random Forest | **Tuần 5 Mở rộng** | **$0.8123$** | **$0.8151$** | **$0.8698$** | **$0.7602$** | **$0.8113$** | **$0.8914$** |
-| **50%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.8690$ | $0.8709$ | $0.9084$ | $0.8360$ | $0.8708$ | $0.9394$ |
-| **50%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.8671$** | **$0.8687$** | **$0.9034$** | **$0.8377$** | **$0.8693$** | **$0.9432$** |
-| **50%** | Random Forest | Tuần 3-4 Cơ sở | $0.8681$ | $0.8700$ | $0.9079$ | $0.8327$ | $0.8687$ | $0.9368$ |
-| **50%** | Random Forest | **Tuần 5 Mở rộng** | **$0.8767$** | **$0.8781$** | **$0.9080$** | **$0.8507$** | **$0.8784$** | **$0.9436$** |
-| **75%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.9038$ | $0.9054$ | $0.9369$ | $0.8767$ | $0.9058$ | $0.9658$ |
-| **75%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.9149$** | **$0.9161$** | **$0.9442$** | **$0.8918$** | **$0.9172$** | **$0.9701$** |
-| **75%** | Random Forest | Tuần 3-4 Cơ sở | $0.9048$ | $0.9056$ | $0.9234$ | $0.8905$ | $0.9066$ | $0.9672$ |
-| **75%** | Random Forest | **Tuần 5 Mở rộng** | **$0.9177$** | **$0.9183$** | **$0.9317$** | **$0.9078$** | **$0.9196$** | **$0.9718$** |
-| **100%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.9227$ | $0.9242$ | $0.9535$ | $0.8975$ | $0.9246$ | $0.9768$ |
-| **100%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.9336$** | **$0.9348$** | **$0.9602$** | **$0.9121$** | **$0.9355$** | **$0.9809$** |
-| **100%** | Random Forest | Tuần 3-4 Cơ sở | $0.9238$ | $0.9242$ | $0.9348$ | $0.9169$ | $0.9258$ | $0.9780$ |
-| **100%** | Random Forest | **Tuần 5 Mở rộng** | **$0.9358$** | **$0.9359$** | **$0.9416$** | **$0.9338$** | **$0.9377$** | **$0.9823$** |
+| **25%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.8151$** | **$0.8175$** | **$0.8621$** | **$0.7734$** | **$0.8154$** | **$0.8938$** |
+| **25%** | Random Forest | Tuần 3-4 Cơ sở | $0.8106$ | $0.8140$ | $0.8717$ | $0.7518$ | $0.8073$ | $0.8887$ |
+| **25%** | Random Forest | **Tuần 5 Mở rộng** | **$0.8146$** | **$0.8182$** | **$0.8771$** | **$0.7547$** | **$0.8113$** | **$0.8914$** |
+| **50%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.8690$ | $0.8709$ | $0.9085$ | $0.8360$ | $0.8708$ | $0.9394$ |
+| **50%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.8671$** | **$0.8688$** | **$0.9035$** | **$0.8377$** | **$0.8693$** | **$0.9432$** |
+| **50%** | Random Forest | Tuần 3-4 Cơ sở | $0.8681$ | $0.8706$ | $0.9153$ | $0.8267$ | $0.8687$ | $0.9368$ |
+| **50%** | Random Forest | **Tuần 5 Mở rộng** | **$0.8776$** | **$0.8799$** | **$0.9233$** | **$0.8377$** | **$0.8784$** | **$0.9436$** |
+| **75%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.9038$ | $0.9054$ | $0.9370$ | $0.8767$ | $0.9058$ | $0.9658$ |
+| **75%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.9149$** | **$0.9163$** | **$0.9440$** | **$0.8918$** | **$0.9172$** | **$0.9701$** |
+| **75%** | Random Forest | Tuần 3-4 Cơ sở | $0.9053$ | $0.9073$ | $0.9453$ | $0.8710$ | $0.9066$ | $0.9672$ |
+| **75%** | Random Forest | **Tuần 5 Mở rộng** | **$0.9184$** | **$0.9204$** | **$0.9581$** | **$0.8841$** | **$0.9196$** | **$0.9718$** |
+| **100%** | Logistic Regression | Tuần 3-4 Cơ sở | $0.9227$ | $0.9242$ | $0.9533$ | $0.8975$ | $0.9246$ | $0.9768$ |
+| **100%** | Logistic Regression | **Tuần 5 Mở rộng** | **$0.9336$** | **$0.9349$** | **$0.9602$** | **$0.9121$** | **$0.9355$** | **$0.9809$** |
+| **100%** | Random Forest | Tuần 3-4 Cơ sở | $0.9246$ | $0.9266$ | $0.9631$ | $0.8914$ | $0.9258$ | $0.9780$ |
+| **100%** | Random Forest | **Tuần 5 Mở rộng** | **$0.9366$** | **$0.9386$** | **$0.9754$** | **$0.9028$** | **$0.9377$** | **$0.9823$** |
 
 ### 5.2. Kết quả trên Dynamic Snapshot Active Cohort - Group-Stratified Split:
 
@@ -214,7 +261,7 @@ Khi loại bỏ các sinh viên đã chính thức hủy môn trước thời đ
 
 > ### Đánh giá Khách quan Tiêu chuẩn Nghiệm thu Câu hỏi Nghiên cứu RQ2
 > Đối chiếu kết quả thực nghiệm giữa hai góc nhìn quản trị đào tạo và nghiệp vụ lớp học trực tiếp:
-> 1. **Trên Full Cohort ($N = 32,593$)**: Với bài toán giám sát vĩ mô của nhà trường (tính cả người học bỏ cuộc sớm trước ngày 60), tại mốc Cảnh báo sớm 25% thời lượng, mô hình với bộ đặc trưng Tuần 5 đạt **Test Recall = 76.02%** (Random Forest) và **Test Recall = 77.34%** (Logistic Regression), cùng **Test ROC-AUC $\approx$ 0.891 - 0.894**. Trên phương diện giám sát toàn thể, kết quả này **đáp ứng vững chắc tiêu chuẩn thành công $\text{Recall} \ge 75\%$** của **RQ2**.
+> 1. **Trên Full Cohort ($N = 32,593$)**: Với bài toán giám sát vĩ mô của nhà trường (tính cả người học bỏ cuộc sớm trước ngày 60), tại mốc Cảnh báo sớm 25% thời lượng, mô hình với bộ đặc trưng Tuần 5 đạt **Test Recall = 75.47%** (Random Forest) và **Test Recall = 77.34%** (Logistic Regression), cùng **Test ROC-AUC $\approx$ 0.891 - 0.894**. Trên phương diện giám sát toàn thể, kết quả này **đáp ứng vững chắc tiêu chuẩn thành công $\text{Recall} \ge 75\%$** của **RQ2**.
 > 2. **Trên Dynamic Snapshot Active Cohort ($N = 26,248$ tại 25%)**: Với nghiệp vụ sư phạm trực tiếp (chỉ theo dõi sinh viên còn đang học tại thời điểm cảnh báo để can thiệp), bài toán có độ khó học thuật cao hơn rõ rệt. Nghiên cứu ghi nhận tiến trình Recall tăng dần theo lượng thông tin tích lũy: từ **$61.34\%$** (mốc 25%) $\to$ **$68.41\%$** (mốc 50%) $\to$ **$73.18\%$** (mốc 75%) $\to$ **$75.00\%$** (mốc 100%) với Random Forest (và $64.18\% \to 70.01\% \to 74.71\% \to 76.96\%$ với Logistic Regression).
 > 3. **Bản chất Sư phạm & Định hướng Tuần 6**: Tại mốc 25% khóa học, các sinh viên đang theo học có tần suất tương tác click ban đầu tương đối đồng nhất và mới chỉ hoàn thành 0–1 bài TMA đầu tiên, khiến tín hiệu suy giảm động lực của nhóm rớt môn về sau còn tiềm ẩn. Đây là thách thức nghiên cứu thực tiễn, tạo động lực cốt lõi để Tuần 6 tập trung khai phá **Đặc trưng Chuỗi thời gian (độ dốc suy giảm click, số ngày không hoạt động liên tiếp)** và **Đặc trưng Tính Quy luật học tập** nhằm bứt phá Recall của nhóm Active tại mốc 25% vượt ngưỡng $\ge 75\%$.
 
@@ -222,10 +269,10 @@ Khi loại bỏ các sinh viên đã chính thức hủy môn trước thời đ
 
 ## 6. KẾT QUẢ BỘ KIỂM THỬ ĐỘC LẬP (TEST SUITE VERIFICATION)
 Tích hợp tại Mục 5 trong [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb)  
-Toàn bộ **12/12 unit tests Tuần 5** (cùng 6 unit tests Tuần 6) đã chạy thành công tuyệt đối ($100\%$ Passed):
+Toàn bộ **18/18 unit tests** (12 tests nền Tuần 5 + 6 tests mở rộng Tuần 6) đã chạy thành công tuyệt đối ($100\%$ Passed):
 
 ```text
-Ran 12 tests in 21.169s
+Ran 18 tests in 19.464s
 OK
 ```
 
@@ -248,17 +295,17 @@ OK
 
 - [x] **Jupyter Notebook Thực nghiệm Tự chủ Toàn diện (bao gồm lớp `OULADFeatureEngineer`, benchmark & 18/18 Unit Tests PASSED)**: [`notebooks/04_feature_engineering.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/04_feature_engineering.ipynb).
 - [x] **4 Ma trận Đặc trưng Snapshot Đã Lưu**:
-  - `data/processed/features_snapshot_25pct.csv` ($32,593 \times 113$ cột đầy đủ Tuần 5–6; chuẩn hóa 76 đặc trưng Tuần 5)
-  - `data/processed/features_snapshot_50pct.csv` ($32,593 \times 113$ cột)
-  - `data/processed/features_snapshot_75pct.csv` ($32,593 \times 113$ cột)
-  - `data/processed/features_snapshot_100pct.csv` ($32,593 \times 113$ cột)
+  - `data/processed/week5_6_snapshots/features_snapshot_25pct.csv` ($32,593 \times 113$ cột đầy đủ Tuần 5–6; chuẩn hóa 76 đặc trưng Tuần 5)
+  - `data/processed/week5_6_snapshots/features_snapshot_50pct.csv` ($32,593 \times 113$ cột)
+  - `data/processed/week5_6_snapshots/features_snapshot_75pct.csv` ($32,593 \times 113$ cột)
+  - `data/processed/week5_6_snapshots/features_snapshot_100pct.csv` ($32,593 \times 113$ cột)
 - [x] **Từ điển Danh mục & Độ quan trọng Đặc trưng**:
-  - `data/processed/feature_catalog_week5.csv` (Mô tả chi tiết 76 đặc trưng kèm công thức và chỉ số thống kê).
-  - [`data/processed/feature_importance_week5.json`](file:///c:/Users/mrore/Project_I/data/processed/feature_importance_week5.json) & [`data/processed/week5_experiment_metrics.json`](file:///c:/Users/mrore/Project_I/data/processed/week5_experiment_metrics.json) (92 thực nghiệm mô hình).
+  - `data/processed/week5_feature_engineering/feature_catalog_week5.csv` (Mô tả chi tiết 76 đặc trưng kèm công thức và chỉ số thống kê).
+  - [`data/processed/week5_feature_engineering/feature_importance_week5.json`](file:///c:/Users/mrore/Project_I/data/processed/week5_feature_engineering/feature_importance_week5.json) & [`data/processed/week5_feature_engineering/week5_experiment_metrics.json`](file:///c:/Users/mrore/Project_I/data/processed/week5_feature_engineering/week5_experiment_metrics.json) (92 thực nghiệm mô hình).
 - [x] **5 Biểu đồ Báo cáo Độ nét cao (300 DPI)**:
   - `reports/figures/21_feature_engineering_taxonomy_and_distributions.png`
   - `reports/figures/22_activity_diversity_and_entropy_analysis.png`
   - `reports/figures/23_assessment_trajectory_and_weighted_scores.png`
   - `reports/figures/24_snapshot_progression_25_50_75_100.png`
   - `reports/figures/25_preliminary_feature_importance_ranking.png`
-- [x] **Tài liệu Báo cáo Khoa học (LaTeX / PDF)**: `báo_cáo_tuần_5.tex` và `báo_cáo_tuần_5.pdf`.
+- [x] **Tài liệu Báo cáo Khoa học (LaTeX / PDF)**: [`báo_cáo/ProjectI_W5_Report.tex`](file:///c:/Users/mrore/Project_I/báo_cáo/ProjectI_W5_Report.tex) và [`báo_cáo/ProjectI_W5_Report.pdf`](file:///c:/Users/mrore/Project_I/báo_cáo/ProjectI_W5_Report.pdf).

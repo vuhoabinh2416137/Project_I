@@ -43,3 +43,6 @@ desktop.ini
 .agents/
 scratch/
 
+# CatBoost training logs
+catboost_info/
+

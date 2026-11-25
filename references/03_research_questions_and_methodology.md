@@ -15,7 +15,12 @@
 ---
 
 ### Câu hỏi nghiên cứu 2 (RQ2): Khả năng cảnh báo sớm (Early At-Risk Prediction)
-> **RQ2**: *Mô hình học máy có thể phát hiện sinh viên có nguy cơ gặp khó khăn sớm tới mức độ nào (trước 25%, 50% thời lượng khóa học) mà vẫn đảm bảo độ tin cậy thực tiễn (Recall $\ge 75\%$)?*
+> **RQ2**: *Mô hình học máy có thể phát hiện sinh viên có nguy cơ gặp khó khăn sớm tới mức độ nào (trước 25%, 50%, 75% thời lượng khóa học) mà vẫn đảm bảo độ tin cậy thực tiễn ($\text{Recall} \ge 75\%$, $\text{ROC-AUC} \ge 0.80$, $\text{F1-Score} \ge 0.70$)?*
+
+- **Cơ sở thiết lập 3 tiêu chuẩn nghiệm thu RQ2**:
+  - **$\text{ROC-AUC} \ge 0.80$**: Kế thừa trực tiếp ngưỡng phân tách mức *tốt/xuất sắc* (*excellent discrimination*: $0.80 \le \text{AUC} < 0.90$) theo Hosmer, Lemeshow & Sturdivant (2013, tr. 177).
+  - **$\text{Recall} \ge 75\%$**: Chỉ tiêu thực tiễn do đề tài xác lập, neo theo vùng hiệu năng độ nhạy cảnh báo sớm $74\%$–$80\%$ tại mốc $25\%$ học kỳ của hệ thống OAAI (Jayaprakash et al., 2014) và đặt cao hơn rõ rệt mức đối chuẩn sớm trên OULAD của Adnan et al. (2021) ($\text{Recall} \approx 59\%$ ở mốc $20\%$).
+  - **$\text{F1-Score} \ge 0.70$**: Ràng buộc cân bằng của đề tài nhằm ngăn mô hình hạ ngưỡng quá mức gây quá tải cảnh báo giả (*alert fatigue*); về mặt toán học, tại $\text{Recall} = 0.75$, điều kiện $F_1 \ge 0.70$ đòi hỏi $\text{Precision} \ge 0.656$, đồng thời vượt mức $F_1 \approx 0.59$ của Adnan et al. (2021).
 
 - **Giả thuyết H2a**: Tại mốc 25% thời lượng khóa học (~tuần 6-8), các mô hình dựa trên gradient boosting (XGBoost / LightGBM) có thể phát hiện ít nhất 70% sinh viên có nguy cơ bỏ cuộc sớm (Withdrawn).
 - **Giả thuyết H2b**: Khi bổ sung thêm dữ liệu điểm số bài tập đầu tiên tại mốc 50% thời lượng, hiệu năng dự đoán (F1-score và PR-AUC) sẽ tăng vọt so với chỉ sử dụng dữ liệu click thuần túy.

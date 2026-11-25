@@ -94,7 +94,7 @@ Nhiều đặc trưng tương tác click và học vụ có phân phối lệch 
      Đối với `total_clicks`, ngưỡng chặn trên tính từ tập Train là $5,906.0$ clicks; đối với `studied_credits`, ngưỡng chặn trên là $300.0$ tín chỉ; đối với `daily_click_mean` là $64.29$ clicks/ngày; đối với `daily_click_std` là $86.27$.
   2. *Biến đổi hàm Log (`np.log1p`)*: Áp dụng $x' = \ln(1 + x)$ trên các biến tương tác click sau khi capping giúp ổn định phương sai và đưa phân phối tiệm cận phân phối chuẩn.
 - **Bộ 8 biểu đồ trực quan hóa (Hình 17)**: Trình bày đầy đủ cho cả 4 đặc trưng trong Bảng 4, thiết kế lưới 2 hàng $\times$ 4 cột chuẩn mực (Hàng 1: 4 biểu đồ Boxplot so sánh Gốc vs Sau Capping; Hàng 2: 4 biểu đồ Histogram đồng bộ độ rộng bin kèm đường ngưỡng Capping nét đứt màu đỏ):
-  1. `total_clicks`: Boxplot (Max Train `20,391` vs Capping `5,906.0`, dồn $n=565$ mẫu vượt ngưỡng) + Histogram `log1p` phân phối tần suất hiển thị tường minh cả 2 giá trị độ lệch (`Skew toàn mẫu = -1.24 | >0 clicks = -0.21`, do toàn mẫu Train có $10.3\%$ SV có `total_clicks = 0` tạo đỉnh xung nhọn tại 0).
+  1. `total_clicks`: Boxplot (Max Train `20,391` vs Capping `5,906.0`, dồn $n=565$ mẫu vượt ngưỡng) + Histogram `log1p` phân phối tần suất hiển thị tường minh cả 2 giá trị độ lệch (`Skew toàn mẫu = -1.24 | >0 clicks = -1.02`, do toàn mẫu Train có $10.3\%$ SV có `total_clicks = 0` tạo đỉnh xung nhọn tại 0).
   2. `studied_credits`: Boxplot (Max `655.0` vs Capping `300.0`) + Histogram tần suất trước và sau Capping (dồn $n=26$ mẫu vượt ngưỡng).
   3. `daily_click_mean`: Boxplot (Max `221.20` vs Capping `64.29`) + Histogram tần suất trước và sau Capping (dồn $n=110$ mẫu vượt ngưỡng).
   4. `daily_click_std`: Boxplot (Max `704.67` vs Capping `86.27`) + Histogram tần suất trước và sau Capping (dồn $n=235$ mẫu vượt ngưỡng).
@@ -238,19 +238,19 @@ OK
 
 - [x] **Jupyter Notebook Tiền xử lý Tự chủ Toàn diện (bao gồm lớp `OULADPreprocessor` & 9/9 Unit Tests PASSED)**: [`notebooks/03_preprocessing.ipynb`](file:///c:/Users/mrore/Project_I/notebooks/03_preprocessing.ipynb) (trực quan hóa chi tiết từng bước 4.1 - 4.8).
 - [x] **Dữ liệu Tiền xử lý Hoàn chỉnh**:
-  - `data/processed/train_features.csv` ($22,815 \times 63$)
-  - `data/processed/train_target.csv` ($22,815 \times 1$)
-  - `data/processed/train_features_smote.csv` ($24,092 \times 63$)
-  - `data/processed/train_target_smote.csv` ($24,092 \times 1$)
-  - `data/processed/val_features.csv` ($4,889 \times 63$)
-  - `data/processed/val_target.csv` ($4,889 \times 1$)
-  - `data/processed/test_features.csv` ($4,889 \times 63$)
-  - `data/processed/test_target.csv` ($4,889 \times 1$)
+  - `data/processed/week4_preprocessing/train_features.csv` ($22,815 \times 63$)
+  - `data/processed/week4_preprocessing/train_target.csv` ($22,815 \times 1$)
+  - `data/processed/week4_preprocessing/train_features_smote.csv` ($24,092 \times 63$)
+  - `data/processed/week4_preprocessing/train_target_smote.csv` ($24,092 \times 1$)
+  - `data/processed/week4_preprocessing/val_features.csv` ($4,889 \times 63$)
+  - `data/processed/week4_preprocessing/val_target.csv` ($4,889 \times 1$)
+  - `data/processed/week4_preprocessing/test_features.csv` ($4,889 \times 63$)
+  - `data/processed/week4_preprocessing/test_target.csv` ($4,889 \times 1$)
 - [x] **Artifacts Mô hình Đã Lưu**:
-  - `data/processed/scaler.joblib`
-  - `data/processed/one_hot_encoder.joblib`
-  - `data/processed/preprocessor_state.joblib`
-  - `data/processed/preprocessing_metadata.json`
+  - `data/processed/week4_preprocessing/scaler.joblib`
+  - `data/processed/week4_preprocessing/one_hot_encoder.joblib`
+  - `data/processed/week4_preprocessing/preprocessor_state.joblib`
+  - `data/processed/week4_preprocessing/preprocessing_metadata.json`
 - [x] **6 Biểu đồ Báo cáo Chất lượng Cao**:
   - `reports/figures/15_missing_values_heatmap_and_imputation.png`
   - `reports/figures/16_early_unregistration_impact.png`
@@ -258,4 +258,4 @@ OK
   - `reports/figures/18_feature_scaling_distributions.png`
   - `reports/figures/19_train_val_test_stratification.png`
   - `reports/figures/20_class_imbalance_and_resampling.png`
-- [x] **Tài liệu Báo cáo LaTeX**: [`báo_cáo_tuần_4.tex`](file:///c:/Users/mrore/Project_I/báo_cáo_tuần_4.tex) và tệp PDF biên dịch.
+- [x] **Tài liệu Báo cáo LaTeX**: [`báo_cáo/ProjectI_W4_Report.tex`](file:///c:/Users/mrore/Project_I/báo_cáo/ProjectI_W4_Report.tex) và [`báo_cáo/ProjectI_W4_Report.pdf`](file:///c:/Users/mrore/Project_I/báo_cáo/ProjectI_W4_Report.pdf).

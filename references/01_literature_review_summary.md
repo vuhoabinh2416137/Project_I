@@ -5,8 +5,8 @@
 
 ## 1. BÀI BÁO NỀN TẢNG: Bergdahl et al. (2024)
 
-- **Trích dẫn**: Bergdahl, N., Bond, M., Sjöden, J., & Dane, M. (2024). *Engagements in digital learning: A systematic review of learning analytics research on student engagement*. International Journal of Educational Technology in Higher Education, 21(1), 63. DOI: 10.1186/s41239-024-00493-y.
-- **Mục tiêu nghiên cứu**: Tổng quan hệ thống (Systematic Literature Review) về cách các nghiên cứu Learning Analytics (LA) định nghĩa, đo lường và vận hành hóa khái niệm "Student Engagement" trong môi trường học tập số.
+- **Trích dẫn**: Bergdahl, N., Bond, M., Sjöberg, J., Dougherty, M., & Oxley, E. (2024). *Unpacking student engagement in higher education learning analytics: a systematic review*. International Journal of Educational Technology in Higher Education, 21, 63. DOI: 10.1186/s41239-024-00493-y.
+- **Mục tiêu nghiên cứu**: Tổng quan hệ thống (Systematic Review) trên 159 công trình nghiên cứu (124 bài báo tạp chí và 35 bài hội nghị giai đoạn 2011–2023) về cách cộng đồng Learning Analytics (LA) định nghĩa, đo lường và vận hành hóa khái niệm "Student Engagement" trong giáo dục đại học.
 
 ### 1.1. Framework SEDL (Student Engagement in Digital Learning)
 Bài báo phân loại sự tham gia của người học (Engagement) và sự giảm sút tương tác (Disengagement) thành 4 chiều cốt lõi:
@@ -41,7 +41,7 @@ Bài báo phân loại sự tham gia của người học (Engagement) và sự 
 
 ### 2.2. Paper 2: Dự đoán sớm sinh viên có nguy cơ (Ouroboros)
 - **Tác giả**: Hlosta, M., Zdrahal, Z., & Zendulka, J. (2017).
-- **Tên bài báo**: *Ouroboros: Early identification of at-risk students without models based on legacy data*. Proceedings of the 7th International Learning Analytics & Knowledge Conference (LAK '17), pp. 256–265.
+- **Tên bài báo**: *Ouroboros: Early identification of at-risk students without models based on legacy data*. Proceedings of the 7th International Learning Analytics & Knowledge Conference (LAK '17), pp. 6–15.
 - **Tóm tắt cốt lõi**:
   - Đề xuất hệ thống Ouroboros để phát hiện sinh viên có nguy cơ bỏ học/trượt môn ngay từ những tuần đầu tiên mà không cần dữ liệu lịch sử của khóa học đó.
   - Sử dụng đặc trưng tích lũy theo thời gian (running cumulative clicks, running assessment scores).
@@ -70,9 +70,9 @@ Bài báo phân loại sự tham gia của người học (Engagement) và sự 
 
 ## 3. BẢNG SO SÁNH TỔNG HỢP CÁC NGHIÊN CỨU
 
-| Tiêu chí | Bergdahl et al. (2024) | Kuzilek et al. (2017) | Hlosta et al. (2017) | Umer et al. (2017) | Jayaprakash et al. (2014) | **Dự án của chúng ta** |
+| Tiêu chí | Bergdahl et al. (2024) | Kuzilek et al. (2017) | Hlosta et al. (2017) | Umer et al. (2017) | Jayaprakash et al. (2014) | **Đề tài hiện tại** |
 |---|---|---|---|---|---|---|
-| **Loại hình** | Systematic Review (131 papers) | Dataset Paper & Benchmark | Research Paper (Early Prediction) | Research Paper (Process Mining) | Empirical Study (OAAI System) | Nghiên cứu ứng dụng + Demo XAI |
+| **Loại hình** | Systematic Review (159 papers) | Dataset Paper & Benchmark | Research Paper (Early Prediction) | Research Paper (Process Mining) | Empirical Study (OAAI System) | Nghiên cứu ứng dụng + Demo XAI |
 | **Dataset** | Nhiều nguồn khác nhau | OULAD (~32.6k SV, 22 courses) | OULAD (các module cụ thể) | Dữ liệu Moodle / OULAD | Dữ liệu Sakai LMS (Marist College) | **OULAD (Toàn bộ 7 bảng CSV)** |
 | **Mục tiêu chính** | Tổng hợp định nghĩa & chỉ số engagement | Công bố dữ liệu mở cho cộng đồng LA | Phát hiện sớm sinh viên at-risk | Phân tích quy trình học tập | Xây dựng hệ thống cảnh báo sớm | **Phân tích hành vi + Dự đoán sớm + Giải thích mô hình (XAI)** |
 | **Nhóm đặc trưng** | 4 chiều: Hành vi, Nhận thức, Cảm xúc, Xã hội | Clicks, nhân khẩu học, điểm số, đăng ký | Clicks tích lũy, điểm bài tập theo tuần | Chuỗi sự kiện, thời gian chuyển đổi trạng thái | Clicks, điểm số, nhân khẩu học | **Đa chiều SEDL (30+ đặc trưng tương tác + nhân khẩu học)** |

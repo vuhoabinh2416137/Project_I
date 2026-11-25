@@ -1,0 +1,926 @@
+{
+  "top20_by_rf_100pct": [
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.7767253488211752,
+      "cohens_d_100": 2.470214588534341,
+      "mutual_info_100": 0.4244989440584177,
+      "rf_gini_importance_100": 0.13339842911307145,
+      "rf_perm_importance_100": 0.017072472627524603
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_100": -0.8117044335366033,
+      "cohens_d_100": 2.7837566005935037,
+      "mutual_info_100": 0.44829687082220704,
+      "rf_gini_importance_100": 0.131356597645327,
+      "rf_perm_importance_100": 0.006719887686724824
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Achievement)",
+      "point_biserial_r_100": -0.7389556242697124,
+      "cohens_d_100": 2.196918779706354,
+      "mutual_info_100": 0.3725309051774468,
+      "rf_gini_importance_100": 0.11215138959164032,
+      "rf_perm_importance_100": 0.005560065881179366
+    },
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_100": -0.8117044335366033,
+      "cohens_d_100": 2.7837566005935037,
+      "mutual_info_100": 0.4458194140034879,
+      "rf_gini_importance_100": 0.08012604784970491,
+      "rf_perm_importance_100": 0.00673533668265105
+    },
+    {
+      "feature_name": "num_submissions_raw",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_100": -0.699536001433884,
+      "cohens_d_100": 1.96085611595912,
+      "mutual_info_100": 0.36490858741956544,
+      "rf_gini_importance_100": 0.0664360978499662,
+      "rf_perm_importance_100": 0.0013877638771763845
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_100": -0.7002312059159337,
+      "cohens_d_100": 1.9646777276985756,
+      "mutual_info_100": 0.3652292707583411,
+      "rf_gini_importance_100": 0.058159153645610216,
+      "rf_perm_importance_100": 0.0014034163928094312
+    },
+    {
+      "feature_name": "active_days_ratio",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.6326683107554392,
+      "cohens_d_100": 1.6364207008652942,
+      "mutual_info_100": 0.31255706145804485,
+      "rf_gini_importance_100": 0.04218159015490444,
+      "rf_perm_importance_100": 0.0006704309178258594
+    },
+    {
+      "feature_name": "active_days_in_course",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.6353321086859076,
+      "cohens_d_100": 1.6479579356762515,
+      "mutual_info_100": 0.30250334162441295,
+      "rf_gini_importance_100": 0.03332431967062202,
+      "rf_perm_importance_100": 0.0005979408986172441
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_100": -0.6131478768787211,
+      "cohens_d_100": 1.554721872572961,
+      "mutual_info_100": 0.26416601144102136,
+      "rf_gini_importance_100": 0.02777699529859711,
+      "rf_perm_importance_100": 0.0008120806337678533
+    },
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_100": -0.6050484679166505,
+      "cohens_d_100": 1.5221983642254406,
+      "mutual_info_100": 0.3015401020675066,
+      "rf_gini_importance_100": 0.02623318025615174,
+      "rf_perm_importance_100": 0.0032814962472817568
+    },
+    {
+      "feature_name": "active_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.625963962719871,
+      "cohens_d_100": 1.6078080996510213,
+      "mutual_info_100": 0.29070533079192384,
+      "rf_gini_importance_100": 0.023838760575737222,
+      "rf_perm_importance_100": 0.0003197849647782469
+    },
+    {
+      "feature_name": "clicks_per_day",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.47483325129780274,
+      "cohens_d_100": 1.08073226071998,
+      "mutual_info_100": 0.24898329224136573,
+      "rf_gini_importance_100": 0.021345176339975905,
+      "rf_perm_importance_100": 0.00044607819375153124
+    },
+    {
+      "feature_name": "score_std",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Consistency)",
+      "point_biserial_r_100": -0.2907979345269329,
+      "cohens_d_100": 0.6087994524911678,
+      "mutual_info_100": 0.3044222881919598,
+      "rf_gini_importance_100": 0.020245621556405465,
+      "rf_perm_importance_100": 0.0002173035415020008
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_100": -0.6014621858746662,
+      "cohens_d_100": 1.5080379796689647,
+      "mutual_info_100": 0.2995959904925778,
+      "rf_gini_importance_100": 0.019943888177398564,
+      "rf_perm_importance_100": 0.002869775880398606
+    },
+    {
+      "feature_name": "min_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_100": -0.4803041539030825,
+      "cohens_d_100": 1.096890571455223,
+      "mutual_info_100": 0.17470838026831625,
+      "rf_gini_importance_100": 0.015383077496596766,
+      "rf_perm_importance_100": 0.000986552527881357
+    },
+    {
+      "feature_name": "tma1_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_100": -0.5199872633429126,
+      "cohens_d_100": 1.219392202593301,
+      "mutual_info_100": 0.1842408742281505,
+      "rf_gini_importance_100": 0.012572330354445244,
+      "rf_perm_importance_100": 0.0002676839198340941
+    },
+    {
+      "feature_name": "total_clicks",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_100": -0.4765738617643689,
+      "cohens_d_100": 1.0858553877332395,
+      "mutual_info_100": 0.2530129933283034,
+      "rf_gini_importance_100": 0.012510221359533719,
+      "rf_perm_importance_100": 0.0004739048882103747
+    },
+    {
+      "feature_name": "clicks_resource",
+      "feature_group": "5.2 Activity-based",
+      "sedl_dimension": "Cognitive (Proxy)",
+      "point_biserial_r_100": -0.2566122220704394,
+      "cohens_d_100": 0.5318216974057056,
+      "mutual_info_100": 0.18706505140850216,
+      "rf_gini_importance_100": 0.011802088351398907,
+      "rf_perm_importance_100": 0.00027961757536991704
+    },
+    {
+      "feature_name": "clicks_homepage",
+      "feature_group": "5.2 Activity-based",
+      "sedl_dimension": "Behavioural (Navigation)",
+      "point_biserial_r_100": -0.4350789679834203,
+      "cohens_d_100": 0.9679064422125847,
+      "mutual_info_100": 0.2567575422798525,
+      "rf_gini_importance_100": 0.011022042309158491,
+      "rf_perm_importance_100": 6.346114494273358e-05
+    },
+    {
+      "feature_name": "first_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_100": -0.5322861512761898,
+      "cohens_d_100": 1.2594536132031755,
+      "mutual_info_100": 0.19564026812725266,
+      "rf_gini_importance_100": 0.010799077736944138,
+      "rf_perm_importance_100": 0.0003120142123362868
+    }
+  ],
+  "top20_by_rf_75pct": [
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.725409915083939,
+      "cohens_d_75": 2.1110182089946514,
+      "mutual_info_75": 0.3706101853715431,
+      "rf_gini_importance_75": 0.1150243800978847,
+      "rf_perm_importance_75": 0.012832731593400171
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Achievement)",
+      "point_biserial_r_75": -0.7045917330162687,
+      "cohens_d_75": 1.9889006715920554,
+      "mutual_info_75": 0.3297355966699018,
+      "rf_gini_importance_75": 0.11159457225247656,
+      "rf_perm_importance_75": 0.01091666756091989
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_75": -0.7475699866443422,
+      "cohens_d_75": 2.2545565640580865,
+      "mutual_info_75": 0.387722911694933,
+      "rf_gini_importance_75": 0.10058534921517791,
+      "rf_perm_importance_75": 0.005708616765361318
+    },
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_75": -0.7489795921573764,
+      "cohens_d_75": 2.2642280197089293,
+      "mutual_info_75": 0.38717991026358867,
+      "rf_gini_importance_75": 0.0876240355123892,
+      "rf_perm_importance_75": 0.007127001107517206
+    },
+    {
+      "feature_name": "num_submissions_raw",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_75": -0.6661040201156853,
+      "cohens_d_75": 1.7888851792459437,
+      "mutual_info_75": 0.33289213776397286,
+      "rf_gini_importance_75": 0.06768196304201658,
+      "rf_perm_importance_75": 0.003066301910013913
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_75": -0.6667523569262647,
+      "cohens_d_75": 1.7920187104774585,
+      "mutual_info_75": 0.33458089172396854,
+      "rf_gini_importance_75": 0.055094702232835614,
+      "rf_perm_importance_75": 0.002273407634061164
+    },
+    {
+      "feature_name": "active_days_ratio",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.6035419832011828,
+      "cohens_d_75": 1.5162324202263269,
+      "mutual_info_75": 0.28421621263970587,
+      "rf_gini_importance_75": 0.0396836423975346,
+      "rf_perm_importance_75": 0.001443121237429379
+    },
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_75": -0.605014708382166,
+      "cohens_d_75": 1.5220643889709518,
+      "mutual_info_75": 0.2951776548945637,
+      "rf_gini_importance_75": 0.03555789691209164,
+      "rf_perm_importance_75": 0.005074874900136539
+    },
+    {
+      "feature_name": "active_days_in_course",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.6062181692931068,
+      "cohens_d_75": 1.526848360866905,
+      "mutual_info_75": 0.2695249791098784,
+      "rf_gini_importance_75": 0.03012941964720703,
+      "rf_perm_importance_75": 0.0007348356541363454
+    },
+    {
+      "feature_name": "score_std",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Consistency)",
+      "point_biserial_r_75": -0.2733994958295328,
+      "cohens_d_75": 0.5693306799597793,
+      "mutual_info_75": 0.3053917096682357,
+      "rf_gini_importance_75": 0.027971438813825366,
+      "rf_perm_importance_75": 0.0004218778504322396
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_75": -0.6079678543593432,
+      "cohens_d_75": 1.5338332872001708,
+      "mutual_info_75": 0.2578560293569738,
+      "rf_gini_importance_75": 0.027891122725544906,
+      "rf_perm_importance_75": 0.0009342109596471859
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_75": -0.6007295143352784,
+      "cohens_d_75": 1.5051627156511225,
+      "mutual_info_75": 0.2835634511342717,
+      "rf_gini_importance_75": 0.02178217395400398,
+      "rf_perm_importance_75": 0.002676654180424265
+    },
+    {
+      "feature_name": "clicks_per_day",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.441338803577204,
+      "cohens_d_75": 0.9851715979890944,
+      "mutual_info_75": 0.22884063558955958,
+      "rf_gini_importance_75": 0.020822693246661444,
+      "rf_perm_importance_75": 0.0005980889129494349
+    },
+    {
+      "feature_name": "active_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.595403398958919,
+      "cohens_d_75": 1.4844377855469308,
+      "mutual_info_75": 0.26369434416345605,
+      "rf_gini_importance_75": 0.01942345212638443,
+      "rf_perm_importance_75": 0.0009340259417319086
+    },
+    {
+      "feature_name": "min_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_75": -0.508458104192112,
+      "cohens_d_75": 1.1827837246818769,
+      "mutual_info_75": 0.1870895873137859,
+      "rf_gini_importance_75": 0.018208924178497968,
+      "rf_perm_importance_75": 0.001295587951781374
+    },
+    {
+      "feature_name": "first_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_75": -0.5322039723739799,
+      "cohens_d_75": 1.2591823208940038,
+      "mutual_info_75": 0.19564026812725266,
+      "rf_gini_importance_75": 0.016887722951324808,
+      "rf_perm_importance_75": 0.000254991690845352
+    },
+    {
+      "feature_name": "avg_days_before_deadline",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural / Self-Regulation",
+      "point_biserial_r_75": -0.2628866527182671,
+      "cohens_d_75": 0.545778313353471,
+      "mutual_info_75": 0.22960200167546385,
+      "rf_gini_importance_75": 0.013981877349436733,
+      "rf_perm_importance_75": 0.0009477727728375074
+    },
+    {
+      "feature_name": "tma1_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_75": -0.5199872633429126,
+      "cohens_d_75": 1.219392202593301,
+      "mutual_info_75": 0.1842408742281505,
+      "rf_gini_importance_75": 0.012715860465444458,
+      "rf_perm_importance_75": 0.00029079265745306503
+    },
+    {
+      "feature_name": "total_clicks",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_75": -0.44279064800280415,
+      "cohens_d_75": 0.9892012226793956,
+      "mutual_info_75": 0.22563041969121156,
+      "rf_gini_importance_75": 0.01067863362088498,
+      "rf_perm_importance_75": 0.0005164775105173103
+    },
+    {
+      "feature_name": "clicks_homepage",
+      "feature_group": "5.2 Activity-based",
+      "sedl_dimension": "Behavioural (Navigation)",
+      "point_biserial_r_75": -0.4095818483367568,
+      "cohens_d_75": 0.8993169197257375,
+      "mutual_info_75": 0.2124969077143053,
+      "rf_gini_importance_75": 0.00864086701568221,
+      "rf_perm_importance_75": 0.00013996605291286546
+    }
+  ],
+  "top20_by_rf_50pct": [
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_50": -0.6395226836053317,
+      "cohens_d_50": 1.66630819541328,
+      "mutual_info_50": 0.2691255949957667,
+      "rf_gini_importance_50": 0.09435923616694909,
+      "rf_perm_importance_50": 0.01180305138946618
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Achievement)",
+      "point_biserial_r_50": -0.6235424865845924,
+      "cohens_d_50": 1.5976193032408499,
+      "mutual_info_50": 0.24902962742863677,
+      "rf_gini_importance_50": 0.09297873599305637,
+      "rf_perm_importance_50": 0.016965865304737537
+    },
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_50": -0.6705699626831387,
+      "cohens_d_50": 1.810619637929813,
+      "mutual_info_50": 0.2976285284154421,
+      "rf_gini_importance_50": 0.07957356392553366,
+      "rf_perm_importance_50": 0.010586262567804483
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_50": -0.6387453867594963,
+      "cohens_d_50": 1.6628856940678174,
+      "mutual_info_50": 0.3048540956478598,
+      "rf_gini_importance_50": 0.07118407474632052,
+      "rf_perm_importance_50": 0.005100666397527376
+    },
+    {
+      "feature_name": "num_submissions_raw",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_50": -0.5805216957222843,
+      "cohens_d_50": 1.428106299651839,
+      "mutual_info_50": 0.2527372053359107,
+      "rf_gini_importance_50": 0.05688105898157257,
+      "rf_perm_importance_50": 0.00279088424132119
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_50": -0.5813322571399909,
+      "cohens_d_50": 1.431117092721203,
+      "mutual_info_50": 0.2541935396037778,
+      "rf_gini_importance_50": 0.047316570354706385,
+      "rf_perm_importance_50": 0.002756063869664538
+    },
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_50": -0.6008521986601768,
+      "cohens_d_50": 1.505643758244894,
+      "mutual_info_50": 0.2669491320739026,
+      "rf_gini_importance_50": 0.04680655298926414,
+      "rf_perm_importance_50": 0.0046854306902538
+    },
+    {
+      "feature_name": "score_std",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Consistency)",
+      "point_biserial_r_50": -0.2520841464403224,
+      "cohens_d_50": 0.5217944655220484,
+      "mutual_info_50": 0.25057036728506743,
+      "rf_gini_importance_50": 0.04278070312847526,
+      "rf_perm_importance_50": 0.00046062060189298035
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_50": -0.5954571178054755,
+      "cohens_d_50": 1.4846452849771452,
+      "mutual_info_50": 0.25616391534316185,
+      "rf_gini_importance_50": 0.035596681747427264,
+      "rf_perm_importance_50": 0.003659432342833835
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_50": -0.5986209460599791,
+      "cohens_d_50": 1.496920959867409,
+      "mutual_info_50": 0.23961851086319008,
+      "rf_gini_importance_50": 0.03373880054002078,
+      "rf_perm_importance_50": 0.0018589675038235055
+    },
+    {
+      "feature_name": "min_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_50": -0.5390384722846601,
+      "cohens_d_50": 1.2819165278651417,
+      "mutual_info_50": 0.19648980440101793,
+      "rf_gini_importance_50": 0.030594737641844495,
+      "rf_perm_importance_50": 0.0017189089419529457
+    },
+    {
+      "feature_name": "active_days_ratio",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_50": -0.548050789822189,
+      "cohens_d_50": 1.3124430031114223,
+      "mutual_info_50": 0.21747442654147942,
+      "rf_gini_importance_50": 0.028473108889518983,
+      "rf_perm_importance_50": 0.0017630912201229032
+    },
+    {
+      "feature_name": "active_days_in_course",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_50": -0.5513791856426041,
+      "cohens_d_50": 1.323880362581069,
+      "mutual_info_50": 0.22182686940086915,
+      "rf_gini_importance_50": 0.027691916092940118,
+      "rf_perm_importance_50": 0.001547193814777148
+    },
+    {
+      "feature_name": "tma1_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_50": -0.519919502085515,
+      "cohens_d_50": 1.2191744276061514,
+      "mutual_info_50": 0.18437418511993275,
+      "rf_gini_importance_50": 0.02249303695812622,
+      "rf_perm_importance_50": 0.0005428610652369991
+    },
+    {
+      "feature_name": "avg_days_before_deadline",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural / Self-Regulation",
+      "point_biserial_r_50": -0.2660112603306901,
+      "cohens_d_50": 0.5527561718092829,
+      "mutual_info_50": 0.20572850170719792,
+      "rf_gini_importance_50": 0.018366554832427016,
+      "rf_perm_importance_50": 0.0009696418904243664
+    },
+    {
+      "feature_name": "first_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_50": -0.5318268607366106,
+      "cohens_d_50": 1.2579380211670508,
+      "mutual_info_50": 0.19379106049371764,
+      "rf_gini_importance_50": 0.018077891726382404,
+      "rf_perm_importance_50": 0.0002064614916663876
+    },
+    {
+      "feature_name": "active_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_50": -0.5381383834643595,
+      "cohens_d_50": 1.2789023685570229,
+      "mutual_info_50": 0.19539400937445284,
+      "rf_gini_importance_50": 0.016587812543253987,
+      "rf_perm_importance_50": 0.0007484529727014522
+    },
+    {
+      "feature_name": "clicks_per_day",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_50": -0.3912466463987818,
+      "cohens_d_50": 0.8515789974058395,
+      "mutual_info_50": 0.18349604212188364,
+      "rf_gini_importance_50": 0.010193097893121911,
+      "rf_perm_importance_50": 0.0006385338292307141
+    },
+    {
+      "feature_name": "cognitive_clicks",
+      "feature_group": "5.2 Activity-based",
+      "sedl_dimension": "Cognitive (Proxy)",
+      "point_biserial_r_50": -0.3551982987601945,
+      "cohens_d_50": 0.7611205156215355,
+      "mutual_info_50": 0.16761982885036497,
+      "rf_gini_importance_50": 0.009445230748113036,
+      "rf_perm_importance_50": 0.0004571237632940983
+    },
+    {
+      "feature_name": "clicks_homepage",
+      "feature_group": "5.2 Activity-based",
+      "sedl_dimension": "Behavioural (Navigation)",
+      "point_biserial_r_50": -0.3653360492630166,
+      "cohens_d_50": 0.7861363834668171,
+      "mutual_info_50": 0.17817838824378684,
+      "rf_gini_importance_50": 0.009150682982729787,
+      "rf_perm_importance_50": 0.00014298184493211075
+    }
+  ],
+  "top20_by_rf_25pct": [
+    {
+      "feature_name": "weighted_avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_25": -0.57069197742905,
+      "cohens_d_25": 1.392094812134322,
+      "mutual_info_25": 0.2090167849322464,
+      "rf_gini_importance_25": 0.0786899170777784,
+      "rf_perm_importance_25": 0.0050666786064894834
+    },
+    {
+      "feature_name": "max_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_25": -0.5656322024176419,
+      "cohens_d_25": 1.3739075369375244,
+      "mutual_info_25": 0.19368552115500481,
+      "rf_gini_importance_25": 0.07181058905066488,
+      "rf_perm_importance_25": 0.004981977404872118
+    },
+    {
+      "feature_name": "avg_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_25": -0.5650341072598095,
+      "cohens_d_25": 1.3717729074918692,
+      "mutual_info_25": 0.2014099624398984,
+      "rf_gini_importance_25": 0.06354762645327212,
+      "rf_perm_importance_25": 0.008523590339252518
+    },
+    {
+      "feature_name": "course_progress_submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_25": -0.48030024644770025,
+      "cohens_d_25": 1.09687897195718,
+      "mutual_info_25": 0.205132010043366,
+      "rf_gini_importance_25": 0.055253570692188156,
+      "rf_perm_importance_25": 0.008868167704678864
+    },
+    {
+      "feature_name": "min_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Performance)",
+      "point_biserial_r_25": -0.5361130787811162,
+      "cohens_d_25": 1.2721426326442622,
+      "mutual_info_25": 0.19940156839729783,
+      "rf_gini_importance_25": 0.046059537502707935,
+      "rf_perm_importance_25": 0.0025493248511253563
+    },
+    {
+      "feature_name": "earned_weight_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Achievement)",
+      "point_biserial_r_25": -0.46015084833880643,
+      "cohens_d_25": 1.0381550367169317,
+      "mutual_info_25": 0.16237389734403007,
+      "rf_gini_importance_25": 0.043692646870317764,
+      "rf_perm_importance_25": 0.006089901685180222
+    },
+    {
+      "feature_name": "tma1_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_25": -0.5143164114889793,
+      "cohens_d_25": 1.2012749369513802,
+      "mutual_info_25": 0.17877791423677536,
+      "rf_gini_importance_25": 0.04226414584252648,
+      "rf_perm_importance_25": 0.00017177063255042758
+    },
+    {
+      "feature_name": "submission_rate",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_25": -0.5310421780596891,
+      "cohens_d_25": 1.2553522613550265,
+      "mutual_info_25": 0.18817347725040712,
+      "rf_gini_importance_25": 0.04018997027947673,
+      "rf_perm_importance_25": 0.007514132593459055
+    },
+    {
+      "feature_name": "active_span_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_25": -0.5122870679912593,
+      "cohens_d_25": 1.1948439817318532,
+      "mutual_info_25": 0.16084887884578314,
+      "rf_gini_importance_25": 0.03920508672947509,
+      "rf_perm_importance_25": 0.006902907408524439
+    },
+    {
+      "feature_name": "first_score",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Early Signal)",
+      "point_biserial_r_25": -0.5230279386009725,
+      "cohens_d_25": 1.2291971512883393,
+      "mutual_info_25": 0.18187781875137632,
+      "rf_gini_importance_25": 0.032570736672389085,
+      "rf_perm_importance_25": 0.0007187575972981807
+    },
+    {
+      "feature_name": "active_days_ratio",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_25": -0.4783658825254354,
+      "cohens_d_25": 1.0911470936927012,
+      "mutual_info_25": 0.16968256487004973,
+      "rf_gini_importance_25": 0.03109904298689451,
+      "rf_perm_importance_25": 0.0027031117423099715
+    },
+    {
+      "feature_name": "avg_days_before_deadline",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural / Self-Regulation",
+      "point_biserial_r_25": -0.2284756587080107,
+      "cohens_d_25": 0.47008772015737266,
+      "mutual_info_25": 0.16468892735515528,
+      "rf_gini_importance_25": 0.023017222309104385,
+      "rf_perm_importance_25": 0.0030280772087160957
+    },
+    {
+      "feature_name": "tma1_days_early",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural / Self-Regulation",
+      "point_biserial_r_25": -0.4030245234572208,
+      "cohens_d_25": 0.8820996689635613,
+      "mutual_info_25": 0.1603512993825995,
+      "rf_gini_importance_25": 0.0220060857509787,
+      "rf_perm_importance_25": 0.0018097712401491828
+    },
+    {
+      "feature_name": "active_days_in_course",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_25": -0.48154793781291716,
+      "cohens_d_25": 1.1005871365380326,
+      "mutual_info_25": 0.1565245573520635,
+      "rf_gini_importance_25": 0.021573622717685294,
+      "rf_perm_importance_25": 0.00226987379187924
+    },
+    {
+      "feature_name": "num_submissions_raw",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_25": -0.44628698414004353,
+      "cohens_d_25": 0.9989452319706493,
+      "mutual_info_25": 0.14299747985917133,
+      "rf_gini_importance_25": 0.01768823606193174,
+      "rf_perm_importance_25": 0.0010208918529581279
+    },
+    {
+      "feature_name": "num_submissions",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_25": -0.4472127238080652,
+      "cohens_d_25": 1.0015347181062677,
+      "mutual_info_25": 0.15306716649727292,
+      "rf_gini_importance_25": 0.017298601750454716,
+      "rf_perm_importance_25": 0.001511929400123857
+    },
+    {
+      "feature_name": "submitted_tma1",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Behavioural (Task Completion)",
+      "point_biserial_r_25": -0.47558471519077583,
+      "cohens_d_25": 1.082942022037826,
+      "mutual_info_25": 0.12693643989158665,
+      "rf_gini_importance_25": 0.014984238065997876,
+      "rf_perm_importance_25": 0.00013887444721274455
+    },
+    {
+      "feature_name": "active_days",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_25": -0.46494920873708323,
+      "cohens_d_25": 1.0519468229961457,
+      "mutual_info_25": 0.14287163353833066,
+      "rf_gini_importance_25": 0.014953223052629862,
+      "rf_perm_importance_25": 0.001113215792685196
+    },
+    {
+      "feature_name": "score_std",
+      "feature_group": "5.3 Assessment-based",
+      "sedl_dimension": "Cognitive (Consistency)",
+      "point_biserial_r_25": -0.19177847131110037,
+      "cohens_d_25": 0.3914118228764251,
+      "mutual_info_25": 0.09953942693362094,
+      "rf_gini_importance_25": 0.0139112861521638,
+      "rf_perm_importance_25": 0.0006699868748290871
+    },
+    {
+      "feature_name": "clicks_per_day",
+      "feature_group": "5.1 Click-based",
+      "sedl_dimension": "Behavioural",
+      "point_biserial_r_25": -0.3381889281085471,
+      "cohens_d_25": 0.7198312840887958,
+      "mutual_info_25": 0.14134478073503098,
+      "rf_gini_importance_25": 0.01344129020893223,
+      "rf_perm_importance_25": 0.0004289455347961546
+    }
+  ],
+  "group_importance_share_100pct": {
+    "5.1 Click-based": 0.27861765289810064,
+    "5.2 Activity-based": 0.08884374784895703,
+    "5.3 Assessment-based": 0.6102316377615387,
+    "5.4 Demographics & Context": 0.01459542673242265
+  },
+  "group_importance_share_75pct": {
+    "5.1 Click-based": 0.25152909671317447,
+    "5.2 Activity-based": 0.0948812564671833,
+    "5.3 Assessment-based": 0.6245382855453865,
+    "5.4 Demographics & Context": 0.018767404150256586
+  },
+  "group_importance_share_50pct": {
+    "5.1 Click-based": 0.20626506295706232,
+    "5.2 Activity-based": 0.11588763694452206,
+    "5.3 Assessment-based": 0.6338545598268751,
+    "5.4 Demographics & Context": 0.027653873501097066
+  },
+  "group_importance_share_25pct": {
+    "5.1 Click-based": 0.16227557848319937,
+    "5.2 Activity-based": 0.15462086794461194,
+    "5.3 Assessment-based": 0.6053258763949277,
+    "5.4 Demographics & Context": 0.05233736026598943
+  },
+  "sedl_importance_share_100pct": {
+    "Academic History": 0.0008308828573428119,
+    "Academic Load": 0.0025955708843314225,
+    "Behavioural": 0.2754208125454843,
+    "Behavioural (Navigation)": 0.014637901194090322,
+    "Behavioural (Planning)": 0.0026748628286540933,
+    "Behavioural (Task Completion)": 0.337548264201542,
+    "Behavioural / Disengagement": 0.008779548717951342,
+    "Behavioural / Self-Regulation": 0.015616930926149424,
+    "Cognitive (Achievement)": 0.11215138959164032,
+    "Cognitive (Consistency)": 0.020245621556405465,
+    "Cognitive (Early Signal)": 0.023371408091389382,
+    "Cognitive (Performance)": 0.08933714122874419,
+    "Cognitive (Proxy)": 0.051309611068204815,
+    "Cognitive / Self-Regulation": 0.0058655538781519235,
+    "Context (Course Structure)": 0.006378173800332903,
+    "Course Context": 0.0012717821486905444,
+    "Demographic": 0.00466084704342332,
+    "Demographic (Prior Knowledge)": 0.0009051805347476818,
+    "Demographic (Socio-Economic)": 0.0016563004352327776,
+    "Emotional / Feedback (Proxy)": 0.0007594314378852725,
+    "Social (Proxy)": 0.01627125027062469
+  },
+  "sedl_importance_share_75pct": {
+    "Academic History": 0.0009949672729233578,
+    "Academic Load": 0.002746862334641077,
+    "Behavioural": 0.24701249371041176,
+    "Behavioural (Navigation)": 0.013224988225108833,
+    "Behavioural (Planning)": 0.0037308062150704815,
+    "Behavioural (Task Completion)": 0.31275516541189874,
+    "Behavioural / Disengagement": 0.00882630352814815,
+    "Behavioural / Self-Regulation": 0.025390745942686536,
+    "Cognitive (Achievement)": 0.11159457225247656,
+    "Cognitive (Consistency)": 0.027971438813825366,
+    "Cognitive (Early Signal)": 0.029603583416769268,
+    "Cognitive (Performance)": 0.10344011777013848,
+    "Cognitive (Proxy)": 0.05211917855285479,
+    "Cognitive / Self-Regulation": 0.007310000829144967,
+    "Context (Course Structure)": 0.009472961412206084,
+    "Course Context": 0.0018798578920812142,
+    "Demographic": 0.006161658784197235,
+    "Demographic (Prior Knowledge)": 0.0011877353539127568,
+    "Demographic (Socio-Economic)": 0.0020655162974304625,
+    "Emotional / Feedback (Proxy)": 0.000732059666109588,
+    "Social (Proxy)": 0.021495029193965128
+  },
+  "sedl_importance_share_50pct": {
+    "Academic History": 0.002160892231144685,
+    "Academic Load": 0.0040757970538363155,
+    "Behavioural": 0.2000332417358359,
+    "Behavioural (Navigation)": 0.014245351623236884,
+    "Behavioural (Planning)": 0.005039026784105262,
+    "Behavioural (Task Completion)": 0.2606777368262421,
+    "Behavioural / Disengagement": 0.009538713401472592,
+    "Behavioural / Self-Regulation": 0.03346845721280904,
+    "Cognitive (Achievement)": 0.09297873599305637,
+    "Cognitive (Consistency)": 0.04278070312847526,
+    "Cognitive (Early Signal)": 0.04057092868450862,
+    "Cognitive (Performance)": 0.1467367729185567,
+    "Cognitive (Proxy)": 0.06575811732950634,
+    "Cognitive / Self-Regulation": 0.010656667417858416,
+    "Context (Course Structure)": 0.013334332882980892,
+    "Course Context": 0.0022374199198874024,
+    "Demographic": 0.00903931208065119,
+    "Demographic (Prior Knowledge)": 0.0019607265397083885,
+    "Demographic (Socio-Economic)": 0.0031406988917638224,
+    "Emotional / Feedback (Proxy)": 0.0005905596477665552,
+    "Social (Proxy)": 0.024636940926153858
+  },
+  "sedl_importance_share_25pct": {
+    "Academic History": 0.004893421614927654,
+    "Academic Load": 0.008689840373597626,
+    "Behavioural": 0.15499907975139776,
+    "Behavioural (Navigation)": 0.018837119494454574,
+    "Behavioural (Planning)": 0.008899302530503922,
+    "Behavioural (Task Completion)": 0.14541461685004922,
+    "Behavioural / Disengagement": 0.007333329892159729,
+    "Behavioural / Self-Regulation": 0.052299806791884715,
+    "Cognitive (Achievement)": 0.043692646870317764,
+    "Cognitive (Consistency)": 0.0139112861521638,
+    "Cognitive (Early Signal)": 0.07483488251491557,
+    "Cognitive (Performance)": 0.26010767008442337,
+    "Cognitive (Proxy)": 0.08553044889685116,
+    "Cognitive / Self-Regulation": 0.014320318889003685,
+    "Context (Course Structure)": 0.015008135970815217,
+    "Course Context": 0.003509498410047227,
+    "Demographic": 0.015767807277957242,
+    "Demographic (Prior Knowledge)": 0.004801897370770125,
+    "Demographic (Socio-Economic)": 0.005775592688185632,
+    "Emotional / Feedback (Proxy)": 0.001094218946766718,
+    "Social (Proxy)": 0.03483876171753582
+  }
+}

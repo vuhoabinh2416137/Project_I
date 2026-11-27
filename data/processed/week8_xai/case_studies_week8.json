@@ -1,0 +1,2485 @@
+{
+  "TP": {
+    "milestone": "25%",
+    "quadrant": "TP",
+    "title_vi": "True Positive — Cảnh báo Đúng",
+    "row_idx": 23419,
+    "id_student": 683094,
+    "code_module": "FFF",
+    "code_presentation": "2014J",
+    "final_result": "Fail",
+    "at_risk": 1,
+    "fold": 5,
+    "fold_tau": 0.45,
+    "oof_prob": 0.8999,
+    "oof_pred": 1,
+    "base_value_log_odds": 0.0062,
+    "output_log_odds": 2.1963,
+    "other_106_features_shap_sum": 0.7072,
+    "top8_shap_drivers": [
+      {
+        "feature": "avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "63.00",
+        "scaled_value": -0.5957,
+        "shap_value": 0.4039
+      },
+      {
+        "feature": "avg_days_before_deadline",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "-3.50",
+        "scaled_value": -0.8571,
+        "shap_value": 0.3248
+      },
+      {
+        "feature": "highest_education",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "Lower Than A Level",
+        "scaled_value": -1.0,
+        "shap_value": 0.3028
+      },
+      {
+        "feature": "score_trend_slope",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "-30.00",
+        "scaled_value": -3.75,
+        "shap_value": 0.1571
+      },
+      {
+        "feature": "clicks_page",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "5.00",
+        "scaled_value": 1.7918,
+        "shap_value": 0.1546
+      },
+      {
+        "feature": "imd_band",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "20-30%",
+        "scaled_value": -0.4,
+        "shap_value": 0.1524
+      },
+      {
+        "feature": "submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "1.00",
+        "scaled_value": 0.0,
+        "shap_value": -0.1434
+      },
+      {
+        "feature": "course_progress_submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "0.17",
+        "scaled_value": -0.5,
+        "shap_value": 0.1308
+      }
+    ],
+    "lime_local_r2": 0.6971,
+    "lime_vs_shap_spearman_active": 0.6541,
+    "lime_vs_shap_spearman_all114": 0.2636,
+    "lime_vs_shap_cosine": 0.5879,
+    "lime_vs_shap_top10_overlap": 0.6,
+    "top8_lime_drivers": [
+      {
+        "feature": "clicks_page",
+        "lime_weight": 0.4169
+      },
+      {
+        "feature": "submission_rate",
+        "lime_weight": -0.1941
+      },
+      {
+        "feature": "consistency_score",
+        "lime_weight": -0.1722
+      },
+      {
+        "feature": "imd_band",
+        "lime_weight": 0.1643
+      },
+      {
+        "feature": "avg_days_before_deadline",
+        "lime_weight": 0.1624
+      },
+      {
+        "feature": "days_before_start",
+        "lime_weight": -0.1277
+      },
+      {
+        "feature": "weighted_avg_score",
+        "lime_weight": 0.121
+      },
+      {
+        "feature": "last_minus_first_score",
+        "lime_weight": 0.107
+      }
+    ]
+  },
+  "FP": {
+    "milestone": "25%",
+    "quadrant": "FP",
+    "title_vi": "False Positive — Cảnh báo Nhầm",
+    "row_idx": 11965,
+    "id_student": 570237,
+    "code_module": "DDD",
+    "code_presentation": "2013J",
+    "final_result": "Pass",
+    "at_risk": 0,
+    "fold": 3,
+    "fold_tau": 0.44,
+    "oof_prob": 0.7199,
+    "oof_pred": 1,
+    "base_value_log_odds": 0.0059,
+    "output_log_odds": 0.9437,
+    "other_106_features_shap_sum": 0.198,
+    "top8_shap_drivers": [
+      {
+        "feature": "avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "66.00",
+        "scaled_value": -0.5,
+        "shap_value": 0.4599
+      },
+      {
+        "feature": "clicks_trend",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "-19.16",
+        "scaled_value": -2.2006,
+        "shap_value": 0.2957
+      },
+      {
+        "feature": "code_module_DDD",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "1.00",
+        "scaled_value": 1.0,
+        "shap_value": 0.1795
+      },
+      {
+        "feature": "weighted_avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "65.33",
+        "scaled_value": -0.4106,
+        "shap_value": -0.1779
+      },
+      {
+        "feature": "submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "1.00",
+        "scaled_value": 0.0,
+        "shap_value": -0.1579
+      },
+      {
+        "feature": "imd_band",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "20-30%",
+        "scaled_value": -0.4,
+        "shap_value": 0.1303
+      },
+      {
+        "feature": "last_minus_first_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "-12.00",
+        "scaled_value": -0.9231,
+        "shap_value": 0.1199
+      },
+      {
+        "feature": "highest_education",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "A Level or Equivalent",
+        "scaled_value": 0.0,
+        "shap_value": -0.1097
+      }
+    ],
+    "lime_local_r2": 0.6965,
+    "lime_vs_shap_spearman_active": 0.4805,
+    "lime_vs_shap_spearman_all114": 0.1363,
+    "lime_vs_shap_cosine": 0.3872,
+    "lime_vs_shap_top10_overlap": 0.6,
+    "top8_lime_drivers": [
+      {
+        "feature": "code_module_DDD",
+        "lime_weight": 0.445
+      },
+      {
+        "feature": "consistency_score",
+        "lime_weight": -0.2357
+      },
+      {
+        "feature": "submission_rate",
+        "lime_weight": -0.1879
+      },
+      {
+        "feature": "last_minus_first_score",
+        "lime_weight": 0.1746
+      },
+      {
+        "feature": "clicks_externalquiz",
+        "lime_weight": -0.1738
+      },
+      {
+        "feature": "avg_days_before_deadline",
+        "lime_weight": 0.1659
+      },
+      {
+        "feature": "total_course_assessments",
+        "lime_weight": -0.1389
+      },
+      {
+        "feature": "imd_band",
+        "lime_weight": 0.1312
+      }
+    ]
+  },
+  "TN": {
+    "milestone": "25%",
+    "quadrant": "TN",
+    "title_vi": "True Negative — An toàn Đúng",
+    "row_idx": 9414,
+    "id_student": 635573,
+    "code_module": "CCC",
+    "code_presentation": "2014J",
+    "final_result": "Distinction",
+    "at_risk": 0,
+    "fold": 1,
+    "fold_tau": 0.42,
+    "oof_prob": 0.0601,
+    "oof_pred": 0,
+    "base_value_log_odds": 0.0071,
+    "output_log_odds": -2.7506,
+    "other_106_features_shap_sum": -0.9162,
+    "top8_shap_drivers": [
+      {
+        "feature": "avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "99.00",
+        "scaled_value": 0.9362,
+        "shap_value": -0.7269
+      },
+      {
+        "feature": "weighted_avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "98.36",
+        "scaled_value": 0.9735,
+        "shap_value": -0.3617
+      },
+      {
+        "feature": "highest_education",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "A Level or Equivalent",
+        "scaled_value": 0.0,
+        "shap_value": -0.2204
+      },
+      {
+        "feature": "days_since_last_activity",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "0.25",
+        "scaled_value": -0.25,
+        "shap_value": -0.2124
+      },
+      {
+        "feature": "avg_days_before_deadline",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "6.00",
+        "scaled_value": 1.2692,
+        "shap_value": -0.1499
+      },
+      {
+        "feature": "clicks_trend",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "7.58",
+        "scaled_value": 1.4046,
+        "shap_value": -0.1483
+      },
+      {
+        "feature": "tma1_days_early",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "15.00",
+        "scaled_value": 4.6667,
+        "shap_value": -0.1481
+      },
+      {
+        "feature": "submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "0.67",
+        "scaled_value": -1.0,
+        "shap_value": 0.1262
+      }
+    ],
+    "lime_local_r2": 0.6262,
+    "lime_vs_shap_spearman_active": 0.4733,
+    "lime_vs_shap_spearman_all114": 0.2666,
+    "lime_vs_shap_cosine": 0.7485,
+    "lime_vs_shap_top10_overlap": 0.4,
+    "top8_lime_drivers": [
+      {
+        "feature": "avg_score",
+        "lime_weight": -0.4046
+      },
+      {
+        "feature": "days_since_last_activity",
+        "lime_weight": -0.2363
+      },
+      {
+        "feature": "consistency_score",
+        "lime_weight": -0.1945
+      },
+      {
+        "feature": "highest_education",
+        "lime_weight": -0.176
+      },
+      {
+        "feature": "region_Scotland",
+        "lime_weight": 0.1633
+      },
+      {
+        "feature": "clicks_quiz",
+        "lime_weight": -0.1602
+      },
+      {
+        "feature": "active_weeks",
+        "lime_weight": -0.1559
+      },
+      {
+        "feature": "login_regularity",
+        "lime_weight": -0.1236
+      }
+    ]
+  },
+  "FN": {
+    "milestone": "25%",
+    "quadrant": "FN",
+    "title_vi": "False Negative — Bỏ sót Nguy cơ",
+    "row_idx": 349,
+    "id_student": 2669816,
+    "code_module": "AAA",
+    "code_presentation": "2013J",
+    "final_result": "Fail",
+    "at_risk": 1,
+    "fold": 5,
+    "fold_tau": 0.45,
+    "oof_prob": 0.1601,
+    "oof_pred": 0,
+    "base_value_log_odds": 0.0062,
+    "output_log_odds": -1.6572,
+    "other_106_features_shap_sum": -0.3001,
+    "top8_shap_drivers": [
+      {
+        "feature": "code_module_AAA",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "1.00",
+        "scaled_value": 1.0,
+        "shap_value": -0.7053
+      },
+      {
+        "feature": "submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "1.00",
+        "scaled_value": 0.0,
+        "shap_value": -0.273
+      },
+      {
+        "feature": "course_progress_submission_rate",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "0.40",
+        "scaled_value": 0.9,
+        "shap_value": -0.2672
+      },
+      {
+        "feature": "avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "67.50",
+        "scaled_value": -0.4043,
+        "shap_value": 0.2612
+      },
+      {
+        "feature": "weighted_avg_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "67.67",
+        "scaled_value": -0.3056,
+        "shap_value": -0.1864
+      },
+      {
+        "feature": "imd_band",
+        "sedl_dimension": "Demographic & Context",
+        "raw_value": "90-100%",
+        "scaled_value": 1.0,
+        "shap_value": -0.1764
+      },
+      {
+        "feature": "earned_weight_score",
+        "sedl_dimension": "Cognitive",
+        "raw_value": "20.30",
+        "scaled_value": 0.4227,
+        "shap_value": -0.1638
+      },
+      {
+        "feature": "consistency_score",
+        "sedl_dimension": "Behavioural",
+        "raw_value": "0.54",
+        "scaled_value": -0.8043,
+        "shap_value": 0.1476
+      }
+    ],
+    "lime_local_r2": 0.6655,
+    "lime_vs_shap_spearman_active": 0.5415,
+    "lime_vs_shap_spearman_all114": 0.2266,
+    "lime_vs_shap_cosine": 0.7789,
+    "lime_vs_shap_top10_overlap": 0.4,
+    "top8_lime_drivers": [
+      {
+        "feature": "code_module_AAA",
+        "lime_weight": -3.3463
+      },
+      {
+        "feature": "submission_rate",
+        "lime_weight": -0.3483
+      },
+      {
+        "feature": "total_course_assessments",
+        "lime_weight": 0.2191
+      },
+      {
+        "feature": "earned_weight_score",
+        "lime_weight": -0.2005
+      },
+      {
+        "feature": "days_since_last_activity",
+        "lime_weight": 0.1273
+      },
+      {
+        "feature": "region_Yorkshire Region",
+        "lime_weight": 0.1231
+      },
+      {
+        "feature": "max_inactivity_streak",
+        "lime_weight": 0.1185
+      },
+      {
+        "feature": "course_progress_submission_rate",
+        "lime_weight": -0.1154
+      }
+    ]
+  },
+  "by_milestone": {
+    "25%": {
+      "TP": {
+        "milestone": "25%",
+        "quadrant": "TP",
+        "title_vi": "True Positive — Cảnh báo Đúng",
+        "row_idx": 23419,
+        "id_student": 683094,
+        "code_module": "FFF",
+        "code_presentation": "2014J",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 5,
+        "fold_tau": 0.45,
+        "oof_prob": 0.8999,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0062,
+        "output_log_odds": 2.1963,
+        "other_106_features_shap_sum": 0.7072,
+        "top8_shap_drivers": [
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "63.00",
+            "scaled_value": -0.5957,
+            "shap_value": 0.4039
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-3.50",
+            "scaled_value": -0.8571,
+            "shap_value": 0.3248
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "Lower Than A Level",
+            "scaled_value": -1.0,
+            "shap_value": 0.3028
+          },
+          {
+            "feature": "score_trend_slope",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "-30.00",
+            "scaled_value": -3.75,
+            "shap_value": 0.1571
+          },
+          {
+            "feature": "clicks_page",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "5.00",
+            "scaled_value": 1.7918,
+            "shap_value": 0.1546
+          },
+          {
+            "feature": "imd_band",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "20-30%",
+            "scaled_value": -0.4,
+            "shap_value": 0.1524
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.1434
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.17",
+            "scaled_value": -0.5,
+            "shap_value": 0.1308
+          }
+        ],
+        "lime_local_r2": 0.6971,
+        "lime_vs_shap_spearman_active": 0.6541,
+        "lime_vs_shap_spearman_all114": 0.2636,
+        "lime_vs_shap_cosine": 0.5879,
+        "lime_vs_shap_top10_overlap": 0.6,
+        "top8_lime_drivers": [
+          {
+            "feature": "clicks_page",
+            "lime_weight": 0.4169
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.1941
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.1722
+          },
+          {
+            "feature": "imd_band",
+            "lime_weight": 0.1643
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "lime_weight": 0.1624
+          },
+          {
+            "feature": "days_before_start",
+            "lime_weight": -0.1277
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.121
+          },
+          {
+            "feature": "last_minus_first_score",
+            "lime_weight": 0.107
+          }
+        ]
+      },
+      "FP": {
+        "milestone": "25%",
+        "quadrant": "FP",
+        "title_vi": "False Positive — Cảnh báo Nhầm",
+        "row_idx": 11965,
+        "id_student": 570237,
+        "code_module": "DDD",
+        "code_presentation": "2013J",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 3,
+        "fold_tau": 0.44,
+        "oof_prob": 0.7199,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0059,
+        "output_log_odds": 0.9437,
+        "other_106_features_shap_sum": 0.198,
+        "top8_shap_drivers": [
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "66.00",
+            "scaled_value": -0.5,
+            "shap_value": 0.4599
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-19.16",
+            "scaled_value": -2.2006,
+            "shap_value": 0.2957
+          },
+          {
+            "feature": "code_module_DDD",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "1.00",
+            "scaled_value": 1.0,
+            "shap_value": 0.1795
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "65.33",
+            "scaled_value": -0.4106,
+            "shap_value": -0.1779
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.1579
+          },
+          {
+            "feature": "imd_band",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "20-30%",
+            "scaled_value": -0.4,
+            "shap_value": 0.1303
+          },
+          {
+            "feature": "last_minus_first_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "-12.00",
+            "scaled_value": -0.9231,
+            "shap_value": 0.1199
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "A Level or Equivalent",
+            "scaled_value": 0.0,
+            "shap_value": -0.1097
+          }
+        ],
+        "lime_local_r2": 0.6965,
+        "lime_vs_shap_spearman_active": 0.4805,
+        "lime_vs_shap_spearman_all114": 0.1363,
+        "lime_vs_shap_cosine": 0.3872,
+        "lime_vs_shap_top10_overlap": 0.6,
+        "top8_lime_drivers": [
+          {
+            "feature": "code_module_DDD",
+            "lime_weight": 0.445
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.2357
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.1879
+          },
+          {
+            "feature": "last_minus_first_score",
+            "lime_weight": 0.1746
+          },
+          {
+            "feature": "clicks_externalquiz",
+            "lime_weight": -0.1738
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "lime_weight": 0.1659
+          },
+          {
+            "feature": "total_course_assessments",
+            "lime_weight": -0.1389
+          },
+          {
+            "feature": "imd_band",
+            "lime_weight": 0.1312
+          }
+        ]
+      },
+      "TN": {
+        "milestone": "25%",
+        "quadrant": "TN",
+        "title_vi": "True Negative — An toàn Đúng",
+        "row_idx": 9414,
+        "id_student": 635573,
+        "code_module": "CCC",
+        "code_presentation": "2014J",
+        "final_result": "Distinction",
+        "at_risk": 0,
+        "fold": 1,
+        "fold_tau": 0.42,
+        "oof_prob": 0.0601,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0071,
+        "output_log_odds": -2.7506,
+        "other_106_features_shap_sum": -0.9162,
+        "top8_shap_drivers": [
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "99.00",
+            "scaled_value": 0.9362,
+            "shap_value": -0.7269
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "98.36",
+            "scaled_value": 0.9735,
+            "shap_value": -0.3617
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "A Level or Equivalent",
+            "scaled_value": 0.0,
+            "shap_value": -0.2204
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.25",
+            "scaled_value": -0.25,
+            "shap_value": -0.2124
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "6.00",
+            "scaled_value": 1.2692,
+            "shap_value": -0.1499
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "7.58",
+            "scaled_value": 1.4046,
+            "shap_value": -0.1483
+          },
+          {
+            "feature": "tma1_days_early",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "15.00",
+            "scaled_value": 4.6667,
+            "shap_value": -0.1481
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.67",
+            "scaled_value": -1.0,
+            "shap_value": 0.1262
+          }
+        ],
+        "lime_local_r2": 0.6262,
+        "lime_vs_shap_spearman_active": 0.4733,
+        "lime_vs_shap_spearman_all114": 0.2666,
+        "lime_vs_shap_cosine": 0.7485,
+        "lime_vs_shap_top10_overlap": 0.4,
+        "top8_lime_drivers": [
+          {
+            "feature": "avg_score",
+            "lime_weight": -0.4046
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.2363
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.1945
+          },
+          {
+            "feature": "highest_education",
+            "lime_weight": -0.176
+          },
+          {
+            "feature": "region_Scotland",
+            "lime_weight": 0.1633
+          },
+          {
+            "feature": "clicks_quiz",
+            "lime_weight": -0.1602
+          },
+          {
+            "feature": "active_weeks",
+            "lime_weight": -0.1559
+          },
+          {
+            "feature": "login_regularity",
+            "lime_weight": -0.1236
+          }
+        ]
+      },
+      "FN": {
+        "milestone": "25%",
+        "quadrant": "FN",
+        "title_vi": "False Negative — Bỏ sót Nguy cơ",
+        "row_idx": 349,
+        "id_student": 2669816,
+        "code_module": "AAA",
+        "code_presentation": "2013J",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 5,
+        "fold_tau": 0.45,
+        "oof_prob": 0.1601,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0062,
+        "output_log_odds": -1.6572,
+        "other_106_features_shap_sum": -0.3001,
+        "top8_shap_drivers": [
+          {
+            "feature": "code_module_AAA",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "1.00",
+            "scaled_value": 1.0,
+            "shap_value": -0.7053
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.273
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.40",
+            "scaled_value": 0.9,
+            "shap_value": -0.2672
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "67.50",
+            "scaled_value": -0.4043,
+            "shap_value": 0.2612
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "67.67",
+            "scaled_value": -0.3056,
+            "shap_value": -0.1864
+          },
+          {
+            "feature": "imd_band",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "90-100%",
+            "scaled_value": 1.0,
+            "shap_value": -0.1764
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "20.30",
+            "scaled_value": 0.4227,
+            "shap_value": -0.1638
+          },
+          {
+            "feature": "consistency_score",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.54",
+            "scaled_value": -0.8043,
+            "shap_value": 0.1476
+          }
+        ],
+        "lime_local_r2": 0.6655,
+        "lime_vs_shap_spearman_active": 0.5415,
+        "lime_vs_shap_spearman_all114": 0.2266,
+        "lime_vs_shap_cosine": 0.7789,
+        "lime_vs_shap_top10_overlap": 0.4,
+        "top8_lime_drivers": [
+          {
+            "feature": "code_module_AAA",
+            "lime_weight": -3.3463
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.3483
+          },
+          {
+            "feature": "total_course_assessments",
+            "lime_weight": 0.2191
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.2005
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": 0.1273
+          },
+          {
+            "feature": "region_Yorkshire Region",
+            "lime_weight": 0.1231
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": 0.1185
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "lime_weight": -0.1154
+          }
+        ]
+      }
+    },
+    "50%": {
+      "TP": {
+        "milestone": "50%",
+        "quadrant": "TP",
+        "title_vi": "True Positive — Cảnh báo Đúng",
+        "row_idx": 17876,
+        "id_student": 271274,
+        "code_module": "FFF",
+        "code_presentation": "2013J",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 4,
+        "fold_tau": 0.5,
+        "oof_prob": 0.8998,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0123,
+        "output_log_odds": 2.1951,
+        "other_106_features_shap_sum": 0.3961,
+        "top8_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.50",
+            "scaled_value": -2.0,
+            "shap_value": 0.9798
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.47",
+            "scaled_value": 0.5986,
+            "shap_value": -0.4279
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "48.00",
+            "scaled_value": -1.1899,
+            "shap_value": 0.3759
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "12.00",
+            "scaled_value": -0.6977,
+            "shap_value": 0.3325
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "48.00",
+            "scaled_value": -1.3782,
+            "shap_value": 0.3181
+          },
+          {
+            "feature": "engagement_decay",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "20.00",
+            "scaled_value": 45.3432,
+            "shap_value": -0.3128
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.17",
+            "scaled_value": -1.1818,
+            "shap_value": 0.3111
+          },
+          {
+            "feature": "total_course_assessments",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "12.00",
+            "scaled_value": 0.5,
+            "shap_value": 0.2099
+          }
+        ],
+        "lime_local_r2": 0.7055,
+        "lime_vs_shap_spearman_active": 0.8349,
+        "lime_vs_shap_spearman_all114": 0.3466,
+        "lime_vs_shap_cosine": 0.7859,
+        "lime_vs_shap_top10_overlap": 0.9,
+        "top8_lime_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.5464
+          },
+          {
+            "feature": "clicks_trend",
+            "lime_weight": -0.5188
+          },
+          {
+            "feature": "tma1_days_early",
+            "lime_weight": 0.4319
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": 0.3551
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": 0.2728
+          },
+          {
+            "feature": "engagement_decay",
+            "lime_weight": -0.2672
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "lime_weight": 0.2159
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": 0.2077
+          }
+        ]
+      },
+      "FP": {
+        "milestone": "50%",
+        "quadrant": "FP",
+        "title_vi": "False Positive — Cảnh báo Nhầm",
+        "row_idx": 12279,
+        "id_student": 602454,
+        "code_module": "DDD",
+        "code_presentation": "2014B",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 5,
+        "fold_tau": 0.53,
+        "oof_prob": 0.7197,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0124,
+        "output_log_odds": 0.9429,
+        "other_106_features_shap_sum": 0.2241,
+        "top8_shap_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "53.08",
+            "scaled_value": -0.9571,
+            "shap_value": 0.4127
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "54.25",
+            "scaled_value": -1.0791,
+            "shap_value": 0.3475
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.3164
+          },
+          {
+            "feature": "code_module_DDD",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "1.00",
+            "scaled_value": 1.0,
+            "shap_value": 0.2745
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.50",
+            "scaled_value": -0.2609,
+            "shap_value": -0.2459
+          },
+          {
+            "feature": "min_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "49.00",
+            "scaled_value": -0.5926,
+            "shap_value": 0.2111
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "Lower Than A Level",
+            "scaled_value": -1.0,
+            "shap_value": 0.155
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-0.10",
+            "scaled_value": 0.4314,
+            "shap_value": -0.1321
+          }
+        ],
+        "lime_local_r2": 0.7116,
+        "lime_vs_shap_spearman_active": 0.7173,
+        "lime_vs_shap_spearman_all114": 0.2998,
+        "lime_vs_shap_cosine": 0.7346,
+        "lime_vs_shap_top10_overlap": 0.6,
+        "top8_lime_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.6877
+          },
+          {
+            "feature": "code_module_DDD",
+            "lime_weight": 0.5699
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.1681
+          },
+          {
+            "feature": "clicks_trend",
+            "lime_weight": -0.1666
+          },
+          {
+            "feature": "region_London Region",
+            "lime_weight": -0.1594
+          },
+          {
+            "feature": "total_course_assessments",
+            "lime_weight": -0.132
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.1137
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": 0.1017
+          }
+        ]
+      },
+      "TN": {
+        "milestone": "50%",
+        "quadrant": "TN",
+        "title_vi": "True Negative — An toàn Đúng",
+        "row_idx": 9898,
+        "id_student": 510195,
+        "code_module": "DDD",
+        "code_presentation": "2013B",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 2,
+        "fold_tau": 0.51,
+        "oof_prob": 0.06,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0114,
+        "output_log_odds": -2.7515,
+        "other_106_features_shap_sum": -0.0987,
+        "top8_shap_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "47.57",
+            "scaled_value": 0.5141,
+            "shap_value": -0.8128
+          },
+          {
+            "feature": "consistency_score",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.94",
+            "scaled_value": 0.6831,
+            "shap_value": -0.5474
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "83.46",
+            "scaled_value": 0.4055,
+            "shap_value": -0.4567
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.4188
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "87.00",
+            "scaled_value": 0.4688,
+            "shap_value": -0.288
+          },
+          {
+            "feature": "clicks_last_2_weeks",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "30.00",
+            "scaled_value": -0.008,
+            "shap_value": 0.1629
+          },
+          {
+            "feature": "weekend_clicks",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "614.00",
+            "scaled_value": 0.8249,
+            "shap_value": -0.161
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "3.00",
+            "scaled_value": -0.0435,
+            "shap_value": -0.1424
+          }
+        ],
+        "lime_local_r2": 0.6675,
+        "lime_vs_shap_spearman_active": 0.7699,
+        "lime_vs_shap_spearman_all114": 0.4454,
+        "lime_vs_shap_cosine": 0.8321,
+        "lime_vs_shap_top10_overlap": 0.8,
+        "top8_lime_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.5966
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.582
+          },
+          {
+            "feature": "burst_count",
+            "lime_weight": -0.3397
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": -0.3026
+          },
+          {
+            "feature": "code_module_DDD",
+            "lime_weight": 0.2819
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.2654
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": -0.2427
+          },
+          {
+            "feature": "weekend_clicks",
+            "lime_weight": -0.2116
+          }
+        ]
+      },
+      "FN": {
+        "milestone": "50%",
+        "quadrant": "FN",
+        "title_vi": "False Negative — Bỏ sót Nguy cơ",
+        "row_idx": 12976,
+        "id_student": 444783,
+        "code_module": "DDD",
+        "code_presentation": "2014J",
+        "final_result": "Withdrawn",
+        "at_risk": 1,
+        "fold": 4,
+        "fold_tau": 0.5,
+        "oof_prob": 0.1602,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0123,
+        "output_log_odds": -1.6569,
+        "other_106_features_shap_sum": -0.2948,
+        "top8_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.4778
+          },
+          {
+            "feature": "consistency_score",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.93",
+            "scaled_value": 0.6568,
+            "shap_value": -0.4335
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "37.50",
+            "scaled_value": 0.1714,
+            "shap_value": -0.3087
+          },
+          {
+            "feature": "code_module_DDD",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "1.00",
+            "scaled_value": 1.0,
+            "shap_value": 0.2593
+          },
+          {
+            "feature": "engagement_decay",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.25",
+            "scaled_value": 0.1667,
+            "shap_value": -0.1395
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "8.00",
+            "scaled_value": -0.4348,
+            "shap_value": -0.0949
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "75.00",
+            "scaled_value": 0.019,
+            "shap_value": -0.0927
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "HE Qualification",
+            "scaled_value": 1.0,
+            "shap_value": -0.0866
+          }
+        ],
+        "lime_local_r2": 0.6891,
+        "lime_vs_shap_spearman_active": 0.4647,
+        "lime_vs_shap_spearman_all114": 0.2626,
+        "lime_vs_shap_cosine": 0.7571,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "code_module_DDD",
+            "lime_weight": 0.5924
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.5072
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.2192
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.212
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.1677
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": -0.1637
+          },
+          {
+            "feature": "activity_entropy",
+            "lime_weight": -0.1469
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "lime_weight": 0.1186
+          }
+        ]
+      }
+    },
+    "75%": {
+      "TP": {
+        "milestone": "75%",
+        "quadrant": "TP",
+        "title_vi": "True Positive — Cảnh báo Đúng",
+        "row_idx": 11031,
+        "id_student": 2082180,
+        "code_module": "DDD",
+        "code_presentation": "2013J",
+        "final_result": "Withdrawn",
+        "at_risk": 1,
+        "fold": 2,
+        "fold_tau": 0.66,
+        "oof_prob": 0.8998,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0199,
+        "output_log_odds": 2.1953,
+        "other_106_features_shap_sum": 0.4466,
+        "top8_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.60",
+            "scaled_value": -2.0,
+            "shap_value": 1.1128
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "28.40",
+            "scaled_value": -0.4354,
+            "shap_value": 0.488
+          },
+          {
+            "feature": "engagement_decay",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.00",
+            "scaled_value": -0.2409,
+            "shap_value": 0.3974
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.50",
+            "scaled_value": -0.66,
+            "shap_value": 0.353
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "25.75",
+            "scaled_value": 0.913,
+            "shap_value": -0.3084
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "A Level or Equivalent",
+            "scaled_value": 0.0,
+            "shap_value": -0.1135
+          },
+          {
+            "feature": "clicks_homepage",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "50.00",
+            "scaled_value": -0.7801,
+            "shap_value": -0.1093
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "71.00",
+            "scaled_value": -0.1332,
+            "shap_value": -0.0912
+          }
+        ],
+        "lime_local_r2": 0.7104,
+        "lime_vs_shap_spearman_active": 0.4286,
+        "lime_vs_shap_spearman_all114": 0.0275,
+        "lime_vs_shap_cosine": 0.6466,
+        "lime_vs_shap_top10_overlap": 0.4,
+        "top8_lime_drivers": [
+          {
+            "feature": "submission_rate",
+            "lime_weight": 0.3662
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": 0.3614
+          },
+          {
+            "feature": "num_of_prev_attempts",
+            "lime_weight": -0.247
+          },
+          {
+            "feature": "late_submission_rate",
+            "lime_weight": -0.229
+          },
+          {
+            "feature": "clicks_trend",
+            "lime_weight": -0.2133
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "lime_weight": 0.2109
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.1197
+          },
+          {
+            "feature": "score_trend_slope",
+            "lime_weight": -0.1178
+          }
+        ]
+      },
+      "FP": {
+        "milestone": "75%",
+        "quadrant": "FP",
+        "title_vi": "False Positive — Cảnh báo Nhầm",
+        "row_idx": 5960,
+        "id_student": 689333,
+        "code_module": "BBB",
+        "code_presentation": "2014J",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 2,
+        "fold_tau": 0.66,
+        "oof_prob": 0.7198,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0199,
+        "output_log_odds": 0.9437,
+        "other_106_features_shap_sum": -0.105,
+        "top8_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.75",
+            "scaled_value": -1.25,
+            "shap_value": 0.709
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "11.50",
+            "scaled_value": 0.2935,
+            "shap_value": -0.453
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "57.46",
+            "scaled_value": -0.7342,
+            "shap_value": 0.3419
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "37.35",
+            "scaled_value": -0.2622,
+            "shap_value": 0.3253
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "58.67",
+            "scaled_value": -0.8492,
+            "shap_value": 0.2591
+          },
+          {
+            "feature": "tma1_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "NaN",
+            "scaled_value": -2.9231,
+            "shap_value": -0.1665
+          },
+          {
+            "feature": "oucontent_ratio",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "0.71",
+            "scaled_value": 1.3138,
+            "shap_value": 0.1372
+          },
+          {
+            "feature": "total_course_assessments",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "5.00",
+            "scaled_value": -0.6667,
+            "shap_value": -0.1242
+          }
+        ],
+        "lime_local_r2": 0.6783,
+        "lime_vs_shap_spearman_active": 0.7701,
+        "lime_vs_shap_spearman_all114": 0.3625,
+        "lime_vs_shap_cosine": 0.6502,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.3442
+          },
+          {
+            "feature": "region_West Midlands Region",
+            "lime_weight": 0.2993
+          },
+          {
+            "feature": "tma1_score",
+            "lime_weight": -0.2055
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": 0.1717
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.1702
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": 0.1616
+          },
+          {
+            "feature": "max_score",
+            "lime_weight": 0.1433
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": 0.1372
+          }
+        ]
+      },
+      "TN": {
+        "milestone": "75%",
+        "quadrant": "TN",
+        "title_vi": "True Negative — An toàn Đúng",
+        "row_idx": 19188,
+        "id_student": 633983,
+        "code_module": "FFF",
+        "code_presentation": "2014B",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 2,
+        "fold_tau": 0.66,
+        "oof_prob": 0.06,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0199,
+        "output_log_odds": -2.7514,
+        "other_106_features_shap_sum": -0.3898,
+        "top8_shap_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "82.00",
+            "scaled_value": 0.6018,
+            "shap_value": -0.7785
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.5166
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.75",
+            "scaled_value": -0.1739,
+            "shap_value": -0.4392
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.50",
+            "scaled_value": -0.66,
+            "shap_value": 0.3964
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "82.00",
+            "scaled_value": 0.3551,
+            "shap_value": -0.354
+          },
+          {
+            "feature": "engagement_decay",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.52",
+            "scaled_value": 1.5732,
+            "shap_value": -0.2481
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "9.00",
+            "scaled_value": -0.3871,
+            "shap_value": -0.2403
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "83.50",
+            "scaled_value": 0.3333,
+            "shap_value": -0.2012
+          }
+        ],
+        "lime_local_r2": 0.6985,
+        "lime_vs_shap_spearman_active": 0.7789,
+        "lime_vs_shap_spearman_all114": 0.324,
+        "lime_vs_shap_cosine": 0.902,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.7803
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": -0.51
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.3646
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.3584
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": -0.2361
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "lime_weight": 0.2298
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.2078
+          },
+          {
+            "feature": "region_London Region",
+            "lime_weight": -0.1536
+          }
+        ]
+      },
+      "FN": {
+        "milestone": "75%",
+        "quadrant": "FN",
+        "title_vi": "False Negative — Bỏ sót Nguy cơ",
+        "row_idx": 19412,
+        "id_student": 236090,
+        "code_module": "FFF",
+        "code_presentation": "2014J",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 1,
+        "fold_tau": 0.63,
+        "oof_prob": 0.161,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0186,
+        "output_log_odds": -1.6508,
+        "other_106_features_shap_sum": -0.1199,
+        "top8_shap_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "63.25",
+            "scaled_value": 0.239,
+            "shap_value": -0.4701
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.75",
+            "scaled_value": -0.172,
+            "shap_value": -0.3944
+          },
+          {
+            "feature": "consistency_score",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.95",
+            "scaled_value": 0.7054,
+            "shap_value": -0.3516
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.3177
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "63.25",
+            "scaled_value": -0.4763,
+            "shap_value": 0.3039
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.92",
+            "scaled_value": 0.44,
+            "shap_value": -0.2428
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "6.00",
+            "scaled_value": -0.4839,
+            "shap_value": -0.2404
+          },
+          {
+            "feature": "total_course_assessments",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "12.00",
+            "scaled_value": 0.5,
+            "shap_value": 0.1636
+          }
+        ],
+        "lime_local_r2": 0.7197,
+        "lime_vs_shap_spearman_active": 0.785,
+        "lime_vs_shap_spearman_all114": 0.463,
+        "lime_vs_shap_cosine": 0.8082,
+        "lime_vs_shap_top10_overlap": 0.6,
+        "top8_lime_drivers": [
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.5028
+          },
+          {
+            "feature": "consistency_score",
+            "lime_weight": -0.3272
+          },
+          {
+            "feature": "clicks_page",
+            "lime_weight": 0.2623
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.2405
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.2094
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.2089
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.2023
+          },
+          {
+            "feature": "clicks_homepage",
+            "lime_weight": 0.1889
+          }
+        ]
+      }
+    },
+    "100%": {
+      "TP": {
+        "milestone": "100%",
+        "quadrant": "TP",
+        "title_vi": "True Positive — Cảnh báo Đúng",
+        "row_idx": 6423,
+        "id_student": 501652,
+        "code_module": "CCC",
+        "code_presentation": "2014B",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 1,
+        "fold_tau": 0.61,
+        "oof_prob": 0.9,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0185,
+        "output_log_odds": 2.197,
+        "other_106_features_shap_sum": -0.4571,
+        "top8_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.38",
+            "scaled_value": -2.2917,
+            "shap_value": 0.8035
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "46.83",
+            "scaled_value": -1.1981,
+            "shap_value": 0.6808
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-2.28",
+            "scaled_value": -1.1748,
+            "shap_value": 0.5105
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "10.77",
+            "scaled_value": -0.8721,
+            "shap_value": 0.4853
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "48.00",
+            "scaled_value": -1.379,
+            "shap_value": 0.4711
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.38",
+            "scaled_value": -2.2917,
+            "shap_value": 0.3338
+          },
+          {
+            "feature": "late_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 1.6667,
+            "shap_value": -0.3256
+          },
+          {
+            "feature": "late_submissions",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "3.00",
+            "scaled_value": 0.5,
+            "shap_value": -0.3238
+          }
+        ],
+        "lime_local_r2": 0.7273,
+        "lime_vs_shap_spearman_active": 0.8737,
+        "lime_vs_shap_spearman_all114": 0.571,
+        "lime_vs_shap_cosine": 0.6854,
+        "lime_vs_shap_top10_overlap": 0.6,
+        "top8_lime_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.9259
+          },
+          {
+            "feature": "code_module_CCC",
+            "lime_weight": -0.6335
+          },
+          {
+            "feature": "late_submission_rate",
+            "lime_weight": -0.6057
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.3933
+          },
+          {
+            "feature": "tma1_score",
+            "lime_weight": -0.3712
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": 0.3392
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "lime_weight": 0.1688
+          },
+          {
+            "feature": "late_submissions",
+            "lime_weight": -0.1666
+          }
+        ]
+      },
+      "FP": {
+        "milestone": "100%",
+        "quadrant": "FP",
+        "title_vi": "False Positive — Cảnh báo Nhầm",
+        "row_idx": 12282,
+        "id_student": 674437,
+        "code_module": "DDD",
+        "code_presentation": "2014J",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 5,
+        "fold_tau": 0.53,
+        "oof_prob": 0.72,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0202,
+        "output_log_odds": 0.9444,
+        "other_106_features_shap_sum": 0.766,
+        "top8_shap_drivers": [
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "54.33",
+            "scaled_value": -1.08,
+            "shap_value": 0.5909
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "51.30",
+            "scaled_value": -1.0044,
+            "shap_value": 0.5195
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "25.00",
+            "scaled_value": -0.0732,
+            "shap_value": -0.4855
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.3825
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "23.00",
+            "scaled_value": 0.1714,
+            "shap_value": -0.2674
+          },
+          {
+            "feature": "max_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "70.00",
+            "scaled_value": -1.15,
+            "shap_value": 0.1831
+          },
+          {
+            "feature": "clicks_externalquiz",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "6.00",
+            "scaled_value": 1.9459,
+            "shap_value": 0.1493
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.1492
+          }
+        ],
+        "lime_local_r2": 0.7636,
+        "lime_vs_shap_spearman_active": 0.6849,
+        "lime_vs_shap_spearman_all114": 0.1997,
+        "lime_vs_shap_cosine": 0.7193,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": 0.7479
+          },
+          {
+            "feature": "clicks_trend",
+            "lime_weight": -0.3677
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.2904
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.2796
+          },
+          {
+            "feature": "total_course_assessments",
+            "lime_weight": -0.2391
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": 0.1997
+          },
+          {
+            "feature": "clicks_per_active_day",
+            "lime_weight": 0.1466
+          },
+          {
+            "feature": "max_score",
+            "lime_weight": 0.1204
+          }
+        ]
+      },
+      "TN": {
+        "milestone": "100%",
+        "quadrant": "TN",
+        "title_vi": "True Negative — An toàn Đúng",
+        "row_idx": 21951,
+        "id_student": 442987,
+        "code_module": "GGG",
+        "code_presentation": "2014J",
+        "final_result": "Pass",
+        "at_risk": 0,
+        "fold": 5,
+        "fold_tau": 0.53,
+        "oof_prob": 0.06,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0202,
+        "output_log_odds": -2.751,
+        "other_106_features_shap_sum": -0.862,
+        "top8_shap_drivers": [
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "91.25",
+            "scaled_value": 0.7633,
+            "shap_value": -0.8012
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.89",
+            "scaled_value": -0.4074,
+            "shap_value": -0.5684
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "55.00",
+            "scaled_value": 1.0857,
+            "shap_value": 0.4817
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "91.25",
+            "scaled_value": 0.7187,
+            "shap_value": -0.4454
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-0.11",
+            "scaled_value": 0.3529,
+            "shap_value": -0.3553
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.89",
+            "scaled_value": -0.4074,
+            "shap_value": -0.2736
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "0.00",
+            "scaled_value": -1.0505,
+            "shap_value": 0.2614
+          },
+          {
+            "feature": "avg_days_before_deadline",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "55.00",
+            "scaled_value": 3.8044,
+            "shap_value": -0.2084
+          }
+        ],
+        "lime_local_r2": 0.7854,
+        "lime_vs_shap_spearman_active": 0.8286,
+        "lime_vs_shap_spearman_all114": 0.4117,
+        "lime_vs_shap_cosine": 0.7697,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "clicks_trend",
+            "lime_weight": -0.6173
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.3803
+          },
+          {
+            "feature": "avg_score",
+            "lime_weight": -0.3721
+          },
+          {
+            "feature": "weighted_avg_score",
+            "lime_weight": -0.3162
+          },
+          {
+            "feature": "module_presentation_length",
+            "lime_weight": -0.1859
+          },
+          {
+            "feature": "max_score",
+            "lime_weight": -0.1304
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": 0.1261
+          },
+          {
+            "feature": "age_band",
+            "lime_weight": 0.1258
+          }
+        ]
+      },
+      "FN": {
+        "milestone": "100%",
+        "quadrant": "FN",
+        "title_vi": "False Negative — Bỏ sót Nguy cơ",
+        "row_idx": 7946,
+        "id_student": 618875,
+        "code_module": "CCC",
+        "code_presentation": "2014J",
+        "final_result": "Fail",
+        "at_risk": 1,
+        "fold": 2,
+        "fold_tau": 0.56,
+        "oof_prob": 0.1603,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0243,
+        "output_log_odds": -1.656,
+        "other_106_features_shap_sum": 0.224,
+        "top8_shap_drivers": [
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "21.00",
+            "scaled_value": -0.1667,
+            "shap_value": -0.6194
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "6.00",
+            "scaled_value": -0.3143,
+            "shap_value": -0.4089
+          },
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "67.25",
+            "scaled_value": -0.4497,
+            "shap_value": 0.4006
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.3575
+          },
+          {
+            "feature": "consistency_score",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.87",
+            "scaled_value": 0.4872,
+            "shap_value": -0.2634
+          },
+          {
+            "feature": "region_North Region",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "1.00",
+            "scaled_value": 1.0,
+            "shap_value": -0.2372
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "66.95",
+            "scaled_value": 0.0782,
+            "shap_value": -0.2317
+          },
+          {
+            "feature": "course_progress_submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "1.00",
+            "scaled_value": 0.0,
+            "shap_value": -0.1868
+          }
+        ],
+        "lime_local_r2": 0.6841,
+        "lime_vs_shap_spearman_active": 0.6857,
+        "lime_vs_shap_spearman_all114": 0.2961,
+        "lime_vs_shap_cosine": 0.6051,
+        "lime_vs_shap_top10_overlap": 0.7,
+        "top8_lime_drivers": [
+          {
+            "feature": "region_North Region",
+            "lime_weight": -0.9445
+          },
+          {
+            "feature": "days_since_last_activity",
+            "lime_weight": -0.3377
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "lime_weight": -0.2838
+          },
+          {
+            "feature": "earned_weight_score",
+            "lime_weight": -0.2031
+          },
+          {
+            "feature": "submission_rate",
+            "lime_weight": -0.1831
+          },
+          {
+            "feature": "code_module_CCC",
+            "lime_weight": 0.182
+          },
+          {
+            "feature": "days_before_start",
+            "lime_weight": -0.1403
+          },
+          {
+            "feature": "late_submission_rate",
+            "lime_weight": 0.1238
+          }
+        ]
+      }
+    }
+  },
+  "longitudinal_trajectory": {
+    "id_student": 2137413,
+    "code_module": "EEE",
+    "code_presentation": "2013J",
+    "final_result": "Fail",
+    "at_risk": 1,
+    "trajectory": [
+      {
+        "milestone": "25%",
+        "fold": 1,
+        "fold_tau": 0.42,
+        "oof_prob": 0.3006,
+        "oof_pred": 0,
+        "base_value_log_odds": 0.0071,
+        "output_log_odds": -0.8445,
+        "top5_shap_drivers": [
+          {
+            "feature": "avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "87.0",
+            "shap_value": -0.3578
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "87.0",
+            "shap_value": -0.3108
+          },
+          {
+            "feature": "clicks_dualpane",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "21.0",
+            "shap_value": -0.2105
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "-1.0",
+            "shap_value": 0.1689
+          },
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.0",
+            "shap_value": -0.1577
+          }
+        ]
+      },
+      {
+        "milestone": "50%",
+        "fold": 2,
+        "fold_tau": 0.51,
+        "oof_prob": 0.8499,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0114,
+        "output_log_odds": 1.7338,
+        "top5_shap_drivers": [
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.67",
+            "shap_value": 0.9868
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-8.96",
+            "shap_value": 0.4207
+          },
+          {
+            "feature": "highest_education",
+            "sedl_dimension": "Demographic & Context",
+            "raw_value": "-1.0",
+            "shap_value": 0.1618
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "34.36",
+            "shap_value": -0.1559
+          },
+          {
+            "feature": "weighted_avg_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "78.09",
+            "shap_value": -0.1529
+          }
+        ]
+      },
+      {
+        "milestone": "75%",
+        "fold": 4,
+        "fold_tau": 0.58,
+        "oof_prob": 0.9944,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0158,
+        "output_log_odds": 5.186,
+        "top5_shap_drivers": [
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "78.0",
+            "shap_value": 2.0633
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.5",
+            "shap_value": 1.0907
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "78.0",
+            "shap_value": 0.6163
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-5.5",
+            "shap_value": 0.3806
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "34.36",
+            "shap_value": 0.3722
+          }
+        ]
+      },
+      {
+        "milestone": "100%",
+        "fold": 1,
+        "fold_tau": 0.61,
+        "oof_prob": 0.9991,
+        "oof_pred": 1,
+        "base_value_log_odds": 0.0185,
+        "output_log_odds": 7.0036,
+        "top5_shap_drivers": [
+          {
+            "feature": "days_since_last_activity",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "145.0",
+            "shap_value": 1.9255
+          },
+          {
+            "feature": "max_inactivity_streak",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "145.0",
+            "shap_value": 1.8915
+          },
+          {
+            "feature": "submission_rate",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "0.5",
+            "shap_value": 0.8281
+          },
+          {
+            "feature": "clicks_trend",
+            "sedl_dimension": "Behavioural",
+            "raw_value": "-3.43",
+            "shap_value": 0.6641
+          },
+          {
+            "feature": "earned_weight_score",
+            "sedl_dimension": "Cognitive",
+            "raw_value": "34.36",
+            "shap_value": 0.4579
+          }
+        ]
+      }
+    ]
+  }
+}
